@@ -1,14 +1,14 @@
 //alert("helloo");
 var database;
 var firebaseConfig = {
-    apiKey: "AIzaSyAwrsDvmof984rMnalGbZZwMILihrLtPm0",
-    authDomain: "s2-guide.firebaseapp.com",
-    databaseURL: "https://s2-guide.firebaseio.com",
-    projectId: "s2-guide",
-    storageBucket: "",
-    messagingSenderId: "971496001385",
-    appId: "1:971496001385:web:5cbc8a5550fe0dfd"
-  };
+  apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+  authDomain: "s2guide.firebaseapp.com",
+  databaseURL: "https://s2guide.firebaseio.com",
+  projectId: "s2guide",
+  storageBucket: "s2guide.appspot.com",
+  messagingSenderId: "457852779269",
+  appId: "1:457852779269:web:7e27f12f4d807544"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   console.log(firebase);
@@ -16,6 +16,7 @@ var firebaseConfig = {
   database = firebase.database();
   var tempInqId = "";
   var rIndex, tblInq;
+
   function submitIquiry(){
     var ref = database.ref('inquiry_list/');
     var name = document.getElementById('name').value;
@@ -25,7 +26,7 @@ var firebaseConfig = {
     var reply = "";
     //get system date
     var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth+1)+'-'+ today.getDate();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+ today.getDate();
     var data = {
         name : name,
         email : email,
