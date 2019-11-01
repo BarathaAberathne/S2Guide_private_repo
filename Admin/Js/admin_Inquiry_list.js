@@ -1,13 +1,13 @@
 //alert("helloo");
 var database;
 var firebaseConfig = {
-  apiKey: "AIzaSyAwrsDvmof984rMnalGbZZwMILihrLtPm0",
-  authDomain: "s2-guide.firebaseapp.com",
-  databaseURL: "https://s2-guide.firebaseio.com",
-  projectId: "s2-guide",
-  storageBucket: "",
-  messagingSenderId: "971496001385",
-  appId: "1:971496001385:web:5cbc8a5550fe0dfd"
+  apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+  authDomain: "s2guide.firebaseapp.com",
+  databaseURL: "https://s2guide.firebaseio.com",
+  projectId: "s2guide",
+  storageBucket: "s2guide.appspot.com",
+  messagingSenderId: "457852779269",
+  appId: "1:457852779269:web:7e27f12f4d807544"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -43,7 +43,7 @@ function onLoad(){
 }
 function loadData(data){
   //console.log(data.val());
-  var inquiries = data.val();
+  inquiries = data.val();
   var keys = Object.keys(inquiries);
   //console.log(keys);
   for(var i=0;i<keys.length;i++){
@@ -83,28 +83,24 @@ function readInq(obj){
   console.log(tempInqId);
   document.getElementById('div_inq_list').style.display = "none";
   document.getElementById('div_inq_single').style.display = "block";
-  var ref = database.ref('inquiry_lists/'+tempInqId);
-  var i = 0;
-  ref.once('value',function(snapshot){
-    snapshot.forEach(function(childSnapshot){
-      var childData =  childSnapshot.val();
-      console.log(childData);
-    });
-  });
-  /*var name = "Baratha";
-  var email = "baratha@gmail.com";
-  var date = "2019/05/11";
-  var subject = "System Error";
-  var message = "I got sytem error";
-  document.getElementById('inq_id').innerHTML = tempInqId;
-  document.getElementById('lbl_name').innerHTML = name;
-  document.getElementById('lbl_email').innerHTML = " *" + email+"*";
-  document.getElementById('lbl_date').innerHTML = date;
-  document.getElementById('lbl_subject').innerHTML = subject;
-  document.getElementById('lbl_msg').innerHTML = message;*/
+  var temp_name = inquiries[tempInqId].name;
+  var temp_email = inquiries[tempInqId].email;
+  var temp_date = inquiries[tempInqId].date;
+  var temp_subject = inquiries[tempInqId].subject;
+  var temp_message = inquiries[tempInqId].message;
+  //display this in <p>
+  document.getElementById('lbl_name').innerHTML=temp_name;
+  document.getElementById('lbl_email').innerHTML=temp_email;
+  document.getElementById('lbl_date').innerHTML=temp_date;
+  document.getElementById('lbl_subject').innerHTML=temp_subject;
+  document.getElementById('lbl_msg').innerHTML=temp_message;
+
+  console.log("Name :"+temp_name);
 
 }
-
+function replyInq(){
+  alert("Replied inquery successfully to email");
+}
 function editInq(tempInqId){
 
 }
