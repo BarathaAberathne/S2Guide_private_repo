@@ -1,0 +1,1057 @@
+
+<html>
+    <head>
+
+        <!-- Title Page-->
+        <title>Dashboard</title>
+
+        <!-- Fontfaces CSS-->
+        <link href="css/font-face.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+        <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+        <!-- Vendor CSS-->
+        <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+        <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+        <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+        <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+        <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+        <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="css/theme.css" rel="stylesheet" media="all">
+        <link href="css/style.css" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="edit.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/quizBiz.css">
+           
+      <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+            authDomain: "s2guide.firebaseapp.com",
+            databaseURL: "https://s2guide.firebaseio.com",
+            projectId: "s2guide",
+            storageBucket: "s2guide.appspot.com",
+            messagingSenderId: "457852779269",
+            appId: "1:457852779269:web:7e27f12f4d807544"
+        };
+             // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.database().ref('QuizPartTwo_Business/');
+        </script>
+    </head>
+
+<body>
+<div class="page-wrapper">
+
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Adverticements</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+            </a>
+
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="Dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Adverticements</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <h2 style="text-align: center"> Quiz</h2>
+                        <div class="header-button">
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+
+                                    <a href="#">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                    <div class="account-dropdown js-dropdown">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <br>
+        <div class="main-content" style="background-image: url('images/admin2.png')">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header"> <h1>Edit Business Faculty Quiz</h1></div>
+
+
+
+
+<script>
+
+var countQuestion = 1;
+var countAns = 1;           
+var databaseRef = firebase.database().ref('QuizPartTwo_Business/').orderByKey();
+    
+     databaseRef.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+ var childKey = childSnapshot.key;
+  var childData = childSnapshot.val();
+
+  //q is question
+  var p = document.createElement("p");
+  p.setAttribute("class", "answer");
+  p.id = "para"+ countQuestion;
+  
+   document.body.appendChild(p);
+   // Append <p> to <body>
+
+
+    var qIndex = document.createElement("INPUT");
+    qIndex.setAttribute("type", "hidden");
+    qIndex.setAttribute("value", childKey);
+   
+    qIndex.id = "qid" + countQuestion;
+    p.appendChild(qIndex);
+
+    var q = document.createElement("INPUT");
+    q.setAttribute("type", "text");
+    q.setAttribute("size", 120);
+    q.setAttribute("class", "form-control");
+    q.id = "q" + countQuestion;
+
+    
+  q.setAttribute("value", childData.question);
+  
+  p.append(" Question: " );
+
+  p.appendChild(q);
+ 
+
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+  p.append(" Answer 1: ");  
+ 
+//ans1 is answer
+  var ans1 = document.createElement("INPUT");
+  ans1.setAttribute("type", "text");
+  ans1.setAttribute("size", 80);
+  ans1.setAttribute("class", "form-control");
+  ans1.id = "ans1" + countAns; 
+  countAns++;
+  ans1.setAttribute("value", childData.ans1.answer);
+  p.appendChild(ans1);
+  
+ 
+  
+p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+p.appendChild(document.createElement("br"));
+
+
+  p.append("BBA(Hons)_Degree_sp_in_Accounting_and_Finance");
+
+  p.append("   ");
+  var AF_score1 = document.createElement("INPUT");
+  AF_score1.setAttribute("type", "text");
+  AF_score1.setAttribute("size", 3);
+  AF_score1.setAttribute("class", "form-controls");
+  AF_score1.id = "AF_score1" + countQuestion;
+  AF_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Accounting_and_Finance);
+  p.appendChild(AF_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Business_Analytics");
+
+  var BA_score1 = document.createElement("INPUT");
+  BA_score1.setAttribute("type", "text");
+  BA_score1.setAttribute("size", 3);
+  BA_score1.setAttribute("class", "form-controls");
+  BA_score1.id = "BA_score1" + countQuestion;
+  BA_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Business_Analytics);
+  p.appendChild(BA_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Business_Management");
+
+  var BM_score1 = document.createElement("INPUT");
+  BM_score1.setAttribute("type", "text");
+  BM_score1.setAttribute("size", 3);
+  BM_score1.setAttribute("class", "form-controls");
+  BM_score1.id = "BM_score1" + countQuestion;
+  BM_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Business_Management);
+  p.appendChild(BM_score1);
+          p.appendChild(document.createElement("br"));
+
+          p.append("BBA(Hons)_Degree_sp_in_Marketing_Management");
+
+  var MM_score1 = document.createElement("INPUT");
+  MM_score1.setAttribute("type", "text");
+  MM_score1.setAttribute("size", 3);
+  MM_score1.setAttribute("class", "form-controls");
+  MM_score1.id = "MM_score1" + countQuestion;
+  MM_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Marketing_Management);
+  p.appendChild(MM_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Human_Capital_Management");
+
+  var HCM_score1 = document.createElement("INPUT");
+  HCM_score1.setAttribute("type", "text");
+  HCM_score1.setAttribute("size", 3);
+  HCM_score1.setAttribute("class", "form-controls");
+  HCM_score1.id = "HCM_score1" + countQuestion;
+  HCM_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Human_Capital_Management);
+  p.appendChild(HCM_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Logistics_and_Supply_Chain_Management");
+
+  var LSCM_score1 = document.createElement("INPUT");
+  LSCM_score1.setAttribute("type", "text");
+  LSCM_score1.setAttribute("size", 3);
+  LSCM_score1.setAttribute("class", "form-controls");
+  LSCM_score1.id = "LSCM_score1" + countQuestion;
+  LSCM_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management);
+  p.appendChild(LSCM_score1);
+          p.appendChild(document.createElement("br"));
+
+          p.append("BBA(Hons)_Degree_sp_in_Management_Information_Systems");
+
+  var MIS_score1 = document.createElement("INPUT");
+  MIS_score1.setAttribute("type", "text");
+  MIS_score1.setAttribute("size", 3);
+  MIS_score1.setAttribute("class", "form-controls");
+  MIS_score1.id = "HCM_score1" + countQuestion;
+  MIS_score1.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Management_Information_Systems);
+  p.appendChild(MIS_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Business_Administration(UK)");
+
+  var B_Admin_UK_score1 = document.createElement("INPUT");
+  B_Admin_UK_score1.setAttribute("type", "text");
+  B_Admin_UK_score1.setAttribute("size", 3);
+  B_Admin_UK_score1.setAttribute("class", "form-controls");
+  B_Admin_UK_score1.id = "HCM_score1" + countQuestion;
+  B_Admin_UK_score1.setAttribute("value", childData.ans1.BBA_Hons_Business_Administration_UK);
+  p.appendChild(B_Admin_UK_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BA(Hons)in_Business_Administration_Top_up(UK)");
+
+  var BA_Topup_score1 = document.createElement("INPUT");
+  BA_Topup_score1.setAttribute("type", "text");
+  BA_Topup_score1.setAttribute("size", 3);
+  BA_Topup_score1.setAttribute("class", "form-controls");
+  BA_Topup_score1.id = "HCM_score1" + countQuestion;
+  BA_Topup_score1.setAttribute("value", childData.ans1.BA_Hons_in_Business_Administration_Top_up_UK);
+  p.appendChild(BA_Topup_score1);
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append(" Answer2: ");
+
+var ans2 = document.createElement("INPUT");
+ans2.setAttribute("type", "text");
+ans2.setAttribute("size", 80);
+ans2.setAttribute("class", "form-control");
+ans2.id = "ans2" + countAns; 
+countAns++;
+  ans2.setAttribute("value", childData.ans2.answer);
+  p.appendChild(ans2);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Accounting_and_Finance");   
+  
+  var AF_score2 = document.createElement("INPUT");
+  AF_score2.setAttribute("type", "text");
+  AF_score2.setAttribute("size", 3);
+  AF_score2.setAttribute("class", "form-controls");
+  AF_score2.id = "AF_score2" + countQuestion;
+  AF_score2.setAttribute("value", childData.ans2.BBA_Hons_Degree_sp_in_Accounting_and_Finance);
+  p.appendChild(AF_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Business_Analytics");
+
+  var BA_score2 = document.createElement("INPUT");
+  BA_score2.setAttribute("type", "text");
+  BA_score2.setAttribute("size", 3);
+  BA_score2.setAttribute("class", "form-controls");
+  BA_score2.id = "BA_score2" + countQuestion;
+  BA_score2.setAttribute("value", childData.ans2.BBA_Hons_Degree_sp_in_Business_Analytics);
+  p.appendChild( BA_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Business_Management");
+
+  var BM_score2 = document.createElement("INPUT");
+  BM_score2.setAttribute("type", "text");
+  BM_score2.setAttribute("size", 3);
+  BM_score2.setAttribute("class", "form-controls");
+  BM_score2.id = "BM_score2" + countQuestion;
+  BM_score2.setAttribute("value", childData.ans2.BBA_Hons_Degree_sp_in_Business_Management);
+  p.appendChild(BM_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BBA(Hons)_Degree_sp_in_Marketing_Management ");
+
+  var MM_score2 = document.createElement("INPUT");
+  MM_score2.setAttribute("type", "text");
+  MM_score2.setAttribute("size", 3);
+  MM_score2.setAttribute("class", "form-controls");
+  MM_score2.id = "MM_score2" + countQuestion;
+  MM_score2.setAttribute("value", childData.ans2.BBA_Hons_Degree_sp_in_Marketing_Management);
+  p.appendChild(MM_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BBA(Hons)_Degree_sp_in_Human_Capital_Management ");
+
+  var HCM_score2 = document.createElement("INPUT");
+  HCM_score2.setAttribute("type", "text");
+  HCM_score2.setAttribute("size", 3);
+  HCM_score2.setAttribute("class", "form-controls");
+  HCM_score2.id = "HCM_score2" + countQuestion;
+  HCM_score2.setAttribute("value", childData.ans2.BBA_Hons_Degree_sp_in_Human_Capital_Management);
+  p.appendChild(HCM_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BBA(Hons)_Degree_sp_in_Logistics_and_Supply_Chain_Management ");
+
+  var LSCM_score2 = document.createElement("INPUT");
+  LSCM_score2.setAttribute("type", "text");
+  LSCM_score2.setAttribute("size", 3);
+  LSCM_score2.setAttribute("class", "form-controls");
+  LSCM_score2.id = "LSCM_score2" + countQuestion;
+  LSCM_score2.setAttribute("value", childData.ans2.BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management);
+  p.appendChild(LSCM_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Management_Information_Systems");
+
+  var MIS_score2 = document.createElement("INPUT");
+  MIS_score2.setAttribute("type", "text");
+  MIS_score2.setAttribute("size", 3);
+  MIS_score2.setAttribute("class", "form-controls");
+  MIS_score2.id = "HCM_score1" + countQuestion;
+  MIS_score2.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Management_Information_Systems);
+  p.appendChild(MIS_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Business_Administration(UK)");
+
+  var B_Admin_UK_score2 = document.createElement("INPUT");
+  B_Admin_UK_score2.setAttribute("type", "text");
+  B_Admin_UK_score2.setAttribute("size", 3);
+  B_Admin_UK_score2.setAttribute("class", "form-controls");
+  B_Admin_UK_score2.id = "HCM_score1" + countQuestion;
+  B_Admin_UK_score2.setAttribute("value", childData.ans1.BBA_Hons_Business_Administration_UK);
+  p.appendChild(B_Admin_UK_score2);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BA(Hons)in_Business_Administration_Top_up(UK)");
+
+  var BA_Topup_score2 = document.createElement("INPUT");
+  BA_Topup_score2.setAttribute("type", "text");
+  BA_Topup_score2.setAttribute("size", 3);
+  BA_Topup_score2.setAttribute("class", "form-controls");
+  BA_Topup_score2.id = "HCM_score1" + countQuestion;
+  BA_Topup_score2.setAttribute("value", childData.ans1.BA_Hons_in_Business_Administration_Top_up_UK);
+  p.appendChild(BA_Topup_score2);
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer3: ");
+
+var ans3 = document.createElement("INPUT");
+    ans3.setAttribute("type", "text");
+    ans3.setAttribute("size", 80);
+    ans3.setAttribute("class", "form-control");
+    ans3.id = "ans3" + countAns; 
+    countAns++;
+  ans3.setAttribute("value", childData.ans3.answer);
+  p.appendChild(ans3);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+  p.append("  BBA(Hons)_Degree_sp_in_Accounting_and_Finance "); 
+
+  var AF_score3 = document.createElement("INPUT");
+  AF_score3.setAttribute("type", "text");
+  AF_score3.setAttribute("size", 3);
+  AF_score3.setAttribute("class", "form-controls");
+  AF_score3.id = "AF_score3" + countQuestion;
+  AF_score3.setAttribute("value", childData.ans3.BBA_Hons_Degree_sp_in_Accounting_and_Finance);
+  p.appendChild(AF_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BBA(Hons)_Degree_sp_in_Business_Analytics ");
+
+  var BA_score3 = document.createElement("INPUT");
+  BA_score3.setAttribute("type", "text");
+  BA_score3.setAttribute("size", 3);
+  BA_score3.setAttribute("class", "form-controls");
+  BA_score3.id = "BA_score3" + countQuestion;
+  BA_score3.setAttribute("value", childData.ans3.BBA_Hons_Degree_sp_in_Business_Analytics);
+  p.appendChild(BA_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Business_Management");
+
+  var BM_score3 = document.createElement("INPUT");
+  BM_score3.setAttribute("type", "text");
+  BM_score3.setAttribute("size", 3);
+  BM_score3.setAttribute("class", "form-controls");
+  BM_score3.id = "BM_score3" + countQuestion;
+  BM_score3.setAttribute("value", childData.ans3.BBA_Hons_Degree_sp_in_Business_Management);
+  p.appendChild(BM_score3);
+          p.appendChild(document.createElement("br"));
+
+          p.append(" BBA(Hons)_Degree_sp_in_Marketing_Management ");
+
+  var MM_score3 = document.createElement("INPUT");
+  MM_score3.setAttribute("type", "text");
+  MM_score3.setAttribute("size", 3);
+  MM_score3.setAttribute("class", "form-controls");
+  MM_score3.id = "MM_score3" + countQuestion;
+  MM_score3.setAttribute("value", childData.ans3.BBA_Hons_Degree_sp_in_Marketing_Management);
+  p.appendChild(MM_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BBA(Hons)_Degree_sp_in_Human_Capital_Management ");
+
+  var HCM_score3 = document.createElement("INPUT");
+  HCM_score3.setAttribute("type", "text");
+  HCM_score3.setAttribute("size", 3);
+  HCM_score3.setAttribute("class", "form-controls");
+  HCM_score3.id = "HCM_score3" + countQuestion;
+  HCM_score3.setAttribute("value", childData.ans3.BBA_Hons_Degree_sp_in_Human_Capital_Management);
+  p.appendChild(HCM_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BBA(Hons)_Degree_sp_in_Logistics_and_Supply_Chain_Management ");
+
+  var LSCM_score3 = document.createElement("INPUT");
+  LSCM_score3.setAttribute("type", "text");
+  LSCM_score3.setAttribute("size", 3);
+  LSCM_score3.setAttribute("class", "form-controls");
+  LSCM_score3.id = "LSCM_score3" + countQuestion;
+  LSCM_score3.setAttribute("value", childData.ans3.BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management);
+  p.appendChild(LSCM_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Degree_sp_in_Management_Information_Systems");
+
+  var MIS_score3 = document.createElement("INPUT");
+  MIS_score3.setAttribute("type", "text");
+  MIS_score3.setAttribute("size", 3);
+  MIS_score3.setAttribute("class", "form-controls");
+  MIS_score3.id = "HCM_score1" + countQuestion;
+  MIS_score3.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Management_Information_Systems);
+  p.appendChild(MIS_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BBA(Hons)_Business_Administration(UK)");
+
+  var B_Admin_UK_score3 = document.createElement("INPUT");
+  B_Admin_UK_score3.setAttribute("type", "text");
+  B_Admin_UK_score3.setAttribute("size", 3);
+  B_Admin_UK_score3.setAttribute("class", "form-controls");
+  B_Admin_UK_score3.id = "HCM_score1" + countQuestion;
+  B_Admin_UK_score3.setAttribute("value", childData.ans1.BBA_Hons_Business_Administration_UK);
+  p.appendChild(B_Admin_UK_score3);
+          p.appendChild(document.createElement("br"));
+
+  p.append("BA(Hons)in_Business_Administration_Top_up(UK)");
+
+  var BA_Topup_score3 = document.createElement("INPUT");
+  BA_Topup_score3.setAttribute("type", "text");
+  BA_Topup_score3.setAttribute("size", 3);
+  BA_Topup_score3.setAttribute("class", "form-controls");
+  BA_Topup_score3.id = "HCM_score1" + countQuestion;
+  BA_Topup_score3.setAttribute("value", childData.ans1.BA_Hons_in_Business_Administration_Top_up_UK);
+  p.appendChild(BA_Topup_score3);
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer4: ");
+
+var ans4 = document.createElement("INPUT");
+    ans4.setAttribute("type", "text");
+    ans4.setAttribute("size", 80);
+    ans4.setAttribute("class", "form-control");
+    ans4.id = "ans4" + countAns; 
+    countAns++;
+  ans4.setAttribute("value", childData.ans4.answer);
+  p.appendChild(ans4);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Accounting_and_Finance"); 
+
+    var AF_score4 = document.createElement("INPUT");
+    AF_score4.setAttribute("type", "text");
+    AF_score4.setAttribute("size", 3);
+    AF_score4.setAttribute("class", "form-controls");
+    AF_score4.id = "AF_score4" + countQuestion;
+    AF_score4.setAttribute("value", childData.ans4.BBA_Hons_Degree_sp_in_Accounting_and_Finance);
+    p.appendChild(AF_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Business_Analytics ");
+
+    var BA_score4 = document.createElement("INPUT");
+    BA_score4.setAttribute("type", "text");
+    BA_score4.setAttribute("size", 3);
+    BA_score4.setAttribute("class", "form-controls");
+    BA_score4.id = "BA_score4" + countQuestion;
+    BA_score4.setAttribute("value", childData.ans4.BBA_Hons_Degree_sp_in_Business_Analytics);
+    p.appendChild(BA_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Business_Management");
+
+    var BM_score4 = document.createElement("INPUT");
+    BM_score4.setAttribute("type", "text");
+    BM_score4.setAttribute("size", 3);
+    BM_score4.setAttribute("class", "form-controls");
+    BM_score4.id = "BM_score4" + countQuestion;
+    BM_score4.setAttribute("value", childData.ans4.BBA_Hons_Degree_sp_in_Business_Management);
+    p.appendChild(BM_score4);
+          p.appendChild(document.createElement("br"));
+
+          p.append("BBA(Hons)_Degree_sp_in_Marketing_Management ");
+
+    var MM_score4 = document.createElement("INPUT");
+    MM_score4.setAttribute("type", "text");
+    MM_score4.setAttribute("size", 3);
+    MM_score4.setAttribute("class", "form-controls");
+    MM_score4.id = "MM_score4" + countQuestion;
+    MM_score4.setAttribute("value", childData.ans4.BBA_Hons_Degree_sp_in_Marketing_Management);
+    p.appendChild(MM_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append(" BBA(Hons)_Degree_sp_in_Human_Capital_Management ");
+
+    var HCM_score4 = document.createElement("INPUT");
+    HCM_score4.setAttribute("type", "text");
+    HCM_score4.setAttribute("size", 3);
+    HCM_score4.setAttribute("class", "form-controls");
+    HCM_score4.id = "HCM_score4" + countQuestion;
+    HCM_score4.setAttribute("value", childData.ans4.BBA_Hons_Degree_sp_in_Human_Capital_Management);
+    p.appendChild(HCM_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append(" BBA(Hons)_Degree_sp_in_Logistics_and_Supply_Chain_Management ");
+
+    var LSCM_score4 = document.createElement("INPUT");
+    LSCM_score4.setAttribute("type", "text");
+    LSCM_score4.setAttribute("size", 3);
+    LSCM_score4.setAttribute("class", "form-controls");
+    LSCM_score4.id = "LSCM_score4" + countQuestion;
+    LSCM_score4.setAttribute("value", childData.ans4.BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management); 
+    p.appendChild(LSCM_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Management_Information_Systems");
+
+    var MIS_score4 = document.createElement("INPUT");
+    MIS_score4.setAttribute("type", "text");
+    MIS_score4.setAttribute("size", 3);
+    MIS_score4.setAttribute("class", "form-controls");
+    MIS_score4.id = "HCM_score1" + countQuestion;
+    MIS_score4.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Management_Information_Systems);
+    p.appendChild(MIS_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Business_Administration(UK)");
+
+    var B_Admin_UK_score4 = document.createElement("INPUT");
+    B_Admin_UK_score4.setAttribute("type", "text");
+    B_Admin_UK_score4.setAttribute("size", 3);
+    B_Admin_UK_score4.setAttribute("class", "form-controls");
+    B_Admin_UK_score4.id = "HCM_score1" + countQuestion;
+    B_Admin_UK_score4.setAttribute("value", childData.ans1.BBA_Hons_Business_Administration_UK);
+    p.appendChild(B_Admin_UK_score4);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BA(Hons)in_Business_Administration_Top_up(UK)");
+
+    var BA_Topup_score4 = document.createElement("INPUT");
+    BA_Topup_score4.setAttribute("type", "text");
+    BA_Topup_score4.setAttribute("size", 3);
+    BA_Topup_score4.setAttribute("class", "form-controls");
+    BA_Topup_score4.id = "HCM_score1" + countQuestion;
+    BA_Topup_score4.setAttribute("value", childData.ans1.BA_Hons_in_Business_Administration_Top_up_UK);
+    p.appendChild(BA_Topup_score4); 
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer5: ");
+
+var ans5 = document.createElement("INPUT");
+    ans5.setAttribute("type", "text");
+    ans5.setAttribute("size", 80);
+    ans5.setAttribute("class", "form-control");
+    ans5.id = "ans5" + countAns; 
+    countAns++;
+  ans5.setAttribute("value", childData.ans5.answer);
+  p.appendChild(ans5);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Accounting_and_Finance");  
+
+    var AF_score5 = document.createElement("INPUT");
+    AF_score5.setAttribute("type", "text");
+    AF_score5.setAttribute("size", 3);
+    AF_score5.setAttribute("class", "form-controls");
+    AF_score5.id = "AF_score5" + countQuestion;
+    AF_score5.setAttribute("value", childData.ans5.BBA_Hons_Degree_sp_in_Accounting_and_Finance);
+    p.appendChild(AF_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Business_Analytics");
+
+    var BA_score5 = document.createElement("INPUT");
+    BA_score5.setAttribute("type", "text");
+    BA_score5.setAttribute("size", 3);
+    BA_score5.setAttribute("class", "form-controls");
+    BA_score5.id = "BA_score5" + countQuestion;
+    BA_score5.setAttribute("value", childData.ans5.BBA_Hons_Degree_sp_in_Business_Analytics);
+    p.appendChild(BA_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Business_Management");
+
+    var BM_score5 = document.createElement("INPUT");
+    BM_score5.setAttribute("type", "text");
+    BM_score5.setAttribute("size", 3);
+    BM_score5.setAttribute("class", "form-controls");
+    BM_score5.id = "BM_score5" + countQuestion;
+    BM_score5.setAttribute("value", childData.ans5.BBA_Hons_Degree_sp_in_Business_Management);
+    p.appendChild(BM_score5);
+          p.appendChild(document.createElement("br"));
+
+          p.append(" BBA(Hons)_Degree_sp_in_Marketing_Management ");
+
+    var MM_score5 = document.createElement("INPUT");
+    MM_score5.setAttribute("type", "text");
+    MM_score5.setAttribute("size", 3);
+    MM_score5.setAttribute("class", "form-controls");
+    MM_score5.id = "MM_score5" + countQuestion;
+    MM_score5.setAttribute("value", childData.ans5.BBA_Hons_Degree_sp_in_Marketing_Management);
+    p.appendChild(MM_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Human_Capital_Management");
+
+    var HCM_score5 = document.createElement("INPUT");
+    HCM_score5.setAttribute("type", "text");
+    HCM_score5.setAttribute("size", 3);
+    HCM_score5.setAttribute("class", "form-controls");
+    HCM_score5.id = "HCM_score5" + countQuestion;
+    HCM_score5.setAttribute("value", childData.ans5.BBA_Hons_Degree_sp_in_Human_Capital_Management);
+    p.appendChild(HCM_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Logistics_and_Supply_Chain_Management");
+
+    var LSCM_score5 = document.createElement("INPUT");
+    LSCM_score5.setAttribute("type", "text");
+    LSCM_score5.setAttribute("size", 3);
+    LSCM_score5.setAttribute("class", "form-controls");
+    LSCM_score5.id = "LSCM_score5" + countQuestion;
+    LSCM_score5.setAttribute("value", childData.ans5.BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management); 
+    p.appendChild(LSCM_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Management_Information_Systems");
+
+    var MIS_score5 = document.createElement("INPUT");
+    MIS_score5.setAttribute("type", "text");
+    MIS_score5.setAttribute("size", 3);
+    MIS_score5.setAttribute("class", "form-controls");
+    MIS_score5.id = "HCM_score1" + countQuestion;
+    MIS_score5.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Management_Information_Systems);
+    p.appendChild(MIS_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Business_Administration(UK)");
+
+    var B_Admin_UK_score5 = document.createElement("INPUT");
+    B_Admin_UK_score5.setAttribute("type", "text");
+    B_Admin_UK_score5.setAttribute("size", 3);
+    B_Admin_UK_score5.setAttribute("class", "form-controls");
+    B_Admin_UK_score5.id = "HCM_score1" + countQuestion;
+    B_Admin_UK_score5.setAttribute("value", childData.ans1.BBA_Hons_Business_Administration_UK);
+    p.appendChild(B_Admin_UK_score5);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BA(Hons)in_Business_Administration_Top_up(UK)");
+
+    var BA_Topup_score5 = document.createElement("INPUT");
+    BA_Topup_score5.setAttribute("type", "text");
+    BA_Topup_score5.setAttribute("size", 3);
+    BA_Topup_score5.setAttribute("class", "form-controls");
+    BA_Topup_score5.id = "HCM_score1" + countQuestion;
+    BA_Topup_score5.setAttribute("value", childData.ans1.BA_Hons_in_Business_Administration_Top_up_UK);
+    p.appendChild(BA_Topup_score5); 
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer6: ");
+
+var ans6 = document.createElement("INPUT");
+  ans6.setAttribute("type", "text");
+   ans6.setAttribute("size", 80);
+   ans6.setAttribute("class", "form-control");
+  ans6.id = "ans6" + countAns; 
+  countAns++;
+  ans6.setAttribute("value", childData.ans6.answer);
+  p.appendChild(ans6);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Accounting_and_Finance");   
+
+    var AF_score6 = document.createElement("INPUT");
+    AF_score6.setAttribute("type", "text");
+    AF_score6.setAttribute("size", 3);
+    AF_score6.setAttribute("class", "form-controls");
+    AF_score6.id = "AF_score6" + countQuestion;
+    AF_score6.setAttribute("value", childData.ans6.BBA_Hons_Degree_sp_in_Accounting_and_Finance);
+    p.appendChild(AF_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Business_Analytics");
+
+    var BA_score6 = document.createElement("INPUT");
+    BA_score6.setAttribute("type", "text");
+    BA_score6.setAttribute("size", 3);
+    BA_score6.setAttribute("class", "form-controls");
+    BA_score6.id = "BA_score6" + countQuestion;
+    BA_score6.setAttribute("value", childData.ans6.BBA_Hons_Degree_sp_in_Business_Analytics);
+    p.appendChild(BA_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Business_Management");
+
+    var BM_score6 = document.createElement("INPUT");
+    BM_score6.setAttribute("type", "text");
+    BM_score6.setAttribute("size", 3);
+    BM_score6.setAttribute("class", "form-controls");
+    BM_score6.id = "BM_score6" + countQuestion;
+    BM_score6.setAttribute("value", childData.ans6.BBA_Hons_Degree_sp_in_Business_Management);
+    p.appendChild(BM_score6);
+          p.appendChild(document.createElement("br"));
+
+          p.append(" BBA(Hons)_Degree_sp_in_Marketing_Management ");
+
+    var MM_score6 = document.createElement("INPUT");
+    MM_score6.setAttribute("type", "text");
+    MM_score6.setAttribute("size", 3);
+    MM_score6.setAttribute("class", "form-controls");
+    MM_score6.id = "MM_score6" + countQuestion;
+    MM_score6.setAttribute("value", childData.ans6.BBA_Hons_Degree_sp_in_Marketing_Management);
+    p.appendChild(MM_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append(" BBA(Hons)_Degree_sp_in_Human_Capital_Management ");
+
+    var HCM_score6 = document.createElement("INPUT");
+    HCM_score6.setAttribute("type", "text");
+    HCM_score6.setAttribute("size", 3);
+    HCM_score6.setAttribute("class", "form-controls");
+    HCM_score6.id = "HCM_score6" + countQuestion;
+    HCM_score6.setAttribute("value", childData.ans6.BBA_Hons_Degree_sp_in_Human_Capital_Management);
+    p.appendChild(HCM_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append(" BBA(Hons)_Degree_sp_in_Logistics_and_Supply_Chain_Management ");
+
+    var LSCM_score6 = document.createElement("INPUT");
+    LSCM_score6.setAttribute("type", "text");
+    LSCM_score6.setAttribute("size", 3);
+    LSCM_score6.setAttribute("class", "form-controls");
+    LSCM_score6.id = "LSCM_score6" + countQuestion;
+    LSCM_score6.setAttribute("value", childData.ans6.BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management); 
+    p.appendChild(LSCM_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Degree_sp_in_Management_Information_Systems");
+
+    var MIS_score6 = document.createElement("INPUT");
+    MIS_score6.setAttribute("type", "text");
+    MIS_score6.setAttribute("size", 3);
+    MIS_score6.setAttribute("class", "form-controls");
+    MIS_score6.id = "HCM_score1" + countQuestion;
+    MIS_score6.setAttribute("value", childData.ans1.BBA_Hons_Degree_sp_in_Management_Information_Systems);
+    p.appendChild(MIS_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BBA(Hons)_Business_Administration(UK)");
+
+    var B_Admin_UK_score6 = document.createElement("INPUT");
+    B_Admin_UK_score6.setAttribute("type", "text");
+    B_Admin_UK_score6.setAttribute("size", 3);
+    B_Admin_UK_score6.setAttribute("class", "form-controls");
+    B_Admin_UK_score6.id = "HCM_score1" + countQuestion;
+    B_Admin_UK_score6.setAttribute("value", childData.ans1.BBA_Hons_Business_Administration_UK);
+    p.appendChild(B_Admin_UK_score6);
+          p.appendChild(document.createElement("br"));
+
+    p.append("BA(Hons)in_Business_Administration_Top_up(UK)");
+
+    var BA_Topup_score6 = document.createElement("INPUT");
+    BA_Topup_score6.setAttribute("type", "text");
+    BA_Topup_score6.setAttribute("size", 3);
+    BA_Topup_score6.setAttribute("class", "form-controls");
+    BA_Topup_score6.id = "HCM_score1" + countQuestion;
+    BA_Topup_score6.setAttribute("value", childData.ans1.BA_Hons_in_Business_Administration_Top_up_UK);
+    p.appendChild(BA_Topup_score6);
+          p.appendChild(document.createElement("br"));
+          p.appendChild(document.createElement("br"));
+
+countQuestion++;
+    
+                // creating button element  
+var buttonE = document.createElement('BUTTON');  
+                  
+                // creating text to be 
+                //displayed on button 
+var text = document.createTextNode("Edit");
+buttonE.setAttribute("class","btn btn-lg btn-info btn-block")
+                // appending text to button 
+buttonE.appendChild(text); 
+buttonE.onclick = function updateQ(){
+                  //alert("w"+document.getElementById(ans1.id).value);
+
+    var qid = document.getElementById(qIndex.id).value;
+    var q_topic = document.getElementById(q.id).value;
+
+    var answer1 = document.getElementById(ans1.id).value;
+    var BBA_Hons_Degree_sp_in_Accounting_and_Finance_1 = document.getElementById(AF_score1.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Analytics_1 = document.getElementById(BA_score1.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Management_1 = document.getElementById(BM_score1.id).value;
+    var BBA_Hons_Degree_sp_in_Marketing_Management_1 = document.getElementById(MM_score1.id).value;
+    var BBA_Hons_Degree_sp_in_Human_Capital_Management_1 = document.getElementById(HCM_score1.id).value;
+    var BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_1 = document.getElementById(LSCM_score1.id).value;
+    var BBA_Hons_Degree_sp_in_Management_Information_Systems_1 = document.getElementById(MIS_score1).value;
+    var BBA_Hons_Business_Administration_UK_1 = document.getElementById(B_Admin_UK_score1).value;
+    var BA_Hons_in_Business_Administration_Top_up_UK_1 = document.getElementById(BA_Topup_score1).value;
+
+    var answer2 =  document.getElementById(ans2.id).value;
+    var BBA_Hons_Degree_sp_in_Accounting_and_Finance_2 = document.getElementById(AF_score2.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Analytics_2 = document.getElementById(BA_score2.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Management_2 = document.getElementById(BM_score2.id).value;
+    var BBA_Hons_Degree_sp_in_Marketing_Management_2 = document.getElementById(MM_score2.id).value;
+    var BBA_Hons_Degree_sp_in_Human_Capital_Management_2 = document.getElementById(HCM_score2.id).value;
+    var BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_2 = document.getElementById(LSCM_score2.id).value;
+    var BBA_Hons_Degree_sp_in_Management_Information_Systems_2 = document.getElementById(MIS_score2).value;
+    var BBA_Hons_Business_Administration_UK_2 = document.getElementById(B_Admin_UK_score2).value;
+    var BA_Hons_in_Business_Administration_Top_up_UK_2 = document.getElementById(BA_Topup_score2).value;
+
+    var answer3 =  document.getElementById(ans3.id).value;
+    var BBA_Hons_Degree_sp_in_Accounting_and_Finance_3 = document.getElementById(AF_score3.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Analytics_3 = document.getElementById(BA_score3.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Management_3 = document.getElementById(BM_score3.id).value;
+    var BBA_Hons_Degree_sp_in_Marketing_Management_3 = document.getElementById(MM_score3.id).value;
+    var BBA_Hons_Degree_sp_in_Human_Capital_Management_3 = document.getElementById(HCM_score3.id).value;
+    var BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_3 = document.getElementById(LSCM_score3.id).value;
+    var BBA_Hons_Degree_sp_in_Management_Information_Systems_3 = document.getElementById(MIS_score3).value;
+    var BBA_Hons_Business_Administration_UK_3 = document.getElementById(B_Admin_UK_score3).value;
+    var BA_Hons_in_Business_Administration_Top_up_UK_3 = document.getElementById(BA_Topup_score3).value;
+
+    var answer4 =  document.getElementById(ans4.id).value;
+    var BBA_Hons_Degree_sp_in_Accounting_and_Finance_4 = document.getElementById(AF_score4.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Analytics_4 = document.getElementById(BA_score4.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Management_4 = document.getElementById(BM_score4.id).value;
+    var BBA_Hons_Degree_sp_in_Marketing_Management_4 = document.getElementById(MM_score4.id).value;
+    var BBA_Hons_Degree_sp_in_Human_Capital_Management_4 = document.getElementById(HCM_score4.id).value;
+    var BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_4 = document.getElementById(LSCM_score4.id).value;
+    var BBA_Hons_Degree_sp_in_Management_Information_Systems_4 = document.getElementById(MIS_score4).value;
+    var BBA_Hons_Business_Administration_UK_4 = document.getElementById(B_Admin_UK_score4).value;
+    var BA_Hons_in_Business_Administration_Top_up_UK_4 = document.getElementById(BA_Topup_score4).value;
+
+    var answer5 =  document.getElementById(ans5.id).value;
+    var BBA_Hons_Degree_sp_in_Accounting_and_Finance_5 = document.getElementById(AF_score5.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Analytics_5 = document.getElementById(BA_score5.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Management_5 = document.getElementById(BM_score5.id).value;
+    var BBA_Hons_Degree_sp_in_Marketing_Management_5 = document.getElementById(MM_score5.id).value;
+    var BBA_Hons_Degree_sp_in_Human_Capital_Management_5 = document.getElementById(HCM_score5.id).value;
+    var BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_5 = document.getElementById(LSCM_score5.id).value;
+    var BBA_Hons_Degree_sp_in_Management_Information_Systems_5 = document.getElementById(MIS_score5).value;
+    var BBA_Hons_Business_Administration_UK_5 = document.getElementById(B_Admin_UK_score5).value;
+    var BA_Hons_in_Business_Administration_Top_up_UK_5 = document.getElementById(BA_Topup_score5).value;
+
+    var answer6 =  document.getElementById(ans6.id).value;
+    var BBA_Hons_Degree_sp_in_Accounting_and_Finance_6 = document.getElementById(AF_score6.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Analytics_6 = document.getElementById(BA_score6.id).value;
+    var BBA_Hons_Degree_sp_in_Business_Management_6 = document.getElementById(BM_score6.id).value;
+    var BBA_Hons_Degree_sp_in_Marketing_Management_6 = document.getElementById(MM_score6.id).value;
+    var BBA_Hons_Degree_sp_in_Human_Capital_Management_6 = document.getElementById(HCM_score6.id).value;
+    var BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_6 = document.getElementById(LSCM_score6.id).value;
+    var BBA_Hons_Degree_sp_in_Management_Information_Systems_6 = document.getElementById(MIS_score6).value;
+    var BBA_Hons_Business_Administration_UK_6 = document.getElementById(B_Admin_UK_score6).value;
+    var BA_Hons_in_Business_Administration_Top_up_UK_6 = document.getElementById(BA_Topup_score6).value;    
+
+    var data = {
+        ans6: {"answer":answer6, "BBA_Hons_Degree_sp_in_Accounting_and_Finance":BBA_Hons_Degree_sp_in_Accounting_and_Finance_6,"BBA_Hons_Degree_sp_in_Business_Analytics":BBA_Hons_Degree_sp_in_Business_Analytics_6,"BBA_Hons_Degree_sp_in_Business_Management":BBA_Hons_Degree_sp_in_Business_Management_6,"BBA_Hons_Degree_sp_in_Marketing_Management":BBA_Hons_Degree_sp_in_Marketing_Management_6,"BBA_Hons_Degree_sp_in_Human_Capital_Management":BBA_Hons_Degree_sp_in_Human_Capital_Management_6,"BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management":BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_6, "BBA_Hons_Degree_sp_in_Management_Information_Systems":BBA_Hons_Degree_sp_in_Management_Information_Systems_6,"BBA_Hons_Business_Administration_UK":BBA_Hons_Business_Administration_UK_6,"BA_Hons_in_Business_Administration_Top_up_UK":BA_Hons_in_Business_Administration_Top_up_UK_6 },
+        ans5: {"answer":answer5, "BBA_Hons_Degree_sp_in_Accounting_and_Finance":BBA_Hons_Degree_sp_in_Accounting_and_Finance_5,"BBA_Hons_Degree_sp_in_Business_Analytics":BBA_Hons_Degree_sp_in_Business_Analytics_5,"BBA_Hons_Degree_sp_in_Business_Management":BBA_Hons_Degree_sp_in_Business_Management_5,"BBA_Hons_Degree_sp_in_Marketing_Management":BBA_Hons_Degree_sp_in_Marketing_Management_5,"BBA_Hons_Degree_sp_in_Human_Capital_Management":BBA_Hons_Degree_sp_in_Human_Capital_Management_5,"BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management":BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_5, "BBA_Hons_Degree_sp_in_Management_Information_Systems":BBA_Hons_Degree_sp_in_Management_Information_Systems_5,"BBA_Hons_Business_Administration_UK":BBA_Hons_Business_Administration_UK_5,"BA_Hons_in_Business_Administration_Top_up_UK":BA_Hons_in_Business_Administration_Top_up_UK_6 },
+        ans4: {"answer":answer4, "BBA_Hons_Degree_sp_in_Accounting_and_Finance":BBA_Hons_Degree_sp_in_Accounting_and_Finance_4,"BBA_Hons_Degree_sp_in_Business_Analytics":BBA_Hons_Degree_sp_in_Business_Analytics_4,"BBA_Hons_Degree_sp_in_Business_Management":BBA_Hons_Degree_sp_in_Business_Management_4,"BBA_Hons_Degree_sp_in_Marketing_Management":BBA_Hons_Degree_sp_in_Marketing_Management_4,"BBA_Hons_Degree_sp_in_Human_Capital_Management":BBA_Hons_Degree_sp_in_Human_Capital_Management_4,"BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management":BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_4, "BBA_Hons_Degree_sp_in_Management_Information_Systems":BBA_Hons_Degree_sp_in_Management_Information_Systems_4,"BBA_Hons_Business_Administration_UK":BBA_Hons_Business_Administration_UK_4,"BA_Hons_in_Business_Administration_Top_up_UK":BA_Hons_in_Business_Administration_Top_up_UK_4 },
+        ans3: {"answer":answer3, "BBA_Hons_Degree_sp_in_Accounting_and_Finance":BBA_Hons_Degree_sp_in_Accounting_and_Finance_3,"BBA_Hons_Degree_sp_in_Business_Analytics":BBA_Hons_Degree_sp_in_Business_Analytics_3,"BBA_Hons_Degree_sp_in_Business_Management":BBA_Hons_Degree_sp_in_Business_Management_3,"BBA_Hons_Degree_sp_in_Marketing_Management":BBA_Hons_Degree_sp_in_Marketing_Management_3,"BBA_Hons_Degree_sp_in_Human_Capital_Management":BBA_Hons_Degree_sp_in_Human_Capital_Management_3,"BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management":BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_3, "BBA_Hons_Degree_sp_in_Management_Information_Systems":BBA_Hons_Degree_sp_in_Management_Information_Systems_3,"BBA_Hons_Business_Administration_UK":BBA_Hons_Business_Administration_UK_3,"BA_Hons_in_Business_Administration_Top_up_UK":BA_Hons_in_Business_Administration_Top_up_UK_3 },
+        ans2: {"answer":answer2, "BBA_Hons_Degree_sp_in_Accounting_and_Finance":BBA_Hons_Degree_sp_in_Accounting_and_Finance_2,"BBA_Hons_Degree_sp_in_Business_Analytics":BBA_Hons_Degree_sp_in_Business_Analytics_2,"BBA_Hons_Degree_sp_in_Business_Management":BBA_Hons_Degree_sp_in_Business_Management_2,"BBA_Hons_Degree_sp_in_Marketing_Management":BBA_Hons_Degree_sp_in_Marketing_Management_2,"BBA_Hons_Degree_sp_in_Human_Capital_Management":BBA_Hons_Degree_sp_in_Human_Capital_Management_2,"BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management":BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_2, "BBA_Hons_Degree_sp_in_Management_Information_Systems":BBA_Hons_Degree_sp_in_Management_Information_Systems_2,"BBA_Hons_Business_Administration_UK":BBA_Hons_Business_Administration_UK_2,"BA_Hons_in_Business_Administration_Top_up_UK":BA_Hons_in_Business_Administration_Top_up_UK_2 },
+        ans1: {"answer":answer1, "BBA_Hons_Degree_sp_in_Accounting_and_Finance":BBA_Hons_Degree_sp_in_Accounting_and_Finance_1,"BBA_Hons_Degree_sp_in_Business_Analytics":BBA_Hons_Degree_sp_in_Business_Analytics_1,"BBA_Hons_Degree_sp_in_Business_Management":BBA_Hons_Degree_sp_in_Business_Management_1,"BBA_Hons_Degree_sp_in_Marketing_Management":BBA_Hons_Degree_sp_in_Marketing_Management_1,"BBA_Hons_Degree_sp_in_Human_Capital_Management":BBA_Hons_Degree_sp_in_Human_Capital_Management_1,"BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management":BBA_Hons_Degree_sp_in_Logistics_and_Supply_Chain_Management_1, "BBA_Hons_Degree_sp_in_Management_Information_Systems":BBA_Hons_Degree_sp_in_Management_Information_Systems_1,"BBA_Hons_Business_Administration_UK":BBA_Hons_Business_Administration_UK_1,"BA_Hons_in_Business_Administration_Top_up_UK":BA_Hons_in_Business_Administration_Top_up_UK_1 },
+        question:q_topic,
+        qid: qid
+      }
+
+  var updates = {};
+  updates['/QuizPartTwo_Business/' + qid] = data;
+  firebase.database().ref().update(updates);
+  
+  alert('The question is updated successfully!');
+  reload_page();
+}
+p.appendChild(buttonE); 
+
+var buttonD = document.createElement('BUTTON');  
+
+var text = document.createTextNode("Delete");
+buttonD.setAttribute("class","btn btn-lg btn-info btn-block")
+buttonD.appendChild(text); 
+
+buttonD.onclick = function deleteQ(){
+
+  var result = confirm("Do you really want to delete?");
+  if(result){
+    var qid = document.getElementById(qIndex.id).value;
+    firebase.database().ref().child('/QuizPartTwo_Business/' + qid).remove();
+    alert('The question is deleted successfully!');
+    reload_page();
+  }
+  else{
+        alert("Cancelled!!")
+    }
+}
+
+p.appendChild(buttonD); 
+             
+});
+});
+</script>
+</div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

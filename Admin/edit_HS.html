@@ -1,0 +1,998 @@
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="edit_HS.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/quizBiz.css">
+        <!-- Fontfaces CSS-->
+        <link href="css/font-face.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+        <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+        <!-- Vendor CSS-->
+        <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+        <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+        <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+        <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+        <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+        <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="css/theme.css" rel="stylesheet" media="all">
+        <link href="css/style.css" rel="stylesheet">
+           
+      <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+            authDomain: "s2guide.firebaseapp.com",
+            databaseURL: "https://s2guide.firebaseio.com",
+            projectId: "s2guide",
+            storageBucket: "s2guide.appspot.com",
+            messagingSenderId: "457852779269",
+            appId: "1:457852779269:web:7e27f12f4d807544"
+        };
+             // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.database().ref('QuizPartTwo_Humanities/');
+        </script>
+    </head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Adverticements</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+            </a>
+
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="Dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Advertisements</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <h2 style="text-align: center"> Quiz</h2>
+                        <div class="header-button">
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+
+                                    <a href="#">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                    <div class="account-dropdown js-dropdown">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <br>
+        <div class="main-content" style="background-image: url('images/admin2.png')">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header"> <h1>Edit Humanities Faculty Quiz</h1></div>
+
+
+
+
+
+
+                                    <script>
+
+var countQuestion = 1;
+var countAns = 1;           
+var databaseRef = firebase.database().ref('QuizPartTwo_Humanities/').orderByKey();
+    
+     databaseRef.once('value', function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+ var childKey = childSnapshot.key;
+  var childData = childSnapshot.val();
+
+  //q is question
+  var p = document.createElement("p");
+  p.setAttribute("class", "answer");
+  p.id = "para"+ countQuestion;
+  
+   document.body.appendChild(p);
+   // Append <p> to <body>
+
+
+    var qIndex = document.createElement("INPUT");
+    qIndex.setAttribute("type", "hidden");
+    qIndex.setAttribute("value", childKey);
+   
+    qIndex.id = "qid" + countQuestion;
+    p.appendChild(qIndex);
+
+    var q = document.createElement("INPUT");
+    q.setAttribute("type", "text");
+    q.setAttribute("size", 120);
+    q.setAttribute("class", "form-control");
+    q.id = "q" + countQuestion;
+
+    
+  q.setAttribute("value", childData.question);
+  
+  p.append(" Question: " );
+
+  p.appendChild(q);
+ 
+
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+  p.append(" Answer 1: ");  
+ 
+//ans1 is answer
+  var ans1 = document.createElement("INPUT");
+  ans1.setAttribute("type", "text");
+  ans1.setAttribute("size", 80);
+  ans1.setAttribute("class", "form-control");
+  ans1.id = "ans1" + countAns; 
+  countAns++;
+  ans1.setAttribute("value", childData.ans1.answer);
+  p.appendChild(ans1);
+  
+ 
+  
+p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+p.appendChild(document.createElement("br"));
+
+  p.appendChild(document.createElement("br"));
+  p.append("BEd(Hons) in Physical Sciences  ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+  
+  var BPS_score1 = document.createElement("INPUT");
+  BPS_score1.setAttribute("type", "number");
+  BPS_score1.setAttribute("size", 3);
+  BPS_score1.setAttribute("class", "form-controls");
+  BPS_score1.id = "BPS_score1" + countQuestion;
+  BPS_score1.setAttribute("value", childData.ans1.BEd_Hons_in_Physical_Sciences);
+
+  p.appendChild(BPS_score1);
+  p.appendChild(document.createElement("br"));
+  p.append(" BEd(Hons) in Biological Sciences ");
+
+  var BBS_score1 = document.createElement("INPUT");
+  BBS_score1.setAttribute("type", "number");
+  BBS_score1.setAttribute("size", 3);
+  BBS_score1.setAttribute("class", "form-controls");
+  BBS_score1.id = "BBS_score1" + countQuestion;
+  BBS_score1.setAttribute("value", childData.ans1.BEd_Hons_in_Biological_Sciences);
+  p.appendChild(BBS_score1);
+          p.appendChild(document.createElement("br"));
+
+  p.append(" BSc(Hons) in Bio Technology");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+  var BBT_score1 = document.createElement("INPUT");
+  BBT_score1.setAttribute("type", "number");
+  BBT_score1.setAttribute("size", 3);
+  BBT_score1.setAttribute("class", "form-controls");
+  BBT_score1.id = "BBT_score1" + countQuestion;
+  BBT_score1.setAttribute("value", childData.ans1.BSc_Hons_in_Bio_Technology);
+  p.appendChild(BBT_score1);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) Psychology(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+var BPsy_score1 = document.createElement("INPUT");
+BPsy_score1.setAttribute("type", "number");
+BPsy_score1.setAttribute("size", 3);
+BPsy_score1 .setAttribute("class", "form-controls");
+BPsy_score1.id = "BPsy_score1" + countQuestion;
+BPsy_score1.setAttribute("value", childData.ans1.BSc_Hons_Psychology_UK);
+ p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0' ) );
+p.appendChild(BPsy_score1);
+          p.appendChild(document.createElement("br"));
+p.append(" BSc(Hons) Nursing(UK) ");
+
+var BNurse_score1 = document.createElement("INPUT");
+BNurse_score1.setAttribute("type", "number");
+BNurse_score1.setAttribute("size", 3);
+BNurse_score1.setAttribute("class", "form-controls");
+BNurse_score1.id = "BNurse_score1" + countQuestion;
+BNurse_score1.setAttribute("value", childData.ans1.BSc_Hons_Nursing_UK);
+ p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+p.appendChild(BNurse_score1);
+          p.appendChild(document.createElement("br"));
+p.append("LLB(Hons) Law(UK)");
+ p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+      p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+var LLB_score1 = document.createElement("INPUT");
+LLB_score1.setAttribute("type", "number");
+LLB_score1.setAttribute("size", 3);
+LLB_score1.setAttribute("class", "form-controls");
+LLB_score1.id = "LLB_score1" + countQuestion;
+
+LLB_score1.setAttribute("value", childData.ans1.LLB_Hons_Law_UK);
+p.appendChild(LLB_score1); 
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.append(" Answer2: ");
+
+var ans2 = document.createElement("INPUT");
+ans2.setAttribute("type", "text");
+ans2.setAttribute("size", 80);
+ans2.setAttribute("class", "form-control");
+ans2.id = "ans2" + countAns; 
+countAns++;
+  ans2.setAttribute("value", childData.ans2.answer);
+  p.appendChild(ans2);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+  p.append("BEd(Hons) in Physical Sciences "); 
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+      p.appendChild( document.createTextNode( '\u00A0' ) );
+
+  var BPS_score2 = document.createElement("INPUT");
+  BPS_score2.setAttribute("type", "number");
+  BPS_score2.setAttribute("size", 3);
+  BPS_score2.setAttribute("class", "form-controls");
+  BPS_score2.id = "BPS_score2" + countQuestion;
+  BPS_score2.setAttribute("value", childData.ans2.BEd_Hons_in_Physical_Sciences);
+  p.appendChild(BPS_score2);
+          p.appendChild(document.createElement("br"));
+  p.append(" BEd(Hons) in Biological Sciences ");
+    p.appendChild( document.createTextNode( '\u00A0' ) );
+
+  var BBS_score2 = document.createElement("INPUT");
+  BBS_score2.setAttribute("type", "number");
+  BBS_score2.setAttribute("size", 3);
+  BBS_score2.setAttribute("class", "form-controls");
+  BBS_score2.id = "BBS_score2" + countQuestion;
+  BBS_score2.setAttribute("value", childData.ans2.BEd_Hons_in_Biological_Sciences);
+
+  p.appendChild( BBS_score2);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) in Bio-Technology");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+    var BBT_score2 = document.createElement("INPUT");
+    BBT_score2.setAttribute("type", "number");
+    BBT_score2.setAttribute("size", 3);
+    BBT_score2.setAttribute("class", "form-controls");
+    BBT_score2.id = "BBT_score2" + countQuestion;
+
+    BBT_score2.setAttribute("value", childData.ans2.BSc_Hons_in_Bio_Technology);
+  p.appendChild(BBT_score2);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) Psychology(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BPsy_score2 = document.createElement("INPUT");
+BPsy_score2.setAttribute("type", "number");
+BPsy_score2.setAttribute("size", 3);
+BPsy_score2.setAttribute("class", "form-controls");
+BPsy_score2.id = "BPsy_score2" + countQuestion;
+BPsy_score2.setAttribute("value", childData.ans2.BSc_Hons_Psychology_UK);
+p.appendChild(BPsy_score2);
+          p.appendChild(document.createElement("br"));
+p.append(" BSc(Hons) Nursing(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BNurse_score2 = document.createElement("INPUT");
+BNurse_score2.setAttribute("type", "number");
+BNurse_score2.setAttribute("size", 3);
+BNurse_score2.setAttribute("class", "form-controls");
+BNurse_score2.id = "BNurse_score2" + countQuestion;
+
+BNurse_score2.setAttribute("value", childData.ans2.BSc_Hons_Nursing_UK);
+p.appendChild(BNurse_score2);
+          p.appendChild(document.createElement("br"));
+p.append("LLB(Hons) Law(UK)");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+	p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+   p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0' ) );
+var LLB_score2 = document.createElement("INPUT");
+LLB_score2.setAttribute("type", "number");
+LLB_score2.setAttribute("size", 3);
+LLB_score2.setAttribute("class", "form-controls");
+LLB_score2.id = "LLB_score2" + countQuestion;
+
+LLB_score2.setAttribute("value", childData.ans2.LLB_Hons_Law_UK);
+p.appendChild(LLB_score2); 
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer3: ");
+
+var ans3 = document.createElement("INPUT");
+    ans3.setAttribute("type", "text");
+    ans3.setAttribute("size", 80);
+    ans3.setAttribute("class", "form-control");
+    ans3.id = "ans3" + countAns; 
+    countAns++;
+  ans3.setAttribute("value", childData.ans3.answer);
+  p.appendChild(ans3);
+  p.appendChild(document.createElement("br"));
+  p.append("  BEd(Hons) in Physical Sciences "); 
+     p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    var BPS_score3 = document.createElement("INPUT");
+    BPS_score3.setAttribute("type", "number");
+    BPS_score3.setAttribute("size", 3);
+    BPS_score3.setAttribute("class", "form-controls");
+    BPS_score3.id = "BPS_score3" + countQuestion;
+
+    BPS_score3.setAttribute("value", childData.ans3.BEd_Hons_in_Physical_Sciences);
+  p.appendChild(BPS_score3);
+          p.appendChild(document.createElement("br"));
+  p.append(" BEd(Hons) in Biological Sciences ");
+  var BBS_score3 = document.createElement("INPUT");
+  BBS_score3.setAttribute("type", "number");
+  BBS_score3.setAttribute("size", 3);
+  BBS_score3.setAttribute("class", "form-controls");
+  BBS_score3.id = "BBS_score3" + countQuestion;
+
+  BBS_score3.setAttribute("value", childData.ans3.BEd_Hons_in_Biological_Sciences);
+  p.appendChild(BBS_score3);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) in Bio-Technology");
+   p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+      p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+	 p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+   p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    var BBT_score3 = document.createElement("INPUT");
+    BBT_score3.setAttribute("type", "number");
+    BBT_score3.setAttribute("size", 3);
+    BBT_score3.setAttribute("class", "form-controls");
+    BBT_score3.id = "BBT_score3" + countQuestion;
+
+    BBT_score3.setAttribute("value", childData.ans3.BSc_Hons_in_Bio_Technology);
+  p.appendChild(BBT_score3);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) Psychology(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+var BPsy_score3 = document.createElement("INPUT");
+BPsy_score3.setAttribute("type", "number");
+BPsy_score3.setAttribute("size", 3);
+BPsy_score3.setAttribute("class", "form-controls");
+BPsy_score3.id = "BPsy_score3" + countQuestion;
+BPsy_score3.setAttribute("value", childData.ans3.BSc_Hons_Psychology_UK);
+p.appendChild(BPsy_score3);
+          p.appendChild(document.createElement("br"));
+p.append(" BSc(Hons) Nursing(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+      p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BNurse_score3 = document.createElement("INPUT");
+BNurse_score3.setAttribute("type", "number");
+BNurse_score3.setAttribute("size", 3);
+BNurse_score3.setAttribute("class", "form-controls");
+BNurse_score3.id = "BNurse_score3" + countQuestion;
+
+BNurse_score3.setAttribute("value", childData.ans3.BSc_Hons_Nursing_UK);
+p.appendChild(BNurse_score3);
+          p.appendChild(document.createElement("br"));
+p.append("LLB(Hons) Law(UK)");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+      p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var LLB_score3 = document.createElement("INPUT");
+LLB_score3.setAttribute("type", "number");
+LLB_score3.setAttribute("size", 3);
+LLB_score3.setAttribute("class", "form-controls");
+LLB_score3.id = "LLB_score3" + countQuestion;
+
+LLB_score3.setAttribute("value", childData.ans3.LLB_Hons_Law_UK);
+p.appendChild(LLB_score3); 
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.append("  Answer4: ");
+
+var ans4 = document.createElement("INPUT");
+    ans4.setAttribute("type", "text");
+    ans4.setAttribute("size", 80);
+    ans4.setAttribute("class", "form-control");
+    ans4.id = "ans4" + countAns; 
+    countAns++;
+  ans4.setAttribute("value", childData.ans4.answer);
+  p.appendChild(ans4);
+  p.appendChild(document.createElement("br"));
+  p.appendChild(document.createElement("br"));
+
+  p.append("  BEd(Hons) in Physical Sciences ");  
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0' ) );
+
+  
+    var BPS_score4 = document.createElement("INPUT");
+    BPS_score4.setAttribute("type", "number");
+    BPS_score4.setAttribute("size", 3);
+    BPS_score4.setAttribute("class", "form-controls");
+    BPS_score4.id = "BPS_score4" + countQuestion;
+    BPS_score4.setAttribute("value", childData.ans4.BEd_Hons_in_Physical_Sciences);
+  p.appendChild(BPS_score4);
+          p.appendChild(document.createElement("br"));
+  p.append(" BEd(Hons) in Biological Sciences ");
+  var BBS_score4 = document.createElement("INPUT");
+  BBS_score4.setAttribute("type", "number");
+    BBS_score4.setAttribute("size", 3);
+    BBS_score4.setAttribute("class", "form-controls");
+    BBS_score4.id = "BBS_score4" + countQuestion;
+
+    BBS_score4.setAttribute("value", childData.ans4.BEd_Hons_in_Biological_Sciences);
+  p.appendChild(BBS_score4);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) in Bio-Technology");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    var BBT_score4 = document.createElement("INPUT");
+    BBT_score4.setAttribute("type", "number");
+    BBT_score4.setAttribute("size", 3);
+    BBT_score4.setAttribute("class", "form-controls");
+    BBT_score4.id = "BBT_score4" + countQuestion;
+
+    BBT_score4.setAttribute("value", childData.ans4.BSc_Hons_in_Bio_Technology);
+  p.appendChild(BBT_score4);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) Psychology(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BPsy_score4 = document.createElement("INPUT");
+BPsy_score4.setAttribute("type", "number");
+BPsy_score4.setAttribute("size", 3);
+BPsy_score4.setAttribute("class", "form-controls");
+BPsy_score4.id = "BPsy_score4" + countQuestion;
+
+BPsy_score4.setAttribute("value", childData.ans4.BSc_Hons_Psychology_UK);
+p.appendChild(BPsy_score4);
+          p.appendChild(document.createElement("br"));
+
+p.append(" BSc(Hons) Nursing(UK) ");
+ p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+var BNurse_score4 = document.createElement("INPUT");
+BNurse_score4.setAttribute("type", "number");
+BNurse_score4.setAttribute("size", 3);
+BNurse_score4.setAttribute("class", "form-controls");
+BNurse_score4.id = "BNurse_score4" + countQuestion;
+
+BNurse_score4.setAttribute("value", childData.ans4.BSc_Hons_Nursing_UK);
+p.appendChild(BNurse_score4);
+          p.appendChild(document.createElement("br"));
+		  
+p.append("LLB(Hons) Law(UK)");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+
+var LLB_score4 = document.createElement("INPUT");
+LLB_score4.setAttribute("type", "number");
+LLB_score4.setAttribute("size", 3);
+LLB_score4.setAttribute("class", "form-controls");
+LLB_score4.id = "LLB_score4" + countQuestion;
+
+LLB_score4.setAttribute("value", childData.ans4.LLB_Hons_Law_UK); 
+p.appendChild(LLB_score4); 
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer5: ");
+
+var ans5 = document.createElement("INPUT");
+    ans5.setAttribute("type", "text");
+    ans5.setAttribute("size", 80);
+    ans5.setAttribute("class", "form-control");
+    ans5.id = "ans5" + countAns; 
+    countAns++;
+  ans5.setAttribute("value", childData.ans5.answer);
+  p.appendChild(ans5);
+  p.appendChild(document.createElement("br"));
+
+  p.append("  BEd(Hons) in Physical Sciences ");  
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  
+  var BPS_score5 = document.createElement("INPUT");
+  BPS_score5.setAttribute("type", "number");
+  BPS_score5.setAttribute("size", 3);
+  BPS_score5.setAttribute("class", "form-controls");
+  BPS_score5.id = "BPS_score5" + countQuestion;
+
+    BPS_score5.setAttribute("value", childData.ans5.BEd_Hons_in_Physical_Sciences);
+  p.appendChild(BPS_score5);
+          p.appendChild(document.createElement("br"));
+  p.append(" BEd(Hons) in Biological Sciences ");
+
+  var BBS_score5 = document.createElement("INPUT");
+  BBS_score5.setAttribute("type", "number");
+    BBS_score5.setAttribute("size", 3);
+    BBS_score5.setAttribute("class", "form-controls");
+    BBS_score5.id = "BBS_score5" + countQuestion;
+
+    BBS_score5.setAttribute("value", childData.ans5.BEd_Hons_in_Biological_Sciences);
+  p.appendChild(BBS_score5);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) in Bio-Technology");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    var BBT_score5 = document.createElement("INPUT");
+    BBT_score5.setAttribute("type", "number");
+    BBT_score5.setAttribute("size", 3);
+    BBT_score5.setAttribute("class", "form-controls");
+    BBT_score5.id = "BBT_score5" + countQuestion;
+
+    BBT_score5.setAttribute("value", childData.ans5.BSc_Hons_in_Bio_Technology);
+  p.appendChild(BBT_score5);
+          p.appendChild(document.createElement("br"));
+  p.append(" BSc(Hons) Psychology(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BPsy_score5 = document.createElement("INPUT");
+BPsy_score5.setAttribute("type", "number");
+BPsy_score5.setAttribute("size", 3);
+BPsy_score5.setAttribute("class", "form-controls");
+BPsy_score5.id = "BPsy_score5" + countQuestion;
+
+BPsy_score5.setAttribute("value", childData.ans5.BSc_Hons_Psychology_UK);
+p.appendChild(BPsy_score5);
+          p.appendChild(document.createElement("br"));
+p.append(" BSc(Hons) Nursing(UK) ");
+p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BNurse_score5 = document.createElement("INPUT");
+BNurse_score5.setAttribute("type", "number");
+BNurse_score5.setAttribute("size", 3);
+BNurse_score5.setAttribute("class", "form-controls");
+BNurse_score5.id = "BNurse_score5" + countQuestion;
+
+BNurse_score5.setAttribute("value", childData.ans5.BSc_Hons_Nursing_UK);
+p.appendChild(BNurse_score5);
+          p.appendChild(document.createElement("br"));
+p.append("LLB(Hons) Law(UK)");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+
+var LLB_score5 = document.createElement("INPUT");
+LLB_score5.setAttribute("type", "number");
+LLB_score5.setAttribute("size", 3);
+LLB_score5.setAttribute("class", "form-controls");
+LLB_score5.id = "LLB_score5" + countQuestion;
+
+LLB_score5.setAttribute("value", childData.ans5.LLB_Hons_Law_UK); 
+p.appendChild(LLB_score5); 
+
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+p.append("  Answer6: ");
+
+var ans6 = document.createElement("INPUT");
+  ans6.setAttribute("type", "text");
+   ans6.setAttribute("size", 80);
+   ans6.setAttribute("class", "form-control");
+  ans6.id = "ans6" + countAns; 
+  countAns++;
+  ans6.setAttribute("value", childData.ans6.answer);
+  p.appendChild(ans6);
+  p.appendChild(document.createElement("br"));
+     
+  p.append("  BEd(Hons) in Physical Sciences ");   
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+    var BPS_score6 = document.createElement("INPUT");
+    BPS_score6.setAttribute("type", "number");
+    BPS_score6.setAttribute("size", 3);
+    BPS_score6.setAttribute("class", "form-controls");
+    BPS_score6.id = "BPS_score6" + countQuestion;
+
+    BPS_score6.setAttribute("value", childData.ans6.BEd_Hons_in_Physical_Sciences);
+  p.appendChild(BPS_score6);
+          p.appendChild(document.createElement("br"));
+  p.append(" BEd(Hons) in Biological Sciences ");
+  var BBS_score6 = document.createElement("INPUT");
+  BBS_score6.setAttribute("type", "number");
+    BBS_score6.setAttribute("size", 3);
+    BBS_score6.setAttribute("class", "form-controls");
+    BBS_score6.id = "BBS_score6" + countQuestion;
+
+    BBS_score6.setAttribute("value", childData.ans6.BEd_Hons_in_Biological_Sciences);
+  p.appendChild(BBS_score6);
+          p.appendChild(document.createElement("br"));
+p.append(" BSc(Hons) in Bio-Technology");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BBT_score6 = document.createElement("INPUT");
+BBT_score6.setAttribute("type", "number");
+BBT_score6.setAttribute("size", 3);
+BBT_score6.setAttribute("class", "form-controls");
+BBT_score6.id = "BBT_score6" + countQuestion;
+
+BBT_score6.setAttribute("value", childData.ans6.BSc_Hons_in_Bio_Technology);
+p.appendChild(BBT_score6);
+          p.appendChild(document.createElement("br"));
+		  
+p.append(" BSc(Hons) Psychology(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BPsy_score6 = document.createElement("INPUT");
+BPsy_score6.setAttribute("type", "number");
+BPsy_score6.setAttribute("size", 3);
+BPsy_score6.setAttribute("class", "form-controls");
+BPsy_score6.id = "BPsy_score6" + countQuestion;
+
+BPsy_score6.setAttribute("value", childData.ans6.BSc_Hons_Psychology_UK);
+p.appendChild(BPsy_score6);
+          p.appendChild(document.createElement("br"));
+p.append(" BSc(Hons) Nursing(UK) ");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+var BNurse_score6 = document.createElement("INPUT");
+BNurse_score6.setAttribute("type", "number");
+BNurse_score6.setAttribute("size", 3);
+BNurse_score6.setAttribute("class", "form-controls");
+BNurse_score6.id = "BNurse_score6" + countQuestion;
+
+BNurse_score6.setAttribute("value", childData.ans6.BNurse);
+p.appendChild(BNurse_score6);
+          p.appendChild(document.createElement("br"));
+p.append("LLB(Hons) Law(UK)");
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+    p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+  p.appendChild( document.createTextNode( '\u00A0\u00A0\u00A0' ) );
+
+var LLB_score6 = document.createElement("INPUT");
+LLB_score6.setAttribute("type", "number");
+LLB_score6.setAttribute("size", 3);
+LLB_score6.setAttribute("class", "form-controls");
+LLB_score6.id = "LLB_score6" + countQuestion;
+
+LLB_score6.setAttribute("value", childData.ans6.LLB_Hons_Law_UK); 
+p.appendChild(LLB_score6); 
+          p.appendChild(document.createElement("br"));
+          p.appendChild(document.createElement("br"));
+          p.appendChild(document.createElement("br"));
+
+countQuestion++;
+    
+                // creating button element  
+var buttonE = document.createElement('BUTTON');  
+                  
+                // creating text to be 
+                //displayed on button 
+var text = document.createTextNode("Edit");
+buttonE.setAttribute("class","btn btn-lg btn-info btn-block")
+                  
+                // appending text to button 
+buttonE.appendChild(text); 
+buttonE.onclick = function updateQ(){
+                  //alert("w"+document.getElementById(ans1.id).value);
+
+    var qid = document.getElementById(qIndex.id).value;
+    var q_topic = document.getElementById(q.id).value;
+    var answer1 = document.getElementById(ans1.id).value;
+    var BPS_1 = document.getElementById(BPS_score1.id).value;
+    var BBS_1 = document.getElementById(BBS_score1.id).value;
+    var BBT_1 = document.getElementById(BBT_score1.id).value;
+    var BPsy_1 = document.getElementById(BPsy_score1.id).value;
+    var LLB_1 = document.getElementById(LLB_score1.id).value;
+    var BNurse_1 = document.getElementById(BNurse_score1.id).value;
+
+    var answer2 =  document.getElementById(ans2.id).value;
+    var BPS_2 = document.getElementById(BPS_score2.id).value;
+    var BBS_2 = document.getElementById(BBS_score2.id).value;
+    var BBT_2 = document.getElementById(BBT_score2.id).value;
+    var BPsy_2 = document.getElementById(BPsy_score2.id).value;
+    var LLB_2 = document.getElementById(LLB_score2.id).value;
+    var BNurse_2 = document.getElementById(BNurse_score2.id).value;
+
+
+    var answer3 =  document.getElementById(ans3.id).value;
+    var BPS_3 = document.getElementById(BPS_score3.id).value;
+    var BBS_3 = document.getElementById(BBS_score3.id).value;
+    var BBT_3 = document.getElementById(BBT_score3.id).value;
+    var BPsy_3 = document.getElementById(BPsy_score3.id).value;
+    var LLB_3 = document.getElementById(LLB_score3.id).value;
+    var BNurse_3 = document.getElementById(BNurse_score3.id).value;
+
+    var answer4 =  document.getElementById(ans4.id).value;
+    var BPS_4 = document.getElementById(BPS_score4.id).value;
+    var BBS_4 = document.getElementById(BBS_score4.id).value;
+    var BBT_4 = document.getElementById(BBT_score4.id).value;
+    var BPsy_4 = document.getElementById(BPsy_score4.id).value;
+    var LLB_4 = document.getElementById(LLB_score4.id).value;
+    var BNurse_4 = document.getElementById(BNurse_score4.id).value;
+
+    var answer5 =  document.getElementById(ans5.id).value;
+    var BPS_5 = document.getElementById(BPS_score5.id).value;
+    var BBS_5 = document.getElementById(BBS_score5.id).value;
+    var BBT_5 = document.getElementById(BBT_score5.id).value;
+    var BPsy_5 = document.getElementById(BPsy_score5.id).value;
+    var LLB_5 = document.getElementById(LLB_score5.id).value;
+    var BNurse_5 = document.getElementById(BNurse_score5.id).value;
+
+    var answer6 =  document.getElementById(ans6.id).value;
+    var BPS_6 = document.getElementById(BPS_score6.id).value;
+    var BBS_6 = document.getElementById(BBS_score6.id).value;
+    var BBT_6 = document.getElementById(BBT_score6.id).value;
+    var BPsy_6 = document.getElementById(BPsy_score6.id).value;
+    var LLB_6 = document.getElementById(LLB_score6.id).value;
+    var BNurse_6 = document.getElementById(BNurse_score6.id).value;
+
+
+    var data = {
+      ans6: {"answer":ans6, "BEd_Hons_in_Physical_Sciences":BPS_score6,"BEd_Hons_in_Biological_Sciences":BBS_score6,"BSc_Hons_in_Bio_Technology":BBT_score6,"BSc_Hons_Psychology_UK":BPsy_score6,"BSc_Hons_Nursing_UK":BNurse_score6,"LLB_Hons_Law_UK":LLB_score6},
+    ans5: {"answer":ans5, "BEd_Hons_in_Physical_Sciences":BPS_score5,"BEd_Hons_in_Biological_Sciences":BBS_score5,"BSc_Hons_in_Bio_Technology":BBT_score5,"BSc_Hons_Psychology_UK":BPsy_score5,"BSc_Hons_Nursing_UK":BNurse_score5,"LLB_Hons_Law_UK":LLB_score5},
+    ans4: {"answer":ans4, "BEd_Hons_in_Physical_Sciences":BPS_score4,"BEd_Hons_in_Biological_Sciences":BBS_score4,"BSc_Hons_in_Bio_Technology":BBT_score4,"BSc_Hons_Psychology_UK":BPsy_score4,"BSc_Hons_Nursing_UK":BNurse_score4,"LLB_Hons_Law_UK":LLB_score4},
+    ans3: {"answer":ans3, "BEd_Hons_in_Physical_Sciences":BPS_score3,"BEd_Hons_in_Biological_Sciences":BBS_score3,"BSc_Hons_in_Bio_Technology":BBT_score3,"BSc_Hons_Psychology_UK":BPsy_score3,"BSc_Hons_Nursing_UK":BNurse_score3,"LLB_Hons_Law_UK":LLB_score3},
+    ans2: {"answer":ans2, "BEd_Hons_in_Physical_Sciences":BPS_score2,"BEd_Hons_in_Biological_Sciences":BBS_score2,"BSc_Hons_in_Bio_Technology":BBT_score2,"BSc_Hons_Psychology_UK":BPsy_score2,"BSc_Hons_Nursing_UK":BNurse_score2,"LLB_Hons_Law_UK":LLB_score2},
+    ans1: {"answer":ans1, "BEd_Hons_in_Physical_Sciences":BPS_score1,"BEd_Hons_in_Biological_Sciences":BBS_score1,"BSc_Hons_in_Bio_Technology":BBT_score1,"BSc_Hons_Psychology_UK":BPsy_score1,"BSc_Hons_Nursing_UK":BNurse_score1,"LLB_Hons_Law_UK":LLB_score1}, 
+    question:q_topic,
+        qid: qid
+      }
+
+  var updates = {};
+  updates['/QuizPartTwo_Humanities/' + qid] = data;
+  firebase.database().ref().update(updates);
+  
+
+
+
+
+  alert('The question is updated successfully!');
+  reload_page();
+}
+p.appendChild(buttonE); 
+
+  var buttonD = document.createElement('BUTTON');  
+
+  var text = document.createTextNode("Delete");
+  buttonD.setAttribute("class","btn btn-lg btn-info btn-block")
+  buttonD.appendChild(text); 
+  buttonD.onclick = function deleteQ(){
+
+  var qid = document.getElementById(qIndex.id).value;
+  
+firebase.database().ref().child('/QuizPartTwo_Humanities/' + qid).remove();
+alert('The question is deleted successfully!');
+reload_page();
+}
+p.appendChild(buttonD); 
+             
+});
+});
+</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

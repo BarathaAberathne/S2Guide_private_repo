@@ -1,0 +1,278 @@
+<html>
+<head>
+ <title>S2Guide - Quiz Part One</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+ <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+ <script src="index.js"></script>
+ <link rel="stylesheet" type="text/css" href="/css/quizOne.css">
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+    authDomain: "s2guide.firebaseapp.com",
+    databaseURL: "https://s2guide.firebaseio.com",
+    projectId: "s2guide",
+    storageBucket: "s2guide.appspot.com",
+    messagingSenderId: "457852779269",
+    appId: "1:457852779269:web:7e27f12f4d807544"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('testingQuizPartOne/');
+
+  </script>
+  <script src="q1.js"> </script>
+</head>
+<body>
+
+
+
+  <h1>Quiz Part ONE - Finding Suitable Faculty</h1>
+<a href="">View All Current Questions of Quiz Part ONE</a>
+
+  <h3> Add new question </h3>
+  <table class="table table-hover">
+   <tr>
+   
+    <td><input type="text" name="q_id" id="q_id" hidden/></td>
+   </tr>
+   <tr>
+    <td>Question: </td>
+    <td><textarea rows="4" cols="50" name="q_topic" id="q_topic"></textarea></td>
+   </tr>
+ 
+   
+  
+</table>
+    
+<button onclick="addAnswer()">Add Answer</button>
+<button onclick="removeAnswer()">Remove Answer</button>
+
+
+<div class="answer" id="DivAns1" style="display:none">
+  1. <input type="text" name="ans" id="ans1" /> 
+  <p></p>
+  <table>
+    <tr>
+      <td><b>Faculty</b></td>
+      <td><b>Score</b></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="comp" value="comp" id="comp1" onclick="enable1(this.id)"> Computing </td>
+      <td><input type="text" name="comp" id="comp_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="eng" value="eng" id="eng1" onclick="enable1(this.id)" > Engineering </td>
+      <td><input type="text" name="eng" id="eng_score1" size="3" disabled/></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="bm" value="bm" id="bm1" onclick="enable1(this.id)"> Business </td>
+      <td><input type="text" name="bm" id="bm_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="arch" value="arch" id="arch1" onclick="enable1(this.id)"> Architecture </td>
+      <td><input type="text" name="arch" id="arch_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="hs" value="hs" id="hs1" onclick="enable1(this.id)"> Humanity and Sciences </td>
+      <td> <input type="text" name="hs" id="hs_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="hc" value="hc" id="hc1" onclick="enable1(this.id)"> Hospitality and Cookery </td>
+      <td> <input type="text" name="hc" id="hc_score1" size="3" disabled/> </td>
+    </tr>
+  </table>
+ 
+</div>
+ 
+<div class="answer" id="DivAns2" style="display:none">
+   
+    2. <input type="text" name="ans" id="ans2" /> 
+    <p></p>
+    <table>
+      <tr>
+        <td><b>Faculty</b></td>
+        <td><b>Score</b></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="comp" value="comp" id="comp2" onclick="enable2(this.id)"> Computing </td>
+        <td><input type="text" name="comp" id="comp_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="eng" value="eng" id="eng2" onclick="enable2(this.id)" > Engineering </td>
+        <td><input type="text" name="eng" id="eng_score2" size="3" disabled/></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="bm" value="bm" id="bm2" onclick="enable2(this.id)"> Business </td>
+        <td><input type="text" name="bm" id="bm_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="arch" value="arch" id="arch2" onclick="enable2(this.id)"> Architecture </td>
+        <td><input type="text" name="arch" id="arch_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td> <input type="checkbox" name="hs" value="hs" id="hs2" onclick="enable2(this.id)"> Humanity and Sciences </td>
+        <td> <input type="text" name="hs" id="hs_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td> <input type="checkbox" name="hc" value="hc" id="hc2" onclick="enable2(this.id)"> Hospitality and Cookery </td>
+        <td> <input type="text" name="hc" id="hc_score2" size="3" disabled/> </td>
+      </tr>
+    </table>
+   
+</div>
+
+<div class="answer" id="DivAns3" style="display:none">
+    3. <input type="text" name="ans" id="ans1" /> 
+    <p></p>
+    <table>
+      <tr>
+        <td><b>Faculty</b></td>
+        <td><b>Score</b></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="comp" value="comp" id="comp3" onclick="enable3(this.id)"> Computing </td>
+        <td><input type="text" name="comp" id="comp_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="eng" value="eng" id="eng3" onclick="enable3(this.id)" > Engineering </td>
+        <td><input type="text" name="eng" id="eng_score3" size="3" disabled/></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="bm" value="bm" id="bm3" onclick="enable3(this.id)"> Business </td>
+        <td><input type="text" name="bm" id="bm_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="arch" value="arch" id="arch3" onclick="enable3(this.id)"> Architecture </td>
+        <td><input type="text" name="arch" id="arch_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td> <input type="checkbox" name="hs" value="hs" id="hs3" onclick="enable3(this.id)"> Humanity and Sciences </td>
+        <td> <input type="text" name="hs" id="hs_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td> <input type="checkbox" name="hc" value="hc" id="hc3" onclick="enable3(this.id)"> Hospitality and Cookery </td>
+        <td> <input type="text" name="hc" id="hc_score3" size="3" disabled/> </td>
+      </tr>
+    </table>
+   
+</div>
+
+<div class="answer" id="DivAns4" style="display:none">
+      4. <input type="text" name="ans" id="ans1" /> 
+      <p></p>
+      <table>
+        <tr>
+          <td><b>Faculty</b></td>
+          <td><b>Score</b></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="comp" value="comp" id="comp4" onclick="enable4(this.id)"> Computing </td>
+          <td><input type="text" name="comp" id="comp_score4" size="3" disabled/> </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="eng" value="eng" id="eng4" onclick="enable4(this.id)" > Engineering </td>
+          <td><input type="text" name="eng" id="eng_score4" size="3" disabled/></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="bm" value="bm" id="bm4" onclick="enable4(this.id)"> Business </td>
+          <td><input type="text" name="bm" id="bm_score4" size="3" disabled/> </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="arch" value="arch" id="arch4" onclick="enable4(this.id)"> Architecture </td>
+          <td><input type="text" name="arch" id="arch_score4" size="3" disabled/> </td>
+        </tr>
+        <tr>
+          <td> <input type="checkbox" name="hs" value="hs" id="hs4" onclick="enable4(this.id)"> Humanity and Sciences </td>
+          <td> <input type="text" name="hs" id="hs_score4" size="3" disabled/> </td>
+        </tr>
+        <tr>
+          <td> <input type="checkbox" name="hc" value="hc" id="hc4" onclick="enable4(this.id)"> Hospitality and Cookery </td>
+          <td> <input type="text" name="hc" id="hc_score4" size="3" disabled/> </td>
+        </tr>
+      </table>
+     
+</div>
+
+<div class="answer" id="DivAns5" style="display:none">
+        5. <input type="text" name="ans" id="ans1" /> 
+        <p></p>
+        <table>
+          <tr>
+            <td><b>Faculty</b></td>
+            <td><b>Score</b></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="comp" value="comp" id="comp5" onclick="enable5(this.id)"> Computing </td>
+            <td><input type="text" name="comp" id="comp_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="eng" value="eng" id="eng5" onclick="enable5(this.id)" > Engineering </td>
+            <td><input type="text" name="eng" id="eng_score5" size="3" disabled/></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="bm" value="bm" id="bm5" onclick="enable5(this.id)"> Business </td>
+            <td><input type="text" name="bm" id="bm_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="arch" value="arch" id="arch5" onclick="enable5(this.id)"> Architecture </td>
+            <td><input type="text" name="arch" id="arch_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td> <input type="checkbox" name="hs" value="hs" id="hs5" onclick="enable5(this.id)"> Humanity and Sciences </td>
+            <td> <input type="text" name="hs" id="hs_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td> <input type="checkbox" name="hc" value="hc" id="hc5" onclick="enable5(this.id)"> Hospitality and Cookery </td>
+            <td> <input type="text" name="hc" id="hc_score5" size="3" disabled/> </td>
+          </tr>
+        </table>
+       
+</div>
+
+<div class="answer" id="DivAns6" style="display:none">
+          6. <input type="text" name="ans" id="ans1" /> 
+          <p></p>
+          <table>
+            <tr>
+              <td><b>Faculty</b></td>
+              <td><b>Score</b></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="comp" value="comp" id="comp6" onclick="enable6(this.id)"> Computing </td>
+              <td><input type="text" name="comp" id="comp_score6" size="3" disabled/> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="eng" value="eng" id="eng6" onclick="enable6(this.id)" > Engineering </td>
+              <td><input type="text" name="eng" id="eng_score6" size="3" disabled/></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="bm" value="bm" id="bm6" onclick="enable6(this.id)"> Business </td>
+              <td><input type="text" name="bm" id="bm_score6" size="3" disabled/> </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="arch" value="arch" id="arch6" onclick="enable6(this.id)"> Architecture </td>
+              <td><input type="text" name="arch" id="arch_score6" size="3" disabled/> </td>
+            </tr>
+            <tr>
+              <td> <input type="checkbox" name="hs" value="hs" id="hs6" onclick="enable6(this.id)"> Humanity and Sciences </td>
+              <td> <input type="text" name="hs" id="hs_score6" size="3" disabled/> </td>
+            </tr>
+            <tr>
+              <td> <input type="checkbox" name="hc" value="hc" id="hc6" onclick="enable6(this.id)"> Hospitality and Cookery </td>
+              <td> <input type="text" name="hc" id="hc_score6" size="3" disabled/> </td>
+            </tr>
+          </table>
+         
+</div>
+
+     <input type="button" value="Save" onclick="save_n();" />
+     <input type="button" value="Edit" onclick="update_n();" />
+     <input type="button" value="Delete" onclick="delete_n();" />
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,568 @@
+<html>
+<head>
+ <title>S2Guide - Quiz Part Two</title>
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/style.css" rel="stylesheet">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+ <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+ <link rel="stylesheet" type="text/css" href="quizOne.css">
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+    authDomain: "s2guide.firebaseapp.com",
+    databaseURL: "https://s2guide.firebaseio.com",
+    projectId: "s2guide",
+    storageBucket: "s2guide.appspot.com",
+    messagingSenderId: "457852779269",
+    appId: "1:457852779269:web:7e27f12f4d807544"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('QuizPartTwo_Computing/');
+
+  </script>
+ <script src="compQuiz.js"></script>
+
+</head>
+<body>
+
+<div class="page-wrapper">
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Adverticements</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+            </a>
+
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="Dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Advertisements</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="page-container">
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">   <div class="header-wrap">
+                    <h2 style="text-align: center"> Create Quiz</h2>
+                    <div class="header-button">
+                        <div class="account-wrap">
+                            <div class="account-item clearfix js-item-menu">
+
+                                <a href="#">
+                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                <div class="account-dropdown js-dropdown">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </header>
+        <div class="main-content" style="background-image: url('images/admin2.png')">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header">
+  <h1>Quiz Part TWO - Finding best Degree for Computing</h1>
+<a href="edit_computing.html">View All Current Questions of this Quiz</a>
+
+  <h3> Add new question </h3>
+  <table class="table table-hover">
+   <tr>
+   
+    <td><input  type="text" name="q_id" id="comp_id" hidden/></td>
+   </tr>
+   <tr>
+    <td>Question: </td>
+    <td><textarea  class="form-control"rows="4" cols="50" name="q_topic" id="q_topic"></textarea></td>
+   </tr>
+ 
+   
+  
+</table>
+    
+<button class="btn btn-lg" style=" background-color: #17a2b8;border-color: #17a2b8;color: white" onclick="addAnswer()">Add Answer</button>
+<br>
+
+<div class="answer" id="DivAns1" style="display:none">
+  1. <input type="text" name="ans" id="ans1" /> 
+  <p></p>
+  <table>
+    <tr>
+      <td><b>Degree</b></td>
+      <td><b>Score</b></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="IT" value="IT" id="IT1" onclick="enable1(this.id)"> BSc (Hons) in IT sp.in Information Technology </td>
+      <td><input type="number" class="form-control" name="IT" id="IT_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="ISE" value="ISE" id="ISE1" onclick="enable1(this.id)" > Bsc (Hons) in IT sp. in Informations Systems Engineering  </td>
+      <td><input type="number" class="form-control" name="ISE" id="ISE_score1" size="3" disabled/></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="SE" value="SE" id="SE1" onclick="enable1(this.id)"> Bsc (Hons) in IT sp. in Software Engineering  </td>
+      <td><input type="number" class="form-control" name="SE" id="SE_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="CSN" value="CSN" id="CSN1" onclick="enable1(this.id)"> Bsc (Hons) in IT sp. In Computer Systems Networking </td>
+      <td><input type="number" class="form-control" name="CSN" id="CSN_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="DS" value="DS" id="DS1" onclick="enable1(this.id)"> Bsc (Hons) in IT sp. In Data Science </td>
+      <td> <input type="number" class="form-control" name="DS" id="DS_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="CS" value="CS" id="CS1" onclick="enable1(this.id)"> Bsc (Hons) in IT sp. In Cyber Security </td>
+      <td> <input type="number" class="form-control" name="CS" id="CS_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="IM" value="IM" id="IM1" onclick="enable1(this.id)"> Bsc (Hons) in IT sp. In Interactive Media </td>
+      <td> <input type="number" class="form-control" name="IM" id="IM_score1" size="3" disabled/> </td>
+    </tr>   
+    <tr>
+        <td> <input type="checkbox" name="SEcur" value="SEcur" id="SEcur1" onclick="enable1(this.id)"> Bsc in Software Engineering (Curtin) </td>
+        <td> <input type="number" class="form-control" name="SEcur" id="SEcur_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+        <td> <input type="checkbox" name="CSNcur" value="CSNcur" id="CSNcur1" onclick="enable1(this.id)"> Bsc in Computer Systems & Networking (Curtin) </td>
+        <td> <input type="number" class="form-control" name="CSNcur" id="CSNcur_score1" size="3" disabled/> </td>
+    </tr>   
+    <tr>
+      <td> <input type="checkbox" name="ITcur" value="ITcur" id="ITcur1" onclick="enable1(this.id)"> Bsc in Information Technology (Curtin) </td>
+      <td> <input type="number" class="form-control"name="ITcur" id="ITcur_score1" size="3" disabled/> </td>
+    </tr>   
+    <tr>
+        <td> <input type="checkbox" name="CSSEbed" value="CSSEbed" id="CSSEbed1" onclick="enable1(this.id)"> BSc.(Hons) Computer Science and Software Engineering (Bedfordshire) </td>
+        <td> <input type="number" class="form-control" name="CSSEbed" id="CSSEbed_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+        <td> <input type="checkbox" name="CNbed" value="CNbed" id="CNbed1" onclick="enable1(this.id)"> BSc.(Hons) Computer Networking (Bedfordshire)  </td>
+        <td> <input type="number" class="form-control" name="CNbed" id="CNbed_score1" size="3" disabled/> </td>
+    </tr>  
+  </table>
+ 
+</div>
+ 
+<div class="answer" id="DivAns2" style="display:none">
+   
+    2. <input type="text" name="ans" id="ans2" /> 
+    <p></p>
+    <table>
+      <tr>
+        <td><b>Degree</b></td>
+        <td><b>Score</b></td>
+      </tr>
+   <tr>
+      <td><input type="checkbox" name="IT" value="IT" id="IT2" onclick="enable2(this.id)"> BSc (Hons) in IT sp.in Information Technology </td>
+      <td><input type="number" class="form-control" name="IT" id="IT_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="ISE" value="ISE" id="ISE2" onclick="enable2(this.id)" > Bsc (Hons) in IT sp. in Informations Systems Engineering  </td>
+      <td><input type="number" class="form-control" name="ISE" id="ISE_score2" size="3" disabled/></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="SE" value="SE" id="SE2" onclick="enable2(this.id)"> Bsc (Hons) in IT sp. in Software Engineering  </td>
+      <td><input type="number" class="form-control" name="SE" id="SE_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="CSN" value="CSN" id="CSN2" onclick="enable2(this.id)"> Bsc (Hons) in IT sp. In Computer Systems Networking </td>
+      <td><input type="number" class="form-control" name="CSN" id="CSN_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="DS" value="DS" id="DS2" onclick="enable2(this.id)"> Bsc (Hons) in IT sp. In Data Science </td>
+      <td> <input type="number" class="form-control" name="DS" id="DS_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="CS" value="CS" id="CS2" onclick="enable2(this.id)"> Bsc (Hons) in IT sp. In Cyber Security </td>
+      <td> <input type="number" class="form-control" name="CS" id="CS_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td> <input type="checkbox" name="IM" value="IM" id="IM2" onclick="enable2(this.id)"> Bsc (Hons) in IT sp. In Interactive Media </td>
+      <td> <input type="number" class="form-control" name="IM" id="IM_score2" size="3" disabled/> </td>
+    </tr>   
+    <tr>
+        <td> <input type="checkbox" name="SEcur" value="SEcur" id="SEcur2" onclick="enable2(this.id)"> Bsc in Software Engineering (Curtin) </td>
+        <td> <input type="number" class="form-control" name="SEcur" id="SEcur_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+        <td> <input type="checkbox" name="CSNcur" value="CSNcur" id="CSNcur2" onclick="enable2(this.id)"> Bsc in Computer Systems & Networking (Curtin) </td>
+        <td> <input type="number" name="CSNcur" id="CSNcur_score2" size="3" disabled/> </td>
+    </tr>   
+    <tr>
+      <td> <input type="checkbox" name="ITcur" value="ITcur" id="ITcur2" onclick="enable2(this.id)"> Bsc in Information Technology (Curtin) </td>
+      <td> <input type="number" name="ITcur" id="ITcur_score2" size="3" disabled/> </td>
+    </tr>   
+    <tr>
+        <td> <input type="checkbox" name="CSSEbed" value="CSSEbed" id="CSSEbed2" onclick="enable2(this.id)"> BSc.(Hons) Computer Science and Software Engineering (Bedfordshire) </td>
+        <td> <input type="number" name="CSSEbed" id="CSSEbed_score2" size="3" disabled/> </td>
+    </tr>
+    <tr>
+        <td> <input type="checkbox" name="CNbed" value="CNbed" id="CNbed2" onclick="enable2(this.id)"> BSc.(Hons) Computer Networking (Bedfordshire)  </td>
+        <td> <input type="number" name="CNbed" id="CNbed_score2" size="3" disabled/> </td>
+    </tr> 
+    </table>
+   
+</div>
+
+<div class="answer" id="DivAns3" style="display:none">
+    3. <input type="text" name="ans" id="ans3" /> 
+    <p></p>
+    <table>
+      <tr>
+        <td><b>Faculty</b></td>
+        <td><b>Score</b></td>
+      </tr>
+      <tr>
+            <td><input type="checkbox" name="IT" value="IT" id="IT3" onclick="enable3(this.id)"> BSc (Hons) in IT sp.in Information Technology </td>
+            <td><input type="number" class="form-control" name="IT" id="IT_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="ISE" value="ISE" id="ISE3" onclick="enable3(this.id)" > Bsc (Hons) in IT sp. in Informations Systems Engineering  </td>
+            <td><input type="number" class="form-control" name="ISE" id="ISE_score3" size="3" disabled/></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="SE" value="SE" id="SE3" onclick="enable3(this.id)"> Bsc (Hons) in IT sp. in Software Engineering  </td>
+            <td><input type="number" class="form-control" name="SE" id="SE_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="CSN" value="CSN" id="CSN3" onclick="enable3(this.id)"> Bsc (Hons) in IT sp. In Computer Systems Networking </td>
+            <td><input type="number" class="form-control" name="CSN" id="CSN_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td> <input type="checkbox" name="DS" value="DS" id="DS3" onclick="enable3(this.id)"> Bsc (Hons) in IT sp. In Data Science </td>
+            <td> <input type="number" class="form-control" name="DS" id="DS_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td> <input type="checkbox" name="CS" value="CS" id="CS3" onclick="enable3(this.id)"> Bsc (Hons) in IT sp. In Cyber Security </td>
+            <td> <input type="number" class="form-control" name="CS" id="CS_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td> <input type="checkbox" name="IM" value="IM" id="IM3" onclick="enable3(this.id)"> Bsc (Hons) in IT sp. In Interactive Media </td>
+            <td> <input type="number" class="form-control" name="IM" id="IM_score3" size="3" disabled/> </td>
+          </tr>   
+          <tr>
+              <td> <input type="checkbox" name="SEcur" value="SEcur" id="SEcur3" onclick="enable3(this.id)"> Bsc in Software Engineering (Curtin) </td>
+              <td> <input type="number" class="form-control" name="SEcur" id="SEcur_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+              <td> <input type="checkbox" name="CSNcur" value="CSNcur" id="CSNcur3" onclick="enable3(this.id)"> Bsc in Computer Systems & Networking (Curtin) </td>
+              <td> <input type="number" class="form-control" name="CSNcur" id="CSNcur_score3" size="3" disabled/> </td>
+          </tr>   
+          <tr>
+            <td> <input type="checkbox" name="ITcur" value="ITcur" id="ITcur3" onclick="enable3(this.id)"> Bsc in Information Technology (Curtin) </td>
+            <td> <input type="number" class="form-control" name="ITcur" id="ITcur_score3" size="3" disabled/> </td>
+          </tr>   
+          <tr>
+              <td> <input type="checkbox" name="CSSEbed" value="CSSEbed" id="CSSEbed3" onclick="enable3(this.id)"> BSc.(Hons) Computer Science and Software Engineering (Bedfordshire) </td>
+              <td> <input type="number" class="form-control" name="CSSEbed" id="CSSEbed_score3" size="3" disabled/> </td>
+          </tr>
+          <tr>
+              <td> <input type="checkbox" name="CNbed" value="CNbed" id="CNbed3" onclick="enable3(this.id)"> BSc.(Hons) Computer Networking (Bedfordshire)  </td>
+              <td> <input type="number" class="form-control" name="CNbed" id="CNbed_score3" size="3" disabled/> </td>
+          </tr> 
+    </table>
+   
+</div>
+
+<div class="answer" id="DivAns4" style="display:none">
+      4. <input type="text" name="ans" id="ans4" /> 
+      <p></p>
+      <table>
+        <tr>
+          <td><b>Degree</b></td>
+          <td><b>Score</b></td>
+        </tr>
+        <tr>
+                <td><input type="checkbox" name="IT" value="IT" id="IT4" onclick="enable4(this.id)"> BSc (Hons) in IT sp.in Information Technology </td>
+                <td><input type="number" class="form-control" name="IT" id="IT_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="ISE" value="ISE" id="ISE4" onclick="enable4(this.id)" > Bsc (Hons) in IT sp. in Informations Systems Engineering  </td>
+                <td><input type="number" class="form-control" name="ISE" id="ISE_score4" size="3" disabled/></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="SE" value="SE" id="SE4" onclick="enable4(this.id)"> Bsc (Hons) in IT sp. in Software Engineering  </td>
+                <td><input type="number" class="form-control" name="SE" id="SE_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="CSN" value="CSN" id="CSN4" onclick="enable4(this.id)"> Bsc (Hons) in IT sp. In Computer Systems Networking </td>
+                <td><input type="number" class="form-control" name="CSN" id="CSN_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="DS" value="DS" id="DS4" onclick="enable4(this.id)"> Bsc (Hons) in IT sp. In Data Science </td>
+                <td> <input type="number" class="form-control" name="DS" id="DS_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="CS" value="CS" id="CS4" onclick="enable4(this.id)"> Bsc (Hons) in IT sp. In Cyber Security </td>
+                <td> <input type="number" class="form-control" name="CS" id="CS_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="IM" value="IM" id="IM4" onclick="enable4(this.id)"> Bsc (Hons) in IT sp. In Interactive Media </td>
+                <td> <input type="number" class="form-control" name="IM" id="IM_score4" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                  <td> <input type="checkbox" name="SEcur" value="SEcur" id="SEcur4" onclick="enable4(this.id)"> Bsc in Software Engineering (Curtin) </td>
+                  <td> <input type="number" class="form-control" name="SEcur" id="SEcur_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td> <input type="checkbox" name="CSNcur" value="CSNcur" id="CSNcur4" onclick="enable4(this.id)"> Bsc in Computer Systems & Networking (Curtin) </td>
+                  <td> <input type="number" class="form-control" name="CSNcur" id="CSNcur_score4" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                <td> <input type="checkbox" name="ITcur" value="ITcur" id="ITcur4" onclick="enable4(this.id)"> Bsc in Information Technology (Curtin) </td>
+                <td> <input type="number" class="form-control" name="ITcur" id="ITcur_score4" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                  <td> <input type="checkbox" name="CSSEbed" value="CSSEbed" id="CSSEbed4" onclick="enable4(this.id)"> BSc.(Hons) Computer Science and Software Engineering (Bedfordshire) </td>
+                  <td> <input type="number" class="form-control" name="CSSEbed" id="CSSEbed_score4" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td> <input type="checkbox" name="CNbed" value="CNbed" id="CNbed4" onclick="enable4(this.id)"> BSc.(Hons) Computer Networking (Bedfordshire)  </td>
+                  <td> <input type="number" class="form-control" name="CNbed" id="CNbed_score4" size="3" disabled/> </td>
+              </tr> 
+      </table>
+     
+</div>
+
+<div class="answer" id="DivAns5" style="display:none">
+        5. <input type="text" name="ans" id="ans5" /> 
+        <p></p>
+        <table>
+          <tr>
+            <td><b>Degree</b></td>
+            <td><b>Score</b></td>
+          </tr>
+          <tr>
+                <td><input type="checkbox" name="IT" value="IT" id="IT5" onclick="enable5(this.id)"> BSc (Hons) in IT sp.in Information Technology </td>
+                <td><input type="number" class="form-control" name="IT" id="IT_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="ISE" value="ISE" id="ISE5" onclick="enable5(this.id)" > Bsc (Hons) in IT sp. in Informations Systems Engineering  </td>
+                <td><input type="number" v name="ISE" id="ISE_score5" size="3" disabled/></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="SE" value="SE" id="SE5" onclick="enable5(this.id)"> Bsc (Hons) in IT sp. in Software Engineering  </td>
+                <td><input type="number" class="form-control" name="SE" id="SE_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="CSN" value="CSN" id="CSN5" onclick="enable5(this.id)"> Bsc (Hons) in IT sp. In Computer Systems Networking </td>
+                <td><input type="number" class="form-control" name="CSN" id="CSN_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="DS" value="DS" id="DS5" onclick="enable5(this.id)"> Bsc (Hons) in IT sp. In Data Science </td>
+                <td> <input type="number" class="form-control" name="DS" id="DS_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="CS" value="CS" id="CS5" onclick="enable5(this.id)"> Bsc (Hons) in IT sp. In Cyber Security </td>
+                <td> <input type="number" class="form-control" name="CS" id="CS_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="IM" value="IM" id="IM5" onclick="enable5(this.id)"> Bsc (Hons) in IT sp. In Interactive Media </td>
+                <td> <input type="number" class="form-control" name="IM" id="IM_score5" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                  <td> <input type="checkbox" name="SEcur" value="SEcur" id="SEcur5" onclick="enable5(this.id)"> Bsc in Software Engineering (Curtin) </td>
+                  <td> <input type="number" class="form-control" name="SEcur" id="SEcur_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td> <input type="checkbox" name="CSNcur" value="CSNcur" id="CSNcur5" onclick="enable5(this.id)"> Bsc in Computer Systems & Networking (Curtin) </td>
+                  <td> <input type="number" class="form-control" name="CSNcur" id="CSNcur_score5" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                <td> <input type="checkbox" name="ITcur" value="ITcur" id="ITcur5" onclick="enable5(this.id)"> Bsc in Information Technology (Curtin) </td>
+                <td> <input type="number" class="form-control" name="ITcur" id="ITcur_score5" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                  <td> <input type="checkbox" name="CSSEbed" value="CSSEbed" id="CSSEbed5" onclick="enable5(this.id)"> BSc.(Hons) Computer Science and Software Engineering (Bedfordshire) </td>
+                  <td> <input type="number" class="form-control" name="CSSEbed" id="CSSEbed_score5" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td> <input type="checkbox" name="CNbed" value="CNbed" id="CNbed5" onclick="enable5(this.id)"> BSc.(Hons) Computer Networking (Bedfordshire)  </td>
+                  <td> <input type="number" class="form-control" name="CNbed" id="CNbed_score5" size="3" disabled/> </td>
+              </tr> 
+        </table>
+       
+</div>
+
+<div class="answer" id="DivAns6" style="display:none">
+          6. <input type="text" name="ans" id="ans6" /> 
+          <p></p>
+          <table>
+            <tr>
+              <td><b>Degree</b></td>
+              <td><b>Score</b></td>
+            </tr>
+           
+            <tr>
+                <td><input type="checkbox" name="IT" value="IT" id="IT6" onclick="enable6(this.id)"> BSc (Hons) in IT sp.in Information Technology </td>
+                <td><input type="number" class="form-control" name="IT" id="IT_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="ISE" value="ISE" id="ISE6" onclick="enable6(this.id)" > Bsc (Hons) in IT sp. in Informations Systems Engineering  </td>
+                <td><input type="number" class="form-control" name="ISE" id="ISE_score6" size="3" disabled/></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="SE" value="SE" id="SE6" onclick="enable6(this.id)"> Bsc (Hons) in IT sp. in Software Engineering  </td>
+                <td><input type="number" class="form-control" name="SE" id="SE_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="CSN" value="CSN" id="CSN6" onclick="enable6(this.id)"> Bsc (Hons) in IT sp. In Computer Systems Networking </td>
+                <td><input type="number" class="form-control" name="CSN" id="CSN_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="DS" value="DS" id="DS6" onclick="enable6(this.id)"> Bsc (Hons) in IT sp. In Data Science </td>
+                <td> <input type="number" class="form-control" name="DS" id="DS_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="CS" value="CS" id="CS6" onclick="enable6(this.id)"> Bsc (Hons) in IT sp. In Cyber Security </td>
+                <td> <input type="number" class="form-control" name="CS" id="CS_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td> <input type="checkbox" name="IM" value="IM" id="IM6" onclick="enable6(this.id)"> Bsc (Hons) in IT sp. In Interactive Media </td>
+                <td> <input type="number" class="form-control" name="IM" id="IM_score6" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                  <td> <input type="checkbox" name="SEcur" value="SEcur" id="SEcur6" onclick="enable6(this.id)"> Bsc in Software Engineering (Curtin) </td>
+                  <td> <input type="number" class="form-control" name="SEcur" id="SEcur_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td> <input type="checkbox" name="CSNcur" value="CSNcur" id="CSNcur6" onclick="enable6(this.id)"> Bsc in Computer Systems & Networking (Curtin) </td>
+                  <td> <input type="number" class="form-control" name="CSNcur" id="CSNcur_score6" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                <td> <input type="checkbox" name="ITcur" value="ITcur" id="ITcur6" onclick="enable6(this.id)"> Bsc in Information Technology (Curtin) </td>
+                <td> <input type="number" class="form-control" name="ITcur" id="ITcur_score6" size="3" disabled/> </td>
+              </tr>   
+              <tr>
+                  <td> <input type="checkbox" name="CSSEbed" value="CSSEbed" id="CSSEbed6" onclick="enable6(this.id)"> BSc.(Hons) Computer Science and Software Engineering (Bedfordshire) </td>
+                  <td> <input type="number" class="form-control" name="CSSEbed" id="CSSEbed_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td> <input type="checkbox" name="CNbed" value="CNbed" id="CNbed6" onclick="enable6(this.id)"> BSc.(Hons) Computer Networking (Bedfordshire)  </td>
+                  <td> <input type="number" class="form-control" name="CNbed" id="CNbed_score6" size="3" disabled/> </td>
+              </tr> 
+              </table>
+         
+</div>
+<br>
+     <input type="button" value="Save" class="btn btn-lg btn-info btn-block" onclick="save_n();" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+</body>
+
+</html>

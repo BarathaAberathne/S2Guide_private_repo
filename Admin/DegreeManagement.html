@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Degree Management</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+    <link rel="stylesheet" href="/assets/dcode.css">
+    <link rel="short icon" href="/assets/favicon.ico">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/1a81673399.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+            authDomain: "s2guide.firebaseapp.com",
+            databaseURL: "https://s2guide.firebaseio.com",
+            projectId: "s2guide",
+            storageBucket: "s2guide.appspot.com",
+            messagingSenderId: "457852779269",
+            appId: "1:457852779269:web:7e27f12f4d807544"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="DegreeManagement.js"></script>
+    <script src="https://kit.fontawesome.com/1a81673399.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<!--Author
+Hasini_Anthony
+19829265-->
+<body onload="init();">
+<div class="page-wrapper">
+<header class="header-mobile d-block d-lg-none">
+    <div class="header-mobile__bar">
+        <div class="container-fluid">
+            <div class="header-mobile-inner">
+                <a class="logo" href="index.html">
+                    <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+                </a>
+                <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar-mobile">
+        <div class="container-fluid">
+            <ul class="navbar-mobile__list list-unstyled">
+                <li class="has-sub">
+                    <a class="js-arrow" href="index.html">
+                        <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                </li>
+                <li>
+                    <a href="inquery_lists.html">
+                        <i class="fas fa-address-book"></i>Manage Students</a>
+                </li>
+                <li>
+                    <a href="Quiz.html">
+                        <i class="fas fa-table"></i>Create Quiz</a>
+                </li>
+                <li>
+                    <a href="DegreeManagement.html">
+                        <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-calendar-alt"></i>Notices</a>
+                </li>
+                <li>
+                    <a href="adverticement.html">
+                        <i class="fas fa-bell"></i>Adverticements</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<!-- END HEADER MOBILE-->
+
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="#">
+            <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+        </a>
+
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="active has-sub">
+                    <a class="js-arrow" href="Dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                </li>
+                <li>
+                    <a href="inquery_lists.html">
+                        <i class="fas fa-address-book"></i>Manage Students</a>
+                </li>
+                <li>
+                    <a href="Quiz.html">
+                        <i class="fas fa-table"></i>Create Quiz</a>
+                </li>
+                <li>
+                    <a href="DegreeManagement.html">
+                        <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                </li>
+                <li>
+                    <a href="add_notice.html">
+                        <i class="fas fa-calendar-alt"></i>Notices</a>
+                </li>
+                <li>
+                    <a href="adverticement.html">
+                        <i class="fas fa-bell"></i>Advertisements</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</aside>
+    <div class="page-container">
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <h2 style="text-align: center">Degree Management</h2>
+                        <li class="nav-link" onclick="logOut();">
+                            <a class="nav-link" href="">Log out</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <div class="main-content" style="background-image: url('images/admin2.png')">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row" style="padding-left: 0;">
+                    <div class="col-6">
+                        <div class="card" style="width: 1000px;">
+    <div class="container msg-db" id="local_table"><br>
+        <div class="card-header"> <h1>Degree And Foundation Course Management</h1></div><br>
+        <button class="btn btn-lg btn-info btn-block" style="width: 400px;" onclick="load_form_add();">Add a new Degree/Foundation Course</button>
+        <br/>
+
+        <input type="hidden" id="selectedId" value="">
+        <h4>Search for the degree..!!</h4>
+
+            <div class="col-md-6">
+                <input type="text" id="myInput1" onkeyup="searchCode1()" class="form-control"  placeholder="Search for code.." title="Type in a name">
+            </div>
+
+        <br/>
+
+        <h4>Degree Programmes</h4>
+        <div class="table-responsive table--no-card m-b-30">
+        <table id="table_foreign" class="table table-borderless table-striped table-earning">
+            <tr>
+                <td><b>Code</b></td>
+                <td><b>Type</b></td>
+                <td><b>Degree Title</b></td>
+                <td><b>Faculty</b></td>
+                <td><b>University</b></td>
+            </tr>
+        </table>
+        </div>
+
+        <h4>Foundation Courses</h4>
+        <div class="table-responsive table--no-card m-b-30">
+        <table id="table_f" class="table table-borderless table-striped table-earning">
+            <tr>
+                <td><b>Code</b></td>
+                <td><b>Course Title</b></td>
+                <td><b>Faculty</b></td>
+                <td><b>University</b></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+    <div id="div_degree_single" class="container msg-db" style="display: none">
+        <input type="hidden" value="" id="fid"><br>
+
+        <h3 id="title_label"></h3><br/>
+
+        <table id="display_table" >
+            <tr><th>Type</th><td id="type_label"></td></tr>
+            <tr><th>Code</th><td id="code_label"></td></tr>
+            <tr><th>Title Abbreviation</th><td id="ab_label"></td></tr>
+            <tr><th>Faculty</th><td id="faculty_label"></td></tr>
+            <tr><th>Duration</th><td id="duration_label"></td></tr>
+            <tr><th>University</th><td id="uni_label"></td></tr>
+            <tr><th>Country</th><td id="country_label"></td></tr>
+            <tr><th>Intake</th><td id="intake_label"></td></tr>
+            <tr><th>Location</th><td id="location_label"></td></tr>
+            <tr><th>Accreditation</th><td id="app_label"></td></tr>
+            <tr><th>Description</th><td id="desc_label"></td></tr>
+            <tr></tr>
+        </table>
+
+        <br/>
+        <h5><u>O/L Requirements</u></h5>
+        <table id="display_table2" class="table table-borderless table-striped table-earning">
+            <tr><th>Minimum Passes</th><td id="min_label"></td></tr>
+            <tr><th>English</th><td id="eng_label"></td></tr>
+            <tr><th>Mathematics</th><td id="math_label"></td></tr>
+            <tr></tr>
+        </table>
+        <br/>
+        <h5><u>A/L Requirements</u></h5>
+        <table id="display_table3" class="table table-borderless table-striped table-earning">
+            <tr><th>Stream</th><td id="st_label"></td></tr>
+            <tr><th>Compulsory Streams</th><td id="coms_label"></td></tr>
+            <tr><th>Compulsory Subjects</th></tr>
+            <tr><th></th><td id="sub1_label"></td></tr>
+            <tr><th></th><td id="sub2_label"></td></tr>
+            <tr><th></th><td id="sub3_label"></td></tr>
+            <tr><th>Minimum Results</th></tr>
+            <tr><th>Local GCE A/L</th></tr>
+            <tr><th></th><td id="s4_label"></td></tr>
+            <tr><th></th><td id="s5_label"></td></tr>
+            <tr><th></th><td id="s6_label"></td></tr>
+            <tr><th>London GCE A/L</th></tr>
+            <tr><th></th><td id="s7_label"></td></tr>
+            <tr><th></th><td id="s8_label"></td></tr>
+            <tr><th></th><td id="s9_label"></td></tr>
+        </table>
+        <br/>
+        <h5><u>Career Opportunities</u></h5>
+        <table id="display_table4" class="table table-borderless table-striped table-earning">
+            <tr><th></th><td id="c1"></td></tr>
+            <tr><th></th><td id="c2"></td></tr>
+            <tr><th></th><td id="c3"></td></tr>
+            <tr><th></th><td id="c4"></td></tr>
+            <tr><th></th><td id="c5"></td></tr>
+            <tr><th></th><td id="c6"></td></tr>
+            <tr><th></th><td id="c7"></td></tr>
+            <tr><th></th><td id="c8"></td></tr>
+            <tr><th></th><td id="c9"></td></tr>
+            <tr><th></th><td id="c10"></td></tr>
+        </table>
+        <br/>
+        <h3>Do you want to change any data?</h3>
+        <h5>If you are going to click "Yes",then remember the Degree Code : <label id="code_label2"></label></h5>
+        <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Yes" onclick="yess();" />
+        <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="No" onclick="noo();" />
+    </div>
+
+    <div id="div_degree" class="container msg-db" style="display: none">
+        <input type="hidden" value="" id="ffid"><br>
+
+        <h3 id="ftitle_label"></h3>
+        <table id="fdisplay_table" >
+            <tr><th>Code</th><td id="fcode_label"></td></tr>
+            <tr><th>Title Abbreviation</th><td id="fab_label"></td></tr>
+            <tr><th>Faculty</th><td id="ffaculty_label"></td></tr>
+            <tr><th>Duration</th><td id="fduration_label"></td></tr>
+            <tr><th>University</th><td id="funi_label"></td></tr>
+            <tr><th>Country</th><td id="fcountry_label"></td></tr>
+            <tr><th>Intake</th><td id="fintake_label"></td></tr>
+            <tr><th>Location</th><td id="flocation_label"></td></tr>
+            <tr><th>Description</th><td id="fdesc_label"></td></tr>
+            <tr></tr>
+        </table>
+        <br/>
+        <h5><u>O/L Requirements</u></h5>
+        <table id="fdisplay_table2">
+            <tr><th>Minimum Passes</th><td id="fmin_label"></td></tr>
+            <tr><th>English</th><td id="feng_label"></td></tr>
+            <tr><th>Mathematics</th><td id="fmath_label"></td></tr>
+            <tr></tr>
+        </table>
+        <br/>
+
+        <h3>Do you want to change any data?</h3>
+        <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Yes" onclick="yess_f();" />
+        <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="No" onclick="noo();" />
+    </div>
+
+    <div id="all_data" class="container msg-db" style="display: none;width:1000px;" >
+            <h4>Do the changes</h4>
+        <div class="row" style="padding-left: 0;padding-top: 0">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="myInput" onkeyup="searchCode()"   placeholder="Enter the code.." title="Type in a name">
+                </div>
+            </div>
+        <br/>
+
+        <div class="table-responsive table--no-card m-b-30" style="color: white">
+        <table id="all" class="table table-borderless table-striped table-earning">
+            <tr>
+                <td><b>Type</b></td>
+                <td><b>Code</b></td>
+                <td><b>Degree Title</b></td>
+                <td><b>Title Abbreviation</b></td>
+                <td><b>Faculty</b></td>
+                <td><b>Duration</b></td>
+                <td><b>University</b></td>
+                <td><b>Country</b></td>
+                <td><b>Intake</b></td>
+                <td><b>Location</b></td>
+                <td><b>Accreditation</b></td>
+                <td><b>Description</b></td>
+                <td><b>O/L-Passes</b></td>
+                <td><b>O/L-English</b></td>
+                <td><b>O/L-Maths</b></td>
+                <td><b>A/L-Stream</b></td>
+            </tr>
+        </table>
+        </div>
+        </div>
+    </div>
+    <div class="table-responsive table--no-card m-b-30" style="width: 1000px;">
+    <div id="all_data_f" class="container msg-db" style="display: none">
+    <table id="all_f" class="table table-borderless table-striped table-earning">
+        <tr>
+            <td><b>Code</b></td>
+            <td><b>Course Title</b></td>
+            <td><b>Title Abbreviation</b></td>
+            <td><b>Faculty</b></td>
+            <td><b>Duration</b></td>
+            <td><b>University</b></td>
+            <td><b>Country</b></td>
+            <td><b>Intake</b></td>
+            <td><b>Location</b></td>
+            <td><b>Description</b></td>
+            <td><b>O/L-Minimum passes</b></td>
+            <td><b>O/L-English</b></td>
+            <td><b>O/L-Maths</b></td>
+        </tr>
+    </table>
+    </div>
+</div>
+   <div class="card">
+    <div class="container msg-db" id="local_form">
+        <div class="card-header"> <h1>Degrees and Foundation Courses</h1></div>
+
+        <form>
+            <div class="form-group">
+                <input type="hidden" class="form-control" name="id" id="degree_id"/>
+            </div>
+
+            <div class="form-group">
+                <label>Degree/Foundation</label>
+                <select id="typeDF" class="form-control" name="typeDF">
+                    <option value="" selected="Selected"></option>
+                    <option value="Degree">Degree</option>
+                    <option value="Foundation">Foundation</option>
+                </select>
+            </div>
+
+            <!--Local/Foreign-->
+            <div id="Degree" style="display:none">
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Degree Type</label>
+                            <select id="typeD" class="form-control" name="typeD">
+                                <option value=""></option>
+                                <option value="Local">Local</option>
+                                <option value="Foreign">Foreign</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Degree Code</label>
+                            <input type="text" class="form-control" id="foreign_degree_code"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col"><label>Degree Title</label>
+                        <input type="text" class="form-control" id="foreign_degree_title"/></div>
+                    <div class="col"><label>Title-abbreviation</label>
+                        <input type="text" class="form-control"  id="degree_ftitle_ab"/></div>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>Faculty</label>
+                        <select id="fac" class="form-control" name="faculty" onchange="selectFaculty()">
+                            <option value="" ></option>
+                            <option value="Computing">Computing</option>
+                            <option value="Business">Business</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Architecture">Architecture</option>
+                            <option value="Humanities and Sciences">Humanities and Sciences</option>
+                            <option value="Hospitality and Cookery">Hospitality and Cookery</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Duration</label>
+                        <select id="dur" class="form-control" name="duration" onchange="selectDuration()">
+                            <option value="" ></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>University </label>
+                        <input type="text" id="uni" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Country</label>
+                        <select id="country" class="form-control">
+                            <option value="" selected="Selected"></option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="England">England</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="SriLanka">Sri Lanka</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Intake</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="inta" id="entry" value="February">
+                        <label class="form-check-label">February</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="inta" id="entry" value="June">
+                        <label class="form-check-label">June</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="inta" id="entry" value="September">
+                        <label class="form-check-label">September</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations" id="cen" value="Malabe">
+                        <label class="form-check-label">Malabe</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations" id="cen" value="Colpetty">
+                        <label class="form-check-label">Colpetty</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations" id="cen" value="Matara">
+                        <label class="form-check-label">Matara</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations" id="cen" value="Kandy">
+                        <label class="form-check-label">Kandy</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations" id="cen" value="Jaffna">
+                        <label class="form-check-label">Jaffna</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations" id="cen" value="Kurunegala">
+                        <label class="form-check-label">Kurunegala</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Accreditation</label><br>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arm" name="arms" value="Approved-by-UGC">
+                        <label class="form-check-label">Approved by the University Grants Commission</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arm" name="arms" value="Recognized-by-UGC">
+                        <label class="form-check-label">Recognized by the University Grants Commission</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arm" name="arms" value="Accreted-by-IET-UK">
+                        <label class="form-check-label">Accreted by Institute of Engineers & Technology, UK</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arm" name="arms" value="Member-of-IAU">
+                        <label class="form-check-label">Member of the International Association of Universities</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arm" name="arms" value="Member-of-AACSB">
+                        <label class="form-check-label">Member of Association of Advance Collegiate Schools of Business</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="arm" name="arms" value="Member-of-Association-of-Commonwealth-Universities">
+                        <label class="form-check-label">Member of the Association of Commonwealth Universities</label>
+                    </div>
+
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>Description</label>
+                        <textarea id="fdesc" class="form-control"></textarea>
+                    </div>
+
+                </div>
+                <br>
+                <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Go Back" onclick="goBackFront();">
+
+            <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Next" onclick="entry_career();"/>
+
+            </div>
+
+
+
+
+
+            <!--Foundation-->
+            <div id="Foundation" style="display: none">
+
+                <div class="form-group">
+                    <label>Course Code</label>
+                    <input type="text" class="form-control" name="course_code" id="course_code"/>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>Course Title</label>
+                        <input type="text" class="form-control" placeholder="Foundation Certificate in Information Technology" id="course_title"/>
+                    </div>
+                    <div class="col">
+                        <label>Title-abbreviation</label>
+                        <input type="text" class="form-control" placeholder="FCIT" id="course_title_ab"/>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>Faculty</label>
+                        <select id="faculty_f" class="form-control" name="faculty" onchange="selectFaculty()">
+                            <option value="" selected="Selected"></option>
+                            <option value="Computing">Computing</option>
+                            <option value="Business">Business</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Architecture">Architecture</option>
+                            <option value="Humanities and Sciences">Humanities and Sciences</option>
+                            <option value="Hospitality and Cookery">Hospitality and Cookery</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Duration</label>
+                        <select id="duration_f" class="form-control">
+                            <option value="" selected="Selected"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>University </label>
+                        <input type="text" id="university_f" placeholder="SLIIT-Academy" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Country</label>
+                        <select id="country_f" class="form-control">
+                            <option value="" selected="Selected"></option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="England">England</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="SriLanka">Sri Lanka</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Intake</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="entry1" id="entry" value="January">
+                        <label class="form-check-label">January</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="entry1" id="entry" value="June">
+                        <label class="form-check-label">June</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Location</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations1" id="cen" value="Malabe">
+                        <label class="form-check-label">Malabe</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="locations1" id="cen" value="Colpetty">
+                        <label class="form-check-label">Colpetty</label>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-left: 0;padding-top: 0">
+                    <div class="col">
+                        <label>Description</label>
+                        <textarea id="description_found" class="form-control"></textarea>
+                    </div>
+                </div>
+                <br>
+                <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Go Back" onclick="goBackFront();">
+                <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Next" onclick="ol();" />
+            </div>
+        </form>
+    </div>
+
+                        </div>
+
+
+
+
+
+
+
+    <!--Dakshika Part-->
+     <div class="card">
+    <div class="container msg-db"id="career_form">
+        <div class="card-header"> <h1>Degree Requirements And Career Opportunities</h1></div>
+
+        <div class="container">
+            <form id="myForm">
+            <br>
+                <h5>Educational Requirements</h5>
+                <label>Ordinary Level<input type="checkbox" id="edu_rq" class="form-control" value="ordinary level" onclick="Olevel()"></label>
+
+                <div id="OL" style="display: none">
+                    <label>Minimum Passes Required<select id="minimum" name="min" class="form-control">
+                        <option value="" selected="Selected"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select></label><br>
+
+                    <label><h6>Compulsory Subjects</h6></label><br>
+
+                    <label>English <select id="english" class="form-control" name="english">
+                        <option value="" selected="Selected"></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="S">S</option>
+                        <option value="NA">N/A</option>
+                    </select></label><br>
+                    <label>Maths<select id="mathematics" class="form-control" name="maths"><option value="" selected="Selected"></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="S">S</option>
+                        <option value="NA">N/A</option>
+                    </select></label>
+
+                </div>
+
+                <label>Advanced Level<input type="checkbox" id="myCheck" class="form-control" value="advanced level" onclick="Alevel()"></label>
+                <div id="AL" style="display: none" onclick="checked()">
+
+                    <label>Stream
+                        <select id="stream" name="stream" class="form-control">
+                            <option value="" selected="Selected"></option>
+                            <option value="Any">Any Stream</option>
+                            <option value="Specific">Specific Stream</option>
+                        </select></label><br>
+                    <br>
+
+                    <h6>Minimum Results</h6>
+                    <div class="row" style="padding-left: 0;padding-top: 0">
+                        <div class="col-md-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="ex1" value="Local" onclick="localcheck()">
+                                <label class="form-check-label">Local GCE A/L</label>
+                            </div>
+                            <div id="t1" style="display: none" onclick="checked()" >
+                                <label>Subject 1</label>
+                                <select id="r4" class="form-control">
+                                    <option value="" selected="Selected"></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="S">S</option>
+                                    <option value="N/A">N/A</option>
+                                </select>
+                                <label>Subject 2</label>
+                                <select id="r5" class="form-control">
+                                    <option value="" selected="Selected"></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="S">S</option>
+                                    <option value="N/A">N/A</option>
+                                </select>
+                                <label>Subject 3</label>
+                                <select id="r6" class="form-control">
+                                    <option value="" selected="Selected"></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="S">S</option>
+                                    <option value="N/A">N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="ex2" value="London" onclick="londoncheck()">
+                                <label class="form-check-label">London GCE A/L</label>
+                            </div>
+                            <div id="t2" style="display: none" onclick="checked()" >
+                                <label>Subject 1</label>
+                                <select id="r7" class="form-control">
+                                    <option value="" selected="Selected"></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="S">S</option>
+                                    <option value="N/A">N/A</option>
+                                </select>
+                                <label>Subject 2</label>
+                                <select id="r8" class="form-control">
+                                    <option value="" selected="Selected"></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="S">S</option>
+                                    <option value="N/A">N/A</option>
+                                </select>
+                                <label>Subject 3</label>
+                                <select id="r9" class="form-control">
+                                    <option value="" selected="Selected"></option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="S">S</option>
+                                    <option value="N/A">N/A</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div id="Specific" style="display: none">
+                        <div class="form-group">
+                            <h6>Compulsory Streams</h6>
+                            <div class="row" style="padding-left: 0;padding-top: 0">
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="st" value="Science">
+                                        <label class="form-check-label">Science Stream</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="st" value="Technology">
+                                        <label class="form-check-label">Technology Stream</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="st" value="Other">
+                                        <label class="form-check-label">Other Streams</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <h6>Compulsory Subjects</h6>
+                            <div class="row" style="padding-left: 0;padding-top: 0">
+                                <div class="col-md-4">
+                                    <select id="com1" class="form-control">
+                                        <option value="" selected="Selected"></option>
+                                        <option value="Biology">Biology</option>
+                                        <option value="Bio-Technology">Bio Technology</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Combined-Maths">Combined Maths</option>
+                                        <option value="Engineering-Technology">Engineering Technology</option>
+                                        <option value="Physics">Physics</option>
+                                    </select>
+                                    <select id="com2" class="form-control">
+                                        <option value="" selected="Selected"></option>
+                                        <option value="Biology">Biology</option>
+                                        <option value="Bio-Technology">Bio Technology</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Combined-Maths">Combined Maths</option>
+                                        <option value="Engineering-Technology">Engineering Technology</option>
+                                        <option value="Physics">Physics</option>
+                                    </select>
+                                    <select id="com3" class="form-control">
+                                        <option value="" selected="Selected"></option>
+                                        <option value="Biology">Biology</option>
+                                        <option value="Bio-Technology">Bio Technology</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Combined-Maths">Combined Maths</option>
+                                        <option value="Engineering-Technology">Engineering Technology</option>
+                                        <option value="Physics">Physics</option>
+                                    </select>
+                                </div>
+                               
+                                <div class="col-md-6">
+                                    <h6>If you enter more than 1 subject and all those must be satisfied to follow the degree, select "compulsory" otherwise select "non-compulsory" </h6>
+                                    <select id="c" class="form-control">
+                                        <option value="" selected="Selected"></option>
+                                        <option value="compulsory">compulsory</option>
+                                        <option value="non-compulsory">non-compulsory</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br>
+                <h5>Career Paths</h5>
+                <div class="form2">
+
+                    <div class="row" style="padding-left: 0;padding-top: 0">
+                        <div class="col">
+                            <form name="myForm" id="myForm" onsubmit="return validateForm()">
+                                <input type="hidden" value="paths" id="career_paths" >
+                                <input type="hidden" id="Add" value="Add"><br>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths1" class="form-control"></div>
+                                    <div class="col-md-4"><input type="button" id="more1" value="+" onclick="addmore1()" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths2" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more2" value="+" onclick="addmore2()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths3" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more3" value="+" onclick="addmore3()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths4" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more4" value="+" onclick="addmore4()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths5" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more5" value="+" onclick="addmore5()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths6" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more6" value="+" onclick="addmore6()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths7" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more7" value="+" onclick="addmore7()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths8" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more8" value="+" onclick="addmore8()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths9" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more9" value="+" onclick="addmore9()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths10" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more10" value="+" onclick="addmore10()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths11" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more11" value="+" onclick="addmore11()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths12" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more12" value="+" onclick="addmore12()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths13" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more13" value="+" onclick="addmore13()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths14" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more14" value="+" onclick="addmore14()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths15" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more15" value="+" onclick="addmore15()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths16" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"><input type="button" id="more16" value="+" onclick="addmore16()" style="display: none" class="btn btn-primary"></div>
+                                </div>
+                                <div class="row" style="padding-left: 0;padding-top: 0">
+                                    <div class="col-md-4"><input type="text" id="career_paths17" class="form-control" style="display: none"></div>
+                                    <div class="col-md-4"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <br><input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Save" onclick="save_Degree();">
+                    <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Update" onclick="update_Degree();">
+                    <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Go Back" onclick="goBack();">
+                </div>
+            </form>
+        </div>
+    </div>
+     </div>
+    <div class="container msg-db"id="entry_ol">
+        <h2>Course Requirements</h2>
+
+        <div class="container">
+            <form>
+                <h4>O/L Requirements</h4>
+                <div id="OL">
+                    <label>Minimum Passes Required<select id="minimum1" name="min" class="form-control">
+                        <option value="" selected="Selected"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select></label><br>
+
+                    <label><h6>Compulsory Subjects</h6></label><br>
+
+                    <label>English <select id="english1" class="form-control" name="english">
+                        <option value="" selected="Selected"></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="S">S</option>
+                        <option value="NA">N/A</option>
+                    </select></label><br>
+                    <label>Maths<select id="mathematics1" class="form-control" name="maths"><option value="" selected="Selected"></option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="S">S</option>
+                        <option value="NA">N/A</option>
+                    </select></label>
+
+                </div>
+
+                <div class="form-group">
+                    <br><input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Save" onclick="save_Degree_f();">
+                    <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Update" onclick="update_Degree_f();">
+                    <input type="button" class="btn btn-lg btn-info btn-block" style="width: 300px;" value="Go Back" onclick="goBack();">
+                </div>
+            </form>
+        </div>
+
+<script src="DegreeManagement.js"></script>
+    </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

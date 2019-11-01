@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Push Notification</title>
+<style>
+.btn {
+	background: #e61025;
+	width: 180px;
+	height: 50px;
+	padding: 4px 0;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 3px;
+
+
+	font-family: 'Roboto';
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFF;
+	user-select: none;
+
+&
+:hover {
+	cursor: pointer;
+}
+
+&
+:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	border-radius: 50%;
+	background-color: darken(#f1c40f, 20%);
+	opacity: 0.4;
+	bottom: -30px;
+}
+
+}
+</style>	
+	
+</head>
+<body>
+<button class="btn" id="dnperm">Subscribe</button>
+
+<ul id="comment">
+</ul>
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<script>
+	var dnperm = document.getElementById('dnperm');
+	dnperm.addEventListener('click',function(e){
+		e.preventDefault();
+		if(!window.Notification){
+			alert('Not supported');
+		}else{
+			Notification.requestPermission().then(function(p){
+				if(p=='denied'){
+					alert('You denied to show notification');
+				}else if(p=='granted'){
+					alert('You allowed to show notification');
+				}
+			});
+		}
+	});
+	
+	
+  var firebaseConfig = {
+    apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+    authDomain: "s2guide.firebaseapp.com",
+    databaseURL: "https://s2guide.firebaseio.com",
+    projectId: "s2guide",
+    storageBucket: "s2guide.appspot.com",
+    messagingSenderId: "457852779269",
+    appId: "1:457852779269:web:7e27f12f4d807544"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+	
+  var database = firebase.database().ref().child("notices");
+  
+  database.limitToLast(1).on('child_added', function(data) {
+    	if(Notification.permission!=='default'){
+					var notify;
+					
+						notify= new Notification('New message from SLIIT',{
+							'body': data.val().notice_topic,
+							'icon': 'sliit.png',
+							'tag': data.getKey()
+						});
+						notify.onclick = function(){
+							//alert(this.tag);
+							 //window.open("https://www.sliit.lk");
+							//var notice_description = $("#notice_description").val();
+							window.open(data.val().notice_description);
+						}
+		}else{
+			//alert('Please allow the notification first');
+			//<a href='#' id="dnperm">Reuqest Permission</a><br /><br />
+		}
+		
+  });
+</script>
+</body>
+</html>

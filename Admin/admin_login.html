@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src='js/main.js'></script>
+</head>
+<body>
+<div id="login_div" >
+    <div class="log">
+        <div class="main-div">
+            <h3 style="font-size: 30px">AdminLogin</h3><br>
+            <input type="email" placeholder="Email" id="email_field" />
+
+            <input type="password" placeholder="Password" id="password_field" />
+
+            <button onclick="adminLogin()">Login to Account</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+        authDomain: "s2guide.firebaseapp.com",
+        databaseURL: "https://s2guide.firebaseio.com",
+        projectId: "s2guide",
+        storageBucket: "s2guide.appspot.com",
+        messagingSenderId: "457852779269",
+        appId: "1:457852779269:web:7e27f12f4d807544"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+
+    function adminLogin(){
+        console.log("login invoked");
+        var email = document.getElementById('email_field').value;
+        var passwrd = document.getElementById('password_field').value;
+        const auth = firebase.auth();
+        const promise = auth.signInWithEmailAndPassword(email,passwrd);
+        promise.catch(e=> console.log(e.message));
+        console.log(email,passwrd);
+    }
+    firebase.auth().onAuthStateChanged(firebaseUser=>{
+        if(firebaseUser){
+            console.log(firebaseUser);
+            window.location.href = 'index.html';
+
+        }else{
+            console.log("not logged in");
+
+        }
+    });
+</script>
+</body>
+</html>

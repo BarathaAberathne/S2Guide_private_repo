@@ -1,0 +1,439 @@
+<html>
+<head>
+ <title>S2Guide - Quiz Part Two</title>
+
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+ <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+ <link rel="stylesheet" type="text/css" href="quizOne.css">
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+    authDomain: "s2guide.firebaseapp.com",
+    databaseURL: "https://s2guide.firebaseio.com",
+    projectId: "s2guide",
+    storageBucket: "s2guide.appspot.com",
+    messagingSenderId: "457852779269",
+    appId: "1:457852779269:web:7e27f12f4d807544"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('QuizPartTwo_Humanities/');
+
+  </script>
+ <script src="humanitiesQuiz.js"></script>
+
+</head>
+<body>
+
+<div class="page-wrapper">
+
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Adverticements</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+            </a>
+
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="Dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Advertisements</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="page-container">
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">   <div class="header-wrap">
+                    <h2 style="text-align: center"> Create Quiz</h2>
+                    <div class="header-button">
+                        <div class="account-wrap">
+                            <div class="account-item clearfix js-item-menu">
+
+                                <a href="#">
+                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                <div class="account-dropdown js-dropdown">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content" style="background-image: url('images/admin2.png')">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header"> <h1>Quiz Part TWO - Finding best Degree for Humanities and Sciences</h1></div>
+
+<a href="edit_HS.html">View All Current Questions of this Quiz</a>
+
+  <h3> Add new question </h3>
+  <table class="table table-hover">
+   <tr>
+   
+    <td><input type="text" name="q_id" id="hum_id" hidden/></td>
+   </tr>
+   <tr>
+    <td>Question: </td>
+    <td><textarea class="form-control" rows="4" cols="50" name="q_topic" id="q_topic"></textarea></td>
+   </tr>
+ 
+   
+  
+</table>
+    
+<button onclick="addAnswer()" class="btn btn-lg" style=" background-color: #17a2b8;border-color: #17a2b8;color: white">Add Answer</button>
+
+
+
+<div class="answer" id="DivAns1" style="display:none">
+  1. <input type="text" name="ans" id="ans1" /> 
+  <p></p>
+  <table>
+    <tr>
+      <td><b>Degree</b></td>
+      <td><b>Score</b></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="BPS" value="BPS" id="BPS1" onclick="enable1(this.id)">BEd(Hons) in Physical Sciences</td>
+      <td><input type="number" class="form-control" name="BPS" id="BPS_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="BBS" value="BBS" id="BBS1" onclick="enable1(this.id)" >BEd(Hons) in Biological Sciences</td>
+      <td><input type="number" class="form-control" name="BBS" id="BBS_score1" size="3" disabled/></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="BBT" value="BBT" id="BBT1" onclick="enable1(this.id)">BSc(Hons) in Bio-Technology</td>
+      <td><input type="number" class="form-control" name="BBT" id="BBT_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" name="BPsy" value="BPsy" id="BPsy1" onclick="enable1(this.id)">BSc(Hons) Psychology(UK)</td>
+      <td><input type="number" class="form-control" name="BPsy" id="BPsy_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="BNurse" value="BNurse" id="BNurse1" onclick="enable1(this.id)">BSc(Hons) Nursing(UK)</td>
+        <td><input type="number" class="form-control" name="BNurse" id="BNurse_score1" size="3" disabled/> </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="LLB" value="LLB" id="LLB1" onclick="enable1(this.id)">LLB(Hons) Law(UK)</td>
+        <td><input type="number" class="form-control" name="LLB" id="LLB_score1" size="3" disabled/> </td>
+    </tr>
+  </table>
+ 
+</div>
+ 
+<div class="answer" id="DivAns2" style="display:none">
+   
+    2. <input type="text" name="ans" id="ans2" /> 
+    <p></p>
+    <table>
+      <tr>
+        <td><b>Degree</b></td>
+        <td><b>Score</b></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BPS" value="BPS" id="BPS2" onclick="enable2(this.id)">BEd(Hons) in Physical Sciences</td>
+        <td><input type="number" class="form-control" name="BPS" id="BPS_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BBS" value="BBS" id="BBS2" onclick="enable2(this.id)" >BEd(Hons) in Biological Sciences</td>
+        <td><input type="number" class="form-control" name="BBS" id="BBS_score2" size="3" disabled/></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BBT" value="BBT" id="BBT2" onclick="enable2(this.id)">BSc(Hons) in Bio-Technology</td>
+        <td><input type="number" class="form-control" name="BBT" id="BBT_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BPsy" value="BPsy" id="BPsy2" onclick="enable2(this.id)">BSc(Hons) Psychology(UK)</td>
+        <td><input type="number" class="form-control" name="BPsy" id="BPsy_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+          <td><input type="checkbox" name="BNurse" value="BNurse" id="BNurse2" onclick="enable2(this.id)">BSc(Hons) Nursing(UK)</td>
+          <td><input type="number" class="form-control" name="BNurse" id="BNurse_score2" size="3" disabled/> </td>
+      </tr>
+      <tr>
+          <td><input type="checkbox" name="LLB" value="LLB" id="LLB2" onclick="enable2(this.id)">LLB(Hons) Law(UK)</td>
+          <td><input type="number" class="form-control" name="LLB" id="LLB_score2" size="3" disabled/> </td>
+      </tr>
+    </table>
+   
+</div>
+
+<div class="answer" id="DivAns3" style="display:none">
+    3. <input type="text" name="ans" id="ans3" /> 
+    <p></p>
+    <table>
+      <tr>
+        <td><b>Faculty</b></td>
+        <td><b>Score</b></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BPS" value="BPS" id="BPS3" onclick="enable3(this.id)">BEd(Hons) in Physical Sciences</td>
+        <td><input type="number" class="form-control" name="BPS" id="BPS_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BBS" value="BBS" id="BBS3" onclick="enable3(this.id)" >BEd(Hons) in Biological Sciences</td>
+        <td><input type="number" class="form-control" name="BBS" id="BBS_score3" size="3" disabled/></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BBT" value="BBT" id="BBT3" onclick="enable3(this.id)">BSc(Hons) in Bio-Technology</td>
+        <td><input type="number" class="form-control" name="BBT" id="BBT_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="BPsy" value="BPsy" id="BPsy3" onclick="enable3(this.id)">BSc(Hons) Psychology(UK)</td>
+        <td><input type="number" class="form-control" name="BPsy" id="BPsy_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+          <td><input type="checkbox" name="BNurse" value="BNurse" id="BNurse3" onclick="enable3(this.id)">BSc(Hons) Nursing(UK)</td>
+          <td><input type="number" class="form-control" name="BNurse" id="BNurse_score3" size="3" disabled/> </td>
+      </tr>
+      <tr>
+          <td><input type="checkbox" name="LLB" value="LLB" id="LLB3" onclick="enable3(this.id)">LLB(Hons) Law(UK)</td>
+          <td><input type="number" class="form-control" name="LLB" id="LLB_score3" size="3" disabled/> </td>
+      </tr>
+    </table>
+   
+</div>
+
+<div class="answer" id="DivAns4" style="display:none">
+      4. <input type="text" name="ans" id="ans4" /> 
+      <p></p>
+      <table>
+        <tr>
+          <td><b>Degree</b></td>
+          <td><b>Score</b></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="BPS" value="BPS" id="BPS4" onclick="enable4(this.id)">BEd(Hons) in Physical Sciences</td>
+            <td><input type="number" class="form-control" name="BPS" id="BPS_score4" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BBS" value="BBS" id="BBS4" onclick="enable4(this.id)" >BEd(Hons) in Biological Sciences</td>
+            <td><input type="number" class="form-control" name="BBS" id="BBS_score4" size="3" disabled/></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BBT" value="BBT" id="BBT4" onclick="enable4(this.id)">BSc(Hons) in Bio-Technology</td>
+            <td><input type="number" class="form-control" name="BBT" id="BBT_score4" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BPsy" value="BPsy" id="BPsy4" onclick="enable4(this.id)">BSc(Hons) Psychology(UK)</td>
+            <td><input type="number" class="form-control" name="BPsy" id="BPsy_score4" size="3" disabled/> </td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" name="BNurse" value="BNurse" id="BNurse4" onclick="enable4(this.id)">BSc(Hons) Nursing(UK)</td>
+              <td><input type="number" class="form-control" name="BNurse" id="BNurse_score4" size="3" disabled/> </td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" name="LLB" value="LLB" id="LLB4" onclick="enable4(this.id)">LLB(Hons) Law(UK)</td>
+              <td><input type="number" class="form-control" name="LLB" id="LLB_score4" size="3" disabled/> </td>
+          </tr>
+      </table>
+     
+</div>
+
+<div class="answer" id="DivAns5" style="display:none">
+        5. <input type="text" name="ans" id="ans5" /> 
+        <p></p>
+        <table>
+          <tr>
+            <td><b>Degree</b></td>
+            <td><b>Score</b></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BPS" value="BPS" id="BPS5" onclick="enable5(this.id)">BEd(Hons) in Physical Sciences</td>
+            <td><input type="number" class="form-control" name="BPS" id="BPS_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BBS" value="BBS" id="BBS5" onclick="enable5(this.id)" >BEd(Hons) in Biological Sciences</td>
+            <td><input type="number" class="form-control" name="BBS" id="BBS_score5" size="3" disabled/></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BBT" value="BBT" id="BBT5" onclick="enable5(this.id)">BSc(Hons) in Bio-Technology</td>
+            <td><input type="number" class="form-control" name="BBT" id="BBT_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="BPsy" value="BPsy" id="BPsy5" onclick="enable5(this.id)">BSc(Hons) Psychology(UK)</td>
+            <td><input type="number" class="form-control" name="BPsy" id="BPsy_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" name="BNurse" value="BNurse" id="BNurse5" onclick="enable5(this.id)">BSc(Hons) Nursing(UK)</td>
+              <td><input type="number" class="form-control" name="BNurse" id="BNurse_score5" size="3" disabled/> </td>
+          </tr>
+          <tr>
+              <td><input type="checkbox" name="LLB" value="LLB" id="LLB5" onclick="enable5(this.id)">LLB(Hons) Law(UK)</td>
+              <td><input type="number" class="form-control" name="LLB" id="LLB_score5" size="3" disabled/> </td>
+          </tr>
+        </table>
+       
+</div>
+
+<div class="answer" id="DivAns6" style="display:none">
+          6. <input type="text" name="ans" id="ans6" /> 
+          <p></p>
+          <table>
+            <tr>
+              <td><b>Degree</b></td>
+              <td><b>Score</b></td>
+            </tr>
+           
+            <tr>
+                <td><input type="checkbox" name="BPS" value="BPS" id="BPS6" onclick="enable6(this.id)">BEd(Hons) in Physical Sciences</td>
+                <td><input type="number" class="form-control" name="BPS" id="BPS_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="BBS" value="BBS" id="BBS6" onclick="enable6(this.id)" >BEd(Hons) in Biological Sciences</td>
+                <td><input type="number" class="form-control" name="BBS" id="BBS_score6" size="3" disabled/></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="BBT" value="BBT" id="BBT6" onclick="enable6(this.id)">BSc(Hons) in Bio-Technology</td>
+                <td><input type="number" class="form-control" name="BBT" id="BBT_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" name="BPsy" value="BPsy" id="BPsy6" onclick="enable6(this.id)">BSc(Hons) Psychology(UK)</td>
+                <td><input type="number" class="form-control" name="BPsy" id="BPsy_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td><input type="checkbox" name="BNurse" value="BNurse" id="BNurse6" onclick="enable6(this.id)">BSc(Hons) Nursing(UK)</td>
+                  <td><input type="number" class="form-control" name="BNurse" id="BNurse_score6" size="3" disabled/> </td>
+              </tr>
+              <tr>
+                  <td><input type="checkbox" name="LLB" value="LLB" id="LLB6" onclick="enable6(this.id)">LLB(Hons) Law(UK)</td>
+                  <td><input type="number" class="form-control" name="LLB" id="LLB_score6" size="3" disabled/> </td>
+              </tr>
+            </table>
+         
+</div>
+<br><br>
+     <input type="button" class="btn btn-lg btn-info btn-block" value="Save" onclick="save_n();" />
+
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

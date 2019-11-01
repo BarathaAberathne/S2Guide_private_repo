@@ -1,0 +1,116 @@
+<html>
+
+<head>
+
+    <script src="quiz_algo.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+</head>
+
+<body>
+    <input type="button" onclick="print()">
+
+    <script>
+        function print(){
+            var points = [40, 100, 1, 5, 25, 101];
+            console.log(points);
+            var sorted = sortNumbers(points);
+            console.log(sorted);
+        }
+        function cc() {
+            var str = ['hkms', 'gghh', 'lmnop'];
+            var json_str = JSON.stringify(str);
+            createCookie('aldegrees', json_str);
+            window.location.href = '../quiz_p1.html';
+        }
+
+
+        //
+        function check() {
+            var std_str = "Maths";
+            var dg_str = "Maths Commerce";
+
+            var rg = new RegExp(std_str);
+            var res = dg_str.match(rg);
+            var rtn;
+            if (res == null) {
+                rtn = false;
+            } else {
+                rtn = true;
+            }
+            return rtn;
+        }
+
+        function getCompulsorySubs() {
+            var spc = " ";
+            var dg_str = "Maths Commerce Arts ";
+            var rg = new RegExp(spc, 'g');
+            var res = dg_str.match(rg);
+            console.log(res.length);
+        }
+        function countComSubs(str) {
+            var count = 1;
+            var spc = " ";
+            var rg = new RegExp(spc, 'g');
+            var res = str.match(rg);
+            count = res.length;
+            return count;
+        }
+        function matchSubs() {
+            var s1 = "Maths";
+            var s2 = "Physics";
+            var s3 = "IT";
+            var sublist1 = "Maths Physics IT ";
+            var sublist1 = "Art ";
+
+
+
+        }
+        function matchStream(std_strm, dg_strm) {
+            var std_str = std_strm;
+            var dg_str = dg_strm;
+
+            var rg = new RegExp(std_str);
+            var res = dg_str.match(rg);
+            var rtn;
+            if (res == null) {
+                rtn = false;
+            } else {
+                rtn = true;
+            }
+            return rtn;
+        }
+        function createCookie(name, value, days) {
+            var expires;
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toGMTString();
+            }
+            else {
+                expires = "";
+            }
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=");
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1;
+                    c_end = document.cookie.indexOf(";", c_start);
+                    if (c_end == -1) {
+                        c_end = document.cookie.length;
+                    }
+                    return unescape(document.cookie.substring(c_start, c_end));
+                }
+            }
+            return "";
+        }
+        
+        function sortNumbers(points) {
+            points.sort(function (a, b) { return b - a });
+            return points;        
+        }
+    </script>
+</body>
+
+</html>

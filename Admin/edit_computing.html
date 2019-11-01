@@ -1,0 +1,1288 @@
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+        <script src="edit.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/quizBiz.css">
+        <!-- Fontfaces CSS-->
+        <link href="css/font-face.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+        <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+        <!-- Bootstrap CSS-->
+        <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+        <!-- Vendor CSS-->
+        <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+        <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+        <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+        <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+        <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+        <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+        <!-- Main CSS-->
+        <link href="css/theme.css" rel="stylesheet" media="all">
+        <link href="css/style.css" rel="stylesheet">
+
+
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+            authDomain: "s2guide.firebaseapp.com",
+            databaseURL: "https://s2guide.firebaseio.com",
+            projectId: "s2guide",
+            storageBucket: "s2guide.appspot.com",
+            messagingSenderId: "457852779269",
+            appId: "1:457852779269:web:7e27f12f4d807544"
+        };
+             // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.database().ref('QuizPartTwo_Computing/');
+        </script>
+    </head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" href="index.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Adverticements</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <!-- END HEADER MOBILE-->
+
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img src="images/s2.jpeg" style="height: 78px" alt="S2Guide" />
+            </a>
+
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="Dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>Home</a>
+
+                    </li>
+                    <li>
+                        <a href="inquery_lists.html">
+                            <i class="fas fa-address-book"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="Quiz.html">
+                            <i class="fas fa-table"></i>Create Quiz</a>
+                    </li>
+                    <li>
+                        <a href="DegreeManagement.html">
+                            <i class="fas fa-graduation-cap"></i>Degree Management</a>
+                    </li>
+                    <li>
+                        <a href="add_notice.html">
+                            <i class="fas fa-calendar-alt"></i>Notices</a>
+                    </li>
+                    <li>
+                        <a href="adverticement.html">
+                            <i class="fas fa-bell"></i>Advertisements</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="page-container">
+
+        <header class="header-desktop">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="header-wrap">
+                        <h2 style="text-align: center"> Quiz</h2>
+                        <div class="header-button">
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+
+                                    <a href="#">
+                                        <i class="zmdi zmdi-power"></i>Logout</a>
+                                    <div class="account-dropdown js-dropdown">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <br>
+        <div class="main-content" style="background-image: url('images/admin2.png')">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header"> <h1>Edit Computing Faculty Quiz</h1></div>
+
+
+
+<script>
+
+var countQuestion = 1;
+var countAns = 1;           
+var databaseRef = firebase.database().ref('QuizPartTwo_Computing/').orderByKey();
+    
+    databaseRef.once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+	var childKey = childSnapshot.key;
+	var childData = childSnapshot.val();
+
+	//q is question
+	var p = document.createElement("p");
+	p.setAttribute("class", "answer");
+	p.id = "para"+ countQuestion;
+  
+	document.body.appendChild(p);
+	// Append <p> to <body>
+
+
+    var qIndex = document.createElement("INPUT");
+    qIndex.setAttribute("type", "hidden");
+    qIndex.setAttribute("value", childKey);
+   
+    qIndex.id = "qid" + countQuestion;
+    p.appendChild(qIndex);
+
+    var q = document.createElement("INPUT");
+    q.setAttribute("type", "text");
+    q.setAttribute("size", 120);
+    q.setAttribute("class", "form-control");
+    q.id = "q" + countQuestion;
+
+    
+	q.setAttribute("value", childData.question);
+  
+	p.append(" Question: " );
+
+	p.appendChild(q);
+ 
+
+	p.appendChild(document.createElement("br"));
+	p.appendChild(document.createElement("br"));
+	p.append(" Answer 1: ");  
+ 
+//ans1 is answer
+var ans1 = document.createElement("INPUT");
+ans1.setAttribute("type", "text");
+ans1.setAttribute("size", 80);
+ans1.setAttribute("class", "form-control");
+ans1.id = "ans1" + countAns; 
+countAns++;
+ans1.setAttribute("value", childData.ans1.answer);
+p.appendChild(ans1);
+  
+ 
+p.appendChild( document.createTextNode( '\u00A0\u00A0' ) );
+
+p.appendChild(document.createElement("br"));
+
+p.appendChild(document.createElement("br"));
+	
+	
+	p.append("Information Technology");
+	p.append("   ");
+	var IT_score1 = document.createElement("INPUT");
+	IT_score1.setAttribute("type", "text");
+	IT_score1.setAttribute("size", 3);
+     IT_score1.setAttribute("class", "form-controls");
+	IT_score1.id = "IT_score1" + countQuestion;
+	IT_score1.setAttribute("value", childData.ans1.Information_Technology);
+	p.appendChild(IT_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append("Informations Systems Engineering");
+
+	var ISE_score1 = document.createElement("INPUT");
+	ISE_score1.setAttribute("type", "text");
+	ISE_score1.setAttribute("size", 3);
+	ISE_score1.setAttribute("class", "form-controls");
+	ISE_score1.id = "ISE_score1" + countQuestion;
+	ISE_score1.setAttribute("value", childData.ans1.Informations_Systems_Engineering);
+	p.appendChild(ISE_score1);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append("Software Engineering");
+
+	var SE_score1 = document.createElement("INPUT");
+	SE_score1.setAttribute("type", "text");
+	SE_score1.setAttribute("size", 3);
+	SE_score1.setAttribute("class", "form-controls");
+	SE_score1.id = "SE_score1" + countQuestion;
+	SE_score1.setAttribute("value", childData.ans1.Software_Engineering);
+	p.appendChild(SE_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append("Computer Systems Networking ");
+
+	var CSN_score1 = document.createElement("INPUT");
+	CSN_score1.setAttribute("type", "text");
+	CSN_score1.setAttribute("size", 3);
+	CSN_score1.setAttribute("class", "form-controls");
+	CSN_score1.id = "CSN_score1" + countQuestion;
+	CSN_score1.setAttribute("value", childData.ans1.Computer_Systems_Networking );
+	p.appendChild(CSN_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Bsc (Hons) in IT sp. In Data Science");
+
+	var DS_score1 = document.createElement("INPUT");
+	DS_score1.setAttribute("type", "text");
+	DS_score1.setAttribute("size", 3);
+	DS_score1.setAttribute("class", "form-controls");
+	DS_score1.id = "DS_score1" + countQuestion;
+	DS_score1.setAttribute("value", childData.ans1.Data_Science);
+	p.appendChild(DS_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Cyber Security ");
+
+	var CS_score1 = document.createElement("INPUT");
+	CS_score1.setAttribute("type", "text");
+	CS_score1.setAttribute("size", 3);
+	CS_score1.setAttribute("class", "form-controls");
+	CS_score1.id = "CS_score1" + countQuestion;
+	CS_score1.setAttribute("value", childData.ans1.Cyber_Security);
+	p.appendChild(CS_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Interactive Media ");
+
+	var IM_score1 = document.createElement("INPUT");
+	IM_score1.setAttribute("type", "text");
+	IM_score1.setAttribute("size", 3);
+	IM_score1.setAttribute("class", "form-controls");
+	IM_score1.id = "IM_score1" + countQuestion;
+	IM_score1.setAttribute("value", childData.ans1.Interactive_Media);
+	p.appendChild(IM_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Software Engineering (Curtin)");
+
+	var SEcur_score1 = document.createElement("INPUT");
+	SEcur_score1.setAttribute("type", "text");
+	SEcur_score1.setAttribute("size", 3);
+	SEcur_score1.setAttribute("class", "form-controls");
+	SEcur_score1.id = "SEcur_score1" + countQuestion;
+	SEcur_score1.setAttribute("value", childData.ans1.Software_Engineering_Curtin);
+	p.appendChild(SEcur_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Systems & Networking (Curtin) ");
+
+	var CSNcur_score1 = document.createElement("INPUT");
+	CSNcur_score1.setAttribute("type", "text");
+	CSNcur_score1.setAttribute("size", 3);
+	CSNcur_score1.setAttribute("class", "form-controls");
+	CSNcur_score1.id = "CSNcur_score1" + countQuestion;
+	CSNcur_score1.setAttribute("value", childData.ans1.Computer_Systems_and_Networking_Curtin);
+	p.appendChild(CSNcur_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Information Technology (Curtin) ");
+
+	var ITcur_score1 = document.createElement("INPUT");
+	ITcur_score1.setAttribute("type", "text");
+	ITcur_score1.setAttribute("size", 3);
+	ITcur_score1.setAttribute("class", "form-controls");
+	ITcur_score1.id = "ITcur_score1" + countQuestion;
+	ITcur_score1.setAttribute("value", childData.ans1.Information_Technology_Curtin);
+	p.appendChild(ITcur_score1);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Science and Software Engineering (Bedfordshire)");
+
+	var CSSEbed_score1 = document.createElement("INPUT");
+	CSSEbed_score1.setAttribute("type", "text");
+	CSSEbed_score1.setAttribute("size", 3);
+	CSSEbed_score1.setAttribute("class", "form-controls");
+	CSSEbed_score1.id = "CSSEbed_score1" + countQuestion;
+	CSSEbed_score1.setAttribute("value", childData.ans1.Computer_Science_and_Software_Engineering_Bedfordshire);
+	p.appendChild(CSSEbed_score1);
+        p.appendChild(document.createElement("br"));
+
+
+	p.append(" Computer Networking (Bedfordshire) ");
+
+	var CNbed_score1 = document.createElement("INPUT");
+	CNbed_score1.setAttribute("type", "text");
+	CNbed_score1.setAttribute("size", 3);
+	CNbed_score1.setAttribute("class", "form-controls");
+	CNbed_score1.id = "CNbed_score1" + countQuestion;
+	CNbed_score1.setAttribute("value", childData.ans1.Computer_Networking_Bedfordshire);
+	p.appendChild(CNbed_score1);
+
+	p.appendChild(document.createElement("br"));
+	p.appendChild(document.createElement("br"));
+
+p.append(" Answer2: ");
+
+var ans2 = document.createElement("INPUT");
+ans2.setAttribute("type", "text");
+ans2.setAttribute("size", 80);
+ans2.setAttribute("class", "form-control");
+ans2.id = "ans2" + countAns; 
+countAns++;
+ans2.setAttribute("value", childData.ans2.answer);
+p.appendChild(ans2);
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+	p.append("Information Technology");
+	p.append("   ");
+	var IT_score2 = document.createElement("INPUT");
+	IT_score2.setAttribute("type", "text");
+	IT_score2.setAttribute("size", 3);
+	IT_score2.setAttribute("class", "form-controls");
+	IT_score2.id = "IT_score2" + countQuestion;
+	IT_score2.setAttribute("value", childData.ans2.Information_Technology);
+
+	p.appendChild(IT_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append("Informations Systems Engineering");
+
+	var ISE_score2 = document.createElement("INPUT");
+	ISE_score2.setAttribute("type", "text");
+	ISE_score2.setAttribute("size", 3);
+	ISE_score2.setAttribute("class", "form-controls");
+	ISE_score2.id = "ISE_score2" + countQuestion;
+	ISE_score2.setAttribute("value", childData.ans2.Informations_Systems_Engineering);
+	p.appendChild(ISE_score2);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append("Software Engineering");
+
+	var SE_score2 = document.createElement("INPUT");
+	SE_score2.setAttribute("type", "text");
+	SE_score2.setAttribute("size", 3);
+	SE_score2.setAttribute("class", "form-controls");
+	SE_score2.id = "SE_score2" + countQuestion;
+	SE_score2.setAttribute("value", childData.ans2.Software_Engineering);
+	p.appendChild(SE_score2);
+        p.appendChild(document.createElement("br"));
+
+        p.append("Computer Systems Networking ");
+
+	var CSN_score2 = document.createElement("INPUT");
+	CSN_score2.setAttribute("type", "text");
+	CSN_score2.setAttribute("size", 3);
+    CSN_score2.setAttribute("class", "form-controls");
+	CSN_score2.id = "CSN_score2" + countQuestion;
+	CSN_score2.setAttribute("value", childData.ans2.Computer_Systems_Networking );
+	p.appendChild(CSN_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Bsc (Hons) in IT sp. In Data Science");
+
+	var DS_score2 = document.createElement("INPUT");
+	DS_score2.setAttribute("type", "text");
+	DS_score2.setAttribute("size", 3);
+	DS_score2.setAttribute("class", "form-controls");
+	DS_score2.id = "DS_score2" + countQuestion;
+	DS_score2.setAttribute("value", childData.ans2.Data_Science);
+	p.appendChild(DS_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Cyber Security ");
+
+	var CS_score2 = document.createElement("INPUT");
+	CS_score2.setAttribute("type", "text");
+	CS_score2.setAttribute("size", 3);
+	CS_score2.setAttribute("class", "form-controls");
+	CS_score2.id = "CS_score2" + countQuestion;
+	CS_score2.setAttribute("value", childData.ans2.Cyber_Security);
+	p.appendChild(CS_score2);
+        p.appendChild(document.createElement("br"));
+
+        p.append(" Interactive Media ");
+
+	var IM_score2 = document.createElement("INPUT");
+	IM_score2.setAttribute("type", "text");
+	IM_score2.setAttribute("size", 3);
+	IM_score2.setAttribute("class", "form-controls");
+	IM_score2.id = "IM_score2" + countQuestion;
+	IM_score2.setAttribute("value", childData.ans2.Interactive_Media);
+	p.appendChild(IM_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Software Engineering (Curtin)");
+
+	var SEcur_score2 = document.createElement("INPUT");
+	SEcur_score2.setAttribute("type", "text");
+	SEcur_score2.setAttribute("size", 3);
+	SEcur_score2.setAttribute("class", "form-controls");
+	SEcur_score2.id = "SEcur_score2" + countQuestion;
+	SEcur_score2.setAttribute("value", childData.ans2.Software_Engineering_Curtin);
+	p.appendChild(SEcur_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Systems & Networking (Curtin) ");
+
+	var CSNcur_score2 = document.createElement("INPUT");
+	CSNcur_score2.setAttribute("type", "text");
+	CSNcur_score2.setAttribute("size", 3);
+	CSNcur_score2.setAttribute("class", "form-controls");
+	CSNcur_score2.id = "CSNcur_score2" + countQuestion;
+	CSNcur_score2.setAttribute("value", childData.ans2.Computer_Systems_and_Networking_Curtin);
+	p.appendChild(CSNcur_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Information Technology (Curtin) ");
+
+	var ITcur_score2 = document.createElement("INPUT");
+	ITcur_score2.setAttribute("type", "text");
+	ITcur_score2.setAttribute("size", 3);
+	ITcur_score2.setAttribute("class", "form-controls");
+	ITcur_score2.id = "ITcur_score2" + countQuestion;
+	ITcur_score2.setAttribute("value", childData.ans2.Information_Technology_Curtin);
+	p.appendChild(ITcur_score2);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Science and Software Engineering (Bedfordshire)");
+
+	var CSSEbed_score2 = document.createElement("INPUT");
+	CSSEbed_score2.setAttribute("type", "text");
+	CSSEbed_score2.setAttribute("size", 3);
+	CSSEbed_score2.setAttribute("class", "form-controls");
+	CSSEbed_score2.id = "CSSEbed_score2" + countQuestion;
+	CSSEbed_score2.setAttribute("value", childData.ans2.Computer_Science_and_Software_Engineering_Bedfordshire);
+	p.appendChild(CSSEbed_score2);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Networking (Bedfordshire) ");
+
+	var CNbed_score2 = document.createElement("INPUT");
+	CNbed_score2.setAttribute("type", "text");
+	CNbed_score2.setAttribute("size", 3);
+	CNbed_score2.setAttribute("class", "form-controls");
+	CNbed_score2.id = "CNbed_score2" + countQuestion;
+	CNbed_score2.setAttribute("value", childData.ans2.Computer_Networking_Bedfordshire);
+	p.appendChild(CNbed_score2);
+
+	p.appendChild(document.createElement("br"));
+	p.appendChild(document.createElement("br"));
+
+p.append("  Answer3: ");
+
+var ans3 = document.createElement("INPUT");
+ans3.setAttribute("type", "text");
+ans3.setAttribute("size", 80);
+ans3.setAttribute("class", "form-control");
+ans3.id = "ans3" + countAns; 
+countAns++;
+ans3.setAttribute("value", childData.ans3.answer);
+p.appendChild(ans3);
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+	
+	p.append("Information Technology");
+	p.append("   ");
+	var IT_score3 = document.createElement("INPUT");
+	IT_score3.setAttribute("type", "text");
+	IT_score3.setAttribute("size", 3);
+	IT_score3.setAttribute("class", "form-controls");
+	IT_score3.id = "IT_score3" + countQuestion;
+	IT_score3.setAttribute("value", childData.ans3.Information_Technology);
+
+	p.appendChild(IT_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append("Informations Systems Engineering");
+
+	var ISE_score3 = document.createElement("INPUT");
+	ISE_score3.setAttribute("type", "text");
+	ISE_score3.setAttribute("size", 3);
+	ISE_score3.setAttribute("class", "form-controls");
+	ISE_score3.id = "ISE_score3" + countQuestion;
+	ISE_score3.setAttribute("value", childData.ans3.Informations_Systems_Engineering);
+	p.appendChild(ISE_score3);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append("Software Engineering");
+
+	var SE_score3 = document.createElement("INPUT");
+	SE_score3.setAttribute("type", "text");
+	SE_score3.setAttribute("size", 3);
+	SE_score3.setAttribute("class", "form-controls");
+	SE_score3.id = "SE_score3" + countQuestion;
+	SE_score3.setAttribute("value", childData.ans3.Software_Engineering);
+	p.appendChild(SE_score3);
+        p.appendChild(document.createElement("br"));
+
+        p.append("Computer Systems Networking ");
+
+	var CSN_score3 = document.createElement("INPUT");
+	CSN_score3.setAttribute("type", "text");
+	CSN_score3.setAttribute("size", 3);
+	CSN_score3.setAttribute("class", "form-controls");
+	CSN_score3.id = "CSN_score3" + countQuestion;
+	CSN_score3.setAttribute("value", childData.ans3.Computer_Systems_Networking );
+	p.appendChild(CSN_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Bsc (Hons) in IT sp. In Data Science");
+
+	var DS_score3 = document.createElement("INPUT");
+	DS_score3.setAttribute("type", "text");
+	DS_score3.setAttribute("size", 3);
+	DS_score3.setAttribute("class", "form-controls");
+	DS_score3.id = "DS_score3" + countQuestion;
+	DS_score3.setAttribute("value", childData.ans3.Data_Science);
+	p.appendChild(DS_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Cyber Security ");
+
+	var CS_score3 = document.createElement("INPUT");
+	CS_score3.setAttribute("type", "text");
+	CS_score3.setAttribute("size", 3);
+	CS_score3.setAttribute("class", "form-controls");
+	CS_score3.id = "CS_score3" + countQuestion;
+	CS_score3.setAttribute("value", childData.ans3.Cyber_Security);
+	p.appendChild(CS_score3);
+        p.appendChild(document.createElement("br"));
+
+        p.append(" Interactive Media ");
+
+	var IM_score3 = document.createElement("INPUT");
+	IM_score3.setAttribute("type", "text");
+	IM_score3.setAttribute("size", 3);
+	IM_score3.setAttribute("class", "form-controls");
+	IM_score3.id = "IM_score3" + countQuestion;
+	IM_score3.setAttribute("value", childData.ans3.Interactive_Media);
+	p.appendChild(IM_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Software Engineering (Curtin)");
+
+	var SEcur_score3 = document.createElement("INPUT");
+	SEcur_score3.setAttribute("type", "text");
+	SEcur_score3.setAttribute("size", 3);
+	SEcur_score3.setAttribute("class", "form-controls");
+	SEcur_score3.id = "SEcur_score3" + countQuestion;
+	SEcur_score3.setAttribute("value", childData.ans3.Software_Engineering_Curtin);
+	p.appendChild(SEcur_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Systems & Networking (Curtin) ");
+
+	var CSNcur_score3 = document.createElement("INPUT");
+	CSNcur_score3.setAttribute("type", "text");
+	CSNcur_score3.setAttribute("size", 3);
+	CSNcur_score3.setAttribute("class", "form-controls");
+	CSNcur_score3.id = "CSNcur_score3" + countQuestion;
+	CSNcur_score3.setAttribute("value", childData.ans3.Computer_Systems_and_Networking_Curtin);
+	p.appendChild(CSNcur_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Information Technology (Curtin) ");
+
+	var ITcur_score3 = document.createElement("INPUT");
+	ITcur_score3.setAttribute("type", "text");
+	ITcur_score3.setAttribute("size", 3);
+	ITcur_score3.setAttribute("class", "form-controls");
+	ITcur_score3.id = "ITcur_score3" + countQuestion;
+	ITcur_score3.setAttribute("value", childData.ans3.Information_Technology_Curtin);
+	p.appendChild(ITcur_score3);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Science and Software Engineering (Bedfordshire)");
+
+	var CSSEbed_score3 = document.createElement("INPUT");
+	CSSEbed_score3.setAttribute("type", "text");
+	CSSEbed_score3.setAttribute("size", 3);
+	CSSEbed_score3.setAttribute("class", "form-controls");
+	CSSEbed_score3.id = "CSSEbed_score3" + countQuestion;
+	CSSEbed_score3.setAttribute("value", childData.ans3.Computer_Science_and_Software_Engineering_Bedfordshire);
+	p.appendChild(CSSEbed_score3);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Networking (Bedfordshire) ");
+
+	var CNbed_score3 = document.createElement("INPUT");
+	CNbed_score3.setAttribute("type", "text");
+	CNbed_score3.setAttribute("size", 3);
+	CNbed_score3.setAttribute("class", "form-controls");
+	CNbed_score3.id = "CNbed_score3" + countQuestion;
+	CNbed_score3.setAttribute("value", childData.ans3.Computer_Networking_Bedfordshire);
+	p.appendChild(CNbed_score3);
+
+	p.appendChild(document.createElement("br"));
+	p.appendChild(document.createElement("br"));
+
+p.append("  Answer4: ");
+
+var ans4 = document.createElement("INPUT");
+ans4.setAttribute("type", "text");
+ans4.setAttribute("size", 80);
+ans4.setAttribute("class", "form-control");
+ans4.id = "ans4" + countAns; 
+countAns++;
+ans4.setAttribute("value", childData.ans4.answer);
+p.appendChild(ans4);
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+	p.append("Information Technology");
+	p.append("   ");
+	var IT_score4 = document.createElement("INPUT");
+	IT_score4.setAttribute("type", "text");
+	IT_score4.setAttribute("size", 3);
+	IT_score4.setAttribute("class", "form-controls");
+	IT_score4.id = "IT_score4" + countQuestion;
+	IT_score4.setAttribute("value", childData.ans4.Information_Technology);
+	p.appendChild(IT_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append("Informations Systems Engineering");
+
+	var ISE_score4 = document.createElement("INPUT");
+	ISE_score4.setAttribute("type", "text");
+	ISE_score4.setAttribute("size", 3);
+	ISE_score4.setAttribute("class", "form-controls");
+	ISE_score4.id = "ISE_score4" + countQuestion;
+	ISE_score4.setAttribute("value", childData.ans4.Informations_Systems_Engineering);
+	p.appendChild(ISE_score4);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append("Software Engineering");
+
+	var SE_score4 = document.createElement("INPUT");
+	SE_score4.setAttribute("type", "text");
+	SE_score4.setAttribute("size", 3);
+	SE_score4.setAttribute("class", "form-controls");
+	SE_score4.id = "SE_score4" + countQuestion;
+	SE_score4.setAttribute("value", childData.ans4.Software_Engineering);
+	p.appendChild(SE_score4);
+        p.appendChild(document.createElement("br"));
+
+        p.append("Computer Systems Networking ");
+
+	var CSN_score4 = document.createElement("INPUT");
+	CSN_score4.setAttribute("type", "text");
+	CSN_score4.setAttribute("size", 3);
+	CSN_score4.setAttribute("class", "form-controls");
+	CSN_score4.id = "CSN_score4" + countQuestion;
+	CSN_score4.setAttribute("value", childData.ans4.Computer_Systems_Networking );
+	p.appendChild(CSN_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Bsc (Hons) in IT sp. In Data Science");
+
+	var DS_score4 = document.createElement("INPUT");
+	DS_score4.setAttribute("type", "text");
+	DS_score4.setAttribute("size", 3);
+	DS_score4.setAttribute("class", "form-controls");
+	DS_score4.id = "DS_score4" + countQuestion;
+	DS_score4.setAttribute("value", childData.ans4.Data_Science);
+	p.appendChild(DS_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Cyber Security ");
+
+	var CS_score4 = document.createElement("INPUT");
+	CS_score4.setAttribute("type", "text");
+	CS_score4.setAttribute("size", 3);
+	CS_score4.setAttribute("class", "form-controls");
+	CS_score4.id = "CS_score4" + countQuestion;
+	CS_score4.setAttribute("value", childData.ans4.Cyber_Security);
+	p.appendChild(CS_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Interactive Media ");
+
+	var IM_score4 = document.createElement("INPUT");
+	IM_score4.setAttribute("type", "text");
+	IM_score4.setAttribute("size", 3);
+	IM_score4.setAttribute("class", "form-controls");
+	IM_score4.id = "IM_score4" + countQuestion;
+	IM_score4.setAttribute("value", childData.ans4.Interactive_Media);
+	p.appendChild(IM_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Software Engineering (Curtin)");
+
+	var SEcur_score4 = document.createElement("INPUT");
+	SEcur_score4.setAttribute("type", "text");
+	SEcur_score4.setAttribute("size", 3);
+	SEcur_score4.setAttribute("class", "form-controls");
+	SEcur_score4.id = "SEcur_score4" + countQuestion;
+	SEcur_score4.setAttribute("value", childData.ans4.Software_Engineering_Curtin);
+	p.appendChild(SEcur_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Systems & Networking (Curtin) ");
+
+	var CSNcur_score4 = document.createElement("INPUT");
+	CSNcur_score4.setAttribute("type", "text");
+	CSNcur_score4.setAttribute("size", 3);
+	CSNcur_score4.setAttribute("class", "form-controls");
+	CSNcur_score4.id = "CSNcur_score4" + countQuestion;
+	CSNcur_score4.setAttribute("value", childData.ans4.Computer_Systems_and_Networking_Curtin);
+	p.appendChild(CSNcur_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Information Technology (Curtin) ");
+
+	var ITcur_score4 = document.createElement("INPUT");
+	ITcur_score4.setAttribute("type", "text");
+	ITcur_score4.setAttribute("size", 3);
+	ITcur_score4.setAttribute("class", "form-controls");
+	ITcur_score4.id = "ITcur_score4" + countQuestion;
+	ITcur_score4.setAttribute("value", childData.ans4.Information_Technology_Curtin);
+	p.appendChild(ITcur_score4);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Science and Software Engineering (Bedfordshire)");
+
+	var CSSEbed_score4 = document.createElement("INPUT");
+	CSSEbed_score4.setAttribute("type", "text");
+	CSSEbed_score4.setAttribute("size", 3);
+	CSSEbed_score4.setAttribute("class", "form-controls");
+	CSSEbed_score4.id = "CSSEbed_score4" + countQuestion;
+	CSSEbed_score4.setAttribute("value", childData.ans4.Computer_Science_and_Software_Engineering_Bedfordshire);
+	p.appendChild(CSSEbed_score4);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Networking (Bedfordshire) ");
+
+	var CNbed_score4 = document.createElement("INPUT");
+	CNbed_score4.setAttribute("type", "text");
+	CNbed_score4.setAttribute("size", 3);
+	CNbed_score4.setAttribute("class", "form-controls");
+	CNbed_score4.id = "CNbed_score4" + countQuestion;
+	CNbed_score4.setAttribute("value", childData.ans4.Computer_Networking_Bedfordshire);
+	p.appendChild(CNbed_score4);
+
+	p.appendChild(document.createElement("br"));
+	p.appendChild(document.createElement("br"));
+
+p.append("  Answer5: ");
+
+var ans5 = document.createElement("INPUT");
+ans5.setAttribute("type", "text");
+ans5.setAttribute("size", 80);
+ans5.setAttribute("class", "form-control");
+ans5.id = "ans5" + countAns; 
+countAns++;
+ans5.setAttribute("value", childData.ans5.answer);
+p.appendChild(ans5);
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+	p.append("Information Technology");
+	p.append("   ");
+	var IT_score5 = document.createElement("INPUT");
+	IT_score5.setAttribute("type", "text");
+	IT_score5.setAttribute("size", 3);
+	IT_score5.setAttribute("class", "form-controls");
+	IT_score5.id = "IT_score5" + countQuestion;
+	IT_score5.setAttribute("value", childData.ans5.Information_Technology);
+	p.appendChild(IT_score5); 
+
+	p.append("Informations Systems Engineering");
+
+	var ISE_score5 = document.createElement("INPUT");
+	ISE_score5.setAttribute("type", "text");
+	ISE_score5.setAttribute("size", 3);
+	ISE_score5.setAttribute("class", "form-controls");
+	ISE_score5.id = "ISE_score5" + countQuestion;
+	ISE_score5.setAttribute("value", childData.ans5.Informations_Systems_Engineering);
+	p.appendChild(ISE_score5);
+        p.appendChild(document.createElement("br"));
+
+
+	p.append("Software Engineering");
+
+	var SE_score5 = document.createElement("INPUT");
+	SE_score5.setAttribute("type", "text");
+	SE_score5.setAttribute("size", 3);
+	SE_score5.setAttribute("class", "form-controls");
+	SE_score5.id = "SE_score5" + countQuestion;
+	SE_score5.setAttribute("value", childData.ans5.Software_Engineering);
+	p.appendChild(SE_score5);
+        p.appendChild(document.createElement("br"));
+
+        p.append("Computer Systems Networking ");
+
+	var CSN_score5 = document.createElement("INPUT");
+	CSN_score5.setAttribute("type", "text");
+	CSN_score5.setAttribute("size", 3);
+	CSN_score5.setAttribute("class", "form-controls");
+	CSN_score5.id = "CSN_score5" + countQuestion;
+	CSN_score5.setAttribute("value", childData.ans5.Computer_Systems_Networking );
+	p.appendChild(CSN_score5);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Bsc (Hons) in IT sp. In Data Science");
+
+	var DS_score5 = document.createElement("INPUT");
+	DS_score5.setAttribute("type", "text");
+	DS_score5.setAttribute("size", 3);
+	DS_score5.setAttribute("class", "form-controls");
+	DS_score5.id = "DS_score5" + countQuestion;
+	DS_score5.setAttribute("value", childData.ans5.Data_Science);
+	p.appendChild(DS_score5);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Cyber Security ");
+
+	var CS_score5 = document.createElement("INPUT");
+	CS_score5.setAttribute("type", "text");
+	CS_score5.setAttribute("size", 3);
+	CS_score5.setAttribute("class", "form-controls");
+	CS_score5.id = "CS_score5" + countQuestion;
+	CS_score5.setAttribute("value", childData.ans5.Cyber_Security);
+	p.appendChild(CS_score5);
+        p.appendChild(document.createElement("br"));
+
+        p.append(" Interactive Media ");
+
+	var IM_score5 = document.createElement("INPUT");
+	IM_score5.setAttribute("type", "text");
+	IM_score5.setAttribute("size", 3);
+	IM_score5.setAttribute("class", "form-controls");
+	IM_score5.id = "IM_score5" + countQuestion;
+	IM_score5.setAttribute("value", childData.ans5.Interactive_Media);
+	p.appendChild(IM_score5);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Software Engineering (Curtin)");
+
+	var SEcur_score5 = document.createElement("INPUT");
+	SEcur_score5.setAttribute("type", "text");
+	SEcur_score5.setAttribute("size", 3);
+	SEcur_score5.setAttribute("class", "form-controls");
+	SEcur_score5.id = "SEcur_score5" + countQuestion;
+	SEcur_score5.setAttribute("value", childData.ans5.Software_Engineering_Curtin);
+	p.appendChild(SEcur_score5);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Systems & Networking (Curtin) ");
+
+	var CSNcur_score5 = document.createElement("INPUT");
+	CSNcur_score5.setAttribute("type", "text");
+	CSNcur_score5.setAttribute("size", 3);
+	CSNcur_score5.setAttribute("class", "form-controls");
+	CSNcur_score5.id = "CSNcur_score5" + countQuestion;
+	CSNcur_score5.setAttribute("value", childData.ans5.Computer_Systems_and_Networking_Curtin);
+	p.appendChild(CSNcur_score5);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Information Technology (Curtin) ");
+
+	var ITcur_score5 = document.createElement("INPUT");
+	ITcur_score5.setAttribute("type", "text");
+	ITcur_score5.setAttribute("size", 3);
+	ITcur_score5.setAttribute("class", "form-controls");
+	ITcur_score5.id = "ITcur_score5" + countQuestion;
+	ITcur_score5.setAttribute("value", childData.ans5.Information_Technology_Curtin);
+	p.appendChild(ITcur_score5);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Science and Software Engineering (Bedfordshire)");
+
+	var CSSEbed_score5 = document.createElement("INPUT");
+	CSSEbed_score5.setAttribute("type", "text");
+	CSSEbed_score5.setAttribute("size", 3);
+	CSSEbed_score5.setAttribute("class", "form-controls");
+	CSSEbed_score5.id = "CSSEbed_score5" + countQuestion;
+	CSSEbed_score5.setAttribute("value", childData.ans5.Computer_Science_and_Software_Engineering_Bedfordshire);
+	p.appendChild(CSSEbed_score5);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Networking (Bedfordshire) ");
+
+	var CNbed_score5 = document.createElement("INPUT");
+	CNbed_score5.setAttribute("type", "text");
+	CNbed_score5.setAttribute("size", 3);
+	CNbed_score5.setAttribute("class", "form-controls");
+	CNbed_score5.id = "CNbed_score5" + countQuestion;
+	CNbed_score5.setAttribute("value", childData.ans5.Computer_Networking_Bedfordshire);
+	p.appendChild(CNbed_score5);
+
+	p.appendChild(document.createElement("br"));
+	p.appendChild(document.createElement("br"));
+
+p.append("  Answer6: ");
+
+var ans6 = document.createElement("INPUT");
+ans6.setAttribute("type", "text");
+ans6.setAttribute("size", 80);
+ans6.setAttribute("class", "form-control");
+ans6.id = "ans6" + countAns; 
+countAns++;
+ans6.setAttribute("value", childData.ans6.answer);
+p.appendChild(ans6);
+p.appendChild(document.createElement("br"));
+p.appendChild(document.createElement("br"));
+
+	p.append("Information Technology");
+	p.append("   ");
+	var IT_score6 = document.createElement("INPUT");
+	IT_score6.setAttribute("type", "text");
+	IT_score6.setAttribute("size", 3);
+	IT_score6.setAttribute("class", "form-controls");
+	IT_score6.id = "IT_score6" + countQuestion;
+	IT_score6.setAttribute("value", childData.ans6.Information_Technology);
+
+	p.appendChild(IT_score6); 
+
+	p.append("Informations Systems Engineering");
+
+	var ISE_score6 = document.createElement("INPUT");
+	ISE_score6.setAttribute("type", "text");
+	ISE_score6.setAttribute("size", 3);
+	ISE_score6.setAttribute("class", "form-controls");
+	ISE_score6.id = "ISE_score6" + countQuestion;
+	ISE_score6.setAttribute("value", childData.ans6.Informations_Systems_Engineering);
+	p.appendChild(ISE_score6);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append("Software Engineering");
+
+	var SE_score6 = document.createElement("INPUT");
+	SE_score6.setAttribute("type", "text");
+	SE_score6.setAttribute("size", 3);
+	SE_score6.setAttribute("class", "form-controls");
+	SE_score6.id = "SE_score6" + countQuestion;
+	SE_score6.setAttribute("value", childData.ans6.Software_Engineering);
+	p.appendChild(SE_score6);
+        p.appendChild(document.createElement("br"));
+
+        p.append("Computer Systems Networking ");
+
+	var CSN_score6 = document.createElement("INPUT");
+	CSN_score6.setAttribute("type", "text");
+	CSN_score6.setAttribute("size", 3);
+	CSN_score6.setAttribute("class", "form-controls");
+	CSN_score6.id = "CSN_score6" + countQuestion;
+	CSN_score6.setAttribute("value", childData.ans6.Computer_Systems_Networking );
+	p.appendChild(CSN_score6);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Bsc (Hons) in IT sp. In Data Science");
+
+	var DS_score6 = document.createElement("INPUT");
+	DS_score6.setAttribute("type", "text");
+	DS_score6.setAttribute("size", 3);
+	DS_score6.setAttribute("class", "form-controls");
+	DS_score6.id = "DS_score6" + countQuestion;
+	DS_score6.setAttribute("value", childData.ans6.Data_Science);
+	p.appendChild(DS_score6);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Cyber Security ");
+
+	var CS_score6 = document.createElement("INPUT");
+	CS_score6.setAttribute("type", "text");
+	CS_score6.setAttribute("size", 3);
+	CS_score6.setAttribute("class", "form-controls");
+	CS_score6.id = "CS_score6" + countQuestion;
+	CS_score6.setAttribute("value", childData.ans6.Cyber_Security);
+	p.appendChild(CS_score6);
+        p.appendChild(document.createElement("br"));
+
+        p.append(" Interactive Media ");
+
+	var IM_score6 = document.createElement("INPUT");
+	IM_score6.setAttribute("type", "text");
+	IM_score6.setAttribute("size", 3);
+	IM_score6.setAttribute("class", "form-controls");
+	IM_score6.id = "IM_score6" + countQuestion;
+	IM_score6.setAttribute("value", childData.ans6.Interactive_Media);
+	p.appendChild(IM_score6);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Software Engineering (Curtin)");
+
+	var SEcur_score6 = document.createElement("INPUT");
+	SEcur_score6.setAttribute("type", "text");
+	SEcur_score6.setAttribute("size", 3);
+	SEcur_score6.setAttribute("class", "form-controls");
+	SEcur_score6.id = "SEcur_score6" + countQuestion;
+
+	SEcur_score6.setAttribute("value", childData.ans6.Software_Engineering_Curtin);
+	p.appendChild(SEcur_score6);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Systems & Networking (Curtin) ");
+
+	var CSNcur_score6 = document.createElement("INPUT");
+	CSNcur_score6.setAttribute("type", "text");
+	CSNcur_score6.setAttribute("size", 3);
+	CSNcur_score6.setAttribute("class", "form-controls");
+	CSNcur_score6.id = "CSNcur_score6" + countQuestion;
+	CSNcur_score6.setAttribute("value", childData.ans6.Computer_Systems_and_Networking_Curtin);
+	p.appendChild(CSNcur_score6);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Information Technology (Curtin) ");
+
+	var ITcur_score6 = document.createElement("INPUT");
+	ITcur_score6.setAttribute("type", "text");
+	ITcur_score6.setAttribute("size", 3);
+	ITcur_score6.setAttribute("class", "form-controls");
+	ITcur_score6.id = "ITcur_score6" + countQuestion;
+	ITcur_score6.setAttribute("value", childData.ans6.Information_Technology_Curtin);
+	p.appendChild(ITcur_score6);
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Science and Software Engineering (Bedfordshire)");
+
+	var CSSEbed_score6 = document.createElement("INPUT");
+	CSSEbed_score6.setAttribute("type", "text");
+	CSSEbed_score6.setAttribute("size", 3);
+	CSSEbed_score6.setAttribute("class", "form-controls");
+	CSSEbed_score6.id = "CSSEbed_score6" + countQuestion;
+	CSSEbed_score6.setAttribute("value", childData.ans6.Computer_Science_and_Software_Engineering_Bedfordshire);
+	p.appendChild(CSSEbed_score6);
+
+        p.appendChild(document.createElement("br"));
+
+	p.append(" Computer Networking (Bedfordshire) ");
+
+	var CNbed_score6 = document.createElement("INPUT");
+	CNbed_score6.setAttribute("type", "text");
+	CNbed_score6.setAttribute("size", 3);
+	CNbed_score6.setAttribute("class", "form-controls");
+	CNbed_score6.id = "CNbed_score6" + countQuestion;
+	CNbed_score6.setAttribute("value", childData.ans6.Computer_Networking_Bedfordshire);
+	p.appendChild(CNbed_score6);
+
+        p.appendChild(document.createElement("br"));
+        p.appendChild(document.createElement("br"));
+
+countQuestion++;
+    
+                // creating button element  
+var buttonE = document.createElement('BUTTON');  
+                  
+                // creating text to be 
+                //displayed on button 
+var text = document.createTextNode("Edit");
+        buttonE.setAttribute("class","btn btn-lg btn-info btn-block")
+                  
+                // appending text to button 
+buttonE.appendChild(text); 
+buttonE.onclick = function updateQ(){
+                  //alert("w"+document.getElementById(ans1.id).value);
+
+    var qid = document.getElementById(qIndex.id).value;
+    var q_topic = document.getElementById(q.id).value;
+	
+    var answer1 = document.getElementById(ans1.id).value;
+    var it_1 = document.getElementById(IT_score1.id).value;
+    var ise_1 = document.getElementById(ISE_score1.id).value;
+    var se_1 = document.getElementById(SE_score1.id).value;
+    var csn_1 = document.getElementById(CSN_score1.id).value;
+    var ds_1 = document.getElementById(DS_score1.id).value;
+    var cs_1 = document.getElementById(CS_score1.id).value;
+    var im_1 = document.getElementById(IM_score1.id).value;
+    var seCur_1 = document.getElementById(SEcur_score1.id).value;
+    var csnCur_1 = document.getElementById(CSNcur_score1.id).value;
+    var itCur_1 = document.getElementById(ITcur_score1.id).value;
+    var csseBed_1 = document.getElementById(CSSEbed_score1.id).value;
+    var cnBed_1 = document.getElementById(CNbed_score1.id).value;
+
+    var answer2 =  document.getElementById(ans2.id).value;
+    var it_2 = document.getElementById(IT_score2.id).value;
+    var ise_2 = document.getElementById(ISE_score2.id).value;
+    var se_2 = document.getElementById(SE_score2.id).value;
+    var csn_2 = document.getElementById(CSN_score2.id).value;
+    var ds_2 = document.getElementById(DS_score2.id).value;
+    var cs_2 = document.getElementById(CS_score2.id).value;
+    var im_2 = document.getElementById(IM_score2.id).value;
+    var seCur_2 = document.getElementById(SEcur_score2.id).value;
+    var csnCur_2 = document.getElementById(CSNcur_score2.id).value;
+    var itCur_2 = document.getElementById(ITcur_score2.id).value;
+    var csseBed_2 = document.getElementById(CSSEbed_score2.id).value;
+    var cnBed_2 = document.getElementById(CNbed_score2.id).value;
+
+
+    var answer3 =  document.getElementById(ans3.id).value;
+    var it_3 = document.getElementById(IT_score3.id).value;
+    var ise_3 = document.getElementById(ISE_score3.id).value;
+    var se_3 = document.getElementById(SE_score3.id).value;
+    var csn_3 = document.getElementById(CSN_score3.id).value;
+    var ds_3 = document.getElementById(DS_score3.id).value;
+    var cs_3 = document.getElementById(CS_score3.id).value;
+    var im_3 = document.getElementById(IM_score3.id).value;
+    var seCur_3 = document.getElementById(SEcur_score3.id).value;
+    var csnCur_3 = document.getElementById(CSNcur_score3.id).value;
+    var itCur_3 = document.getElementById(ITcur_score3.id).value;
+    var csseBed_3 = document.getElementById(CSSEbed_score3.id).value;
+    var cnBed_3 = document.getElementById(CNbed_score3.id).value;
+
+    var answer4 =  document.getElementById(ans4.id).value;
+    var it_4 = document.getElementById(IT_score4.id).value;
+    var ise_4 = document.getElementById(ISE_score4.id).value;
+    var se_4 = document.getElementById(SE_score4.id).value;
+    var csn_4 = document.getElementById(CSN_score4.id).value;
+    var ds_4 = document.getElementById(DS_score4.id).value;
+    var cs_4 = document.getElementById(CS_score4.id).value;
+    var im_4 = document.getElementById(IM_score4.id).value;
+    var seCur_4 = document.getElementById(SEcur_score4.id).value;
+    var csnCur_4 = document.getElementById(CSNcur_score4.id).value;
+    var itCur_4 = document.getElementById(ITcur_score4.id).value;
+    var csseBed_4 = document.getElementById(CSSEbed_score4.id).value;
+    var cnBed_4 = document.getElementById(CNbed_score4.id).value;
+    
+	
+	var answer5 =  document.getElementById(ans5.id).value;
+    var it_5 = document.getElementById(IT_score5.id).value;
+    var ise_5 = document.getElementById(ISE_score5.id).value;
+    var se_5 = document.getElementById(SE_score5.id).value;
+    var csn_5 = document.getElementById(CSN_score5.id).value;
+    var ds_5 = document.getElementById(DS_score5.id).value;
+    var cs_5 = document.getElementById(CS_score5.id).value;
+    var im_5 = document.getElementById(IM_score5.id).value;
+    var seCur_5 = document.getElementById(SEcur_score5.id).value;
+    var csnCur_5 = document.getElementById(CSNcur_score5.id).value;
+    var itCur_5 = document.getElementById(ITcur_score5.id).value;
+    var csseBed_5 = document.getElementById(CSSEbed_score5.id).value;
+    var cnBed_5 = document.getElementById(CNbed_score5.id).value;
+
+    var answer6 =  document.getElementById(ans6.id).value;
+    var it_6 = document.getElementById(IT_score6.id).value;
+    var ise_6 = document.getElementById(ISE_score6.id).value;
+    var se_6 = document.getElementById(SE_score6.id).value;
+    var csn_6 = document.getElementById(CSN_score6.id).value;
+    var ds_6 = document.getElementById(DS_score6.id).value;
+    var cs_6 = document.getElementById(CS_score6.id).value;
+    var im_6 = document.getElementById(IM_score6.id).value;
+    var seCur_6 = document.getElementById(SEcur_score6.id).value;
+    var csnCur_6 = document.getElementById(CSNcur_score6.id).value;
+    var itCur_6 = document.getElementById(ITcur_score6.id).value;
+    var csseBed_6 = document.getElementById(CSSEbed_score6.id).value;
+    var cnBed_6 = document.getElementById(CNbed_score6.id).value;
+
+
+    var data = {
+        ans6: {"answer":answer6, "Information_Technology":it_6,"Informations_Systems_Engineering":ise_6,"Software_Engineering":se_6,"Computer_Systems_Networking":se_6,"Data_Science":ds_6,"Cyber_Security":cs_6,"Interactive_Media":im_6,"Software_Engineering_Curtin":seCur_6,"Computer_Systems_and_Networking_Curtin":csnCur_6,"Information_Technology_Curtin":itCur_6,"Computer_Science_and_Software_Engineering_Bedfordshire":csseBed_6,"Computer_Networking_Bedfordshire":cnBed_6},
+        ans5: {"answer":answer5, "Information_Technology":it_5,"Informations_Systems_Engineering":ise_5,"Software_Engineering":se_5,"Computer_Systems_Networking":se_5,"Data_Science":ds_5,"Cyber_Security":cs_5,"Interactive_Media":im_5,"Software_Engineering_Curtin":seCur_5,"Computer_Systems_and_Networking_Curtin":csnCur_5,"Information_Technology_Curtin":itCur_5,"Computer_Science_and_Software_Engineering_Bedfordshire":csseBed_5,"Computer_Networking_Bedfordshire":cnBed_5},
+        ans4: {"answer":answer4, "Information_Technology":it_4,"Informations_Systems_Engineering":ise_4,"Software_Engineering":se_4,"Computer_Systems_Networking":se_4,"Data_Science":ds_4,"Cyber_Security":cs_4,"Interactive_Media":im_4,"Software_Engineering_Curtin":seCur_4,"Computer_Systems_and_Networking_Curtin":csnCur_4,"Information_Technology_Curtin":itCur_4,"Computer_Science_and_Software_Engineering_Bedfordshire":csseBed_4,"Computer_Networking_Bedfordshire":cnBed_4},
+        ans3: {"answer":answer3, "Information_Technology":it_3,"Informations_Systems_Engineering":ise_3,"Software_Engineering":se_3,"Computer_Systems_Networking":se_3,"Data_Science":ds_3,"Cyber_Security":cs_3,"Interactive_Media":im_3,"Software_Engineering_Curtin":seCur_3,"Computer_Systems_and_Networking_Curtin":csnCur_3,"Information_Technology_Curtin":itCur_3,"Computer_Science_and_Software_Engineering_Bedfordshire":csseBed_3,"Computer_Networking_Bedfordshire":cnBed_3},
+        ans2: {"answer":answer2, "Information_Technology":it_2,"Informations_Systems_Engineering":ise_2,"Software_Engineering":se_2,"Computer_Systems_Networking":se_2,"Data_Science":ds_2,"Cyber_Security":cs_2,"Interactive_Media":im_2,"Software_Engineering_Curtin":seCur_2,"Computer_Systems_and_Networking_Curtin":csnCur_2,"Information_Technology_Curtin":itCur_2,"Computer_Science_and_Software_Engineering_Bedfordshire":csseBed_2,"Computer_Networking_Bedfordshire":cnBed_2},
+        ans1: {"answer":answer1, "Information_Technology":it_1,"Informations_Systems_Engineering":ise_1,"Software_Engineering":se_1,"Computer_Systems_Networking":se_1,"Data_Science":ds_1,"Cyber_Security":cs_1,"Interactive_Media":im_1,"Software_Engineering_Curtin":seCur_1,"Computer_Systems_and_Networking_Curtin":csnCur_1,"Information_Technology_Curtin":itCur_1,"Computer_Science_and_Software_Engineering_Bedfordshire":csseBed_1,"Computer_Networking_Bedfordshire":cnBed_1},
+        question:q_topic,
+        qid: qid
+      }
+	  
+	 
+  var updates = {};
+  updates['/QuizPartTwo_Computing/' + qid] = data;
+  firebase.database().ref().update(updates);
+  
+
+  alert('The question is updated successfully!');
+  reload_page();
+}
+
+p.appendChild(buttonE); 
+
+var buttonD = document.createElement('BUTTON');  
+
+var text = document.createTextNode("Delete");
+        buttonD.setAttribute("class","btn btn-lg btn-info btn-block")
+                    
+
+buttonD.appendChild(text); 
+buttonD.onclick = function deleteQ(){
+
+	var qid = document.getElementById(qIndex.id).value;
+  
+	firebase.database().ref().child('/QuizPartTwo_Computing/' + qid).remove();
+	alert('The question is deleted successfully!');
+	reload_page();
+}
+p.appendChild(buttonD); 
+             
+});
+});
+</script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

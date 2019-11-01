@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Student Form</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/st.css">
+	<!--===============================================================================================-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body onload="init();">
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<div class="container msg-db" id="student_details">
+				<form class="contact100-form validate-form">
+					<span class="contact100-form-title">
+						Here we go!!
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Name is required">
+						<input class="input100" type="text" name="st_name" id="st_name" placeholder="your name">
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="st_email" id="st_email" placeholder="Email address">
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Address is required">
+						<textarea class="input100" name="st_address" id="st_address" placeholder="Your Home Address here..."></textarea>
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<div class="wrap-contact100-form-btn">
+							<div class="contact100-form-bgbtn"></div>
+							<div class="btn contact100-form-btn">
+								<input type="button" style="color: white;background: transparent" value="Next"
+									onclick="load_form_ol();" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="container msg-db" id="results_form_ol">
+				<form class="contact100-form validate-form">
+					<span class="contact100-form-title">
+						Enter Ordinary Level Results!!
+					</span>
+
+					<div class="wrap-input100 input100-select">
+						<div class="row">
+							<div class="col">
+								<span class="form-control-label">Number of passed subjects</span>
+							</div>
+							<div class="col">
+								<select class="selection-2" name="min_passes" id="min_passes">
+									<option value="" selected="Selected"></option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</div>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 input100-select">
+						<div class="row">
+							<div class="col">
+								<span class="form-control-label">Maths</span>
+							</div>
+							<div class="col">
+								<select class="selection-2" name="maths" id="maths">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 input100-select">
+						<div class="row">
+							<div class="col">
+								<span class="form-control-label">English</span>
+							</div>
+							<div class="col">
+								<select class="selection-2" name="english" id="english">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="container-contact100-form-btn">
+								<div class="wrap-contact100-form-btn">
+									<div class="contact100-form-bgbtn"></div>
+									<div class="contact100-form-btn">
+										<input type="button" style="background: transparent;color: white"  value="Next"
+											onclick="getEligibiltyOL();" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="container-contact100-form-btn">
+								<div class="wrap-contact100-form-btn">
+									<div class="contact100-form-bgbtn-secondary"></div>
+									<div class="contact100-form-btn">
+										<input type="button" style="background: transparent;color: white" value="Back"
+											onclick="init();" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="container msg-db" id="results_form_al">
+				<form class="contact100-form validate-form">
+					<span class="contact100-form-title">
+						Enter Advanced Level Results!!
+					</span>
+
+					<div class="wrap-input100 input100-select">
+						<div>
+							<select class="selection-2" name="exam_type" id="exam_type">
+								<option>EXAM TYPE</option>
+								<option>Local</option>
+								<option>London</option>
+							</select>
+						</div>
+					</div>
+					<div class="wrap-input100 input100-select">
+						<div>
+							<select class="selection-2" name="attempt" id="attempt">
+								<option>A/L ATTEMPT</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+							</select>
+						</div>
+					</div>
+					<div class="wrap-input100 input100-select">
+						<div>
+							<select id="std_stream" name="std_stream" class="selection-2">
+								<option>STREAM</option>
+								<option value="Science">Science</option>
+								<option value="Commerce">Commerce</option>
+								<option value="Technology">Technology</option>
+								<option value="OtherStream">Other Stream</option>
+							</select>
+						</div>
+					</div>
+
+
+
+					<div class="wrap-input100 input100-select">
+						<div>
+							<select id="stream" class="selection-2">
+								<option>SUB STREAM</option>
+								<option value="Maths">Maths</option>
+								<option value="BioScience">Bio Science</option>
+								<option value="Commerce">Commerce</option>
+								<option value="Technology">Technology</option>
+								<option value="OtherStream">Other Stream</option>
+							</select>
+						</div>
+					</div>
+
+					<div id="option-Maths" class="option">
+						<div class="row">
+							<div class="col">
+								<label>Subject</label>
+							</div>
+							<div class="col">
+								<label>Grade</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Physics">Physics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Physics">Physics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Physics">Physics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div id="option-BioScience" class="option">
+						<div class="row">
+							<div class="col">
+								<label>Subject</label>
+							</div>
+							<div class="col">
+								<label>Grade</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Physics">Physics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Physics">Physics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Physics">Physics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div id="option-Commerce" class="option">
+						<div class="row">
+							<div class="col">
+								<label>Subject</label>
+							</div>
+							<div class="col">
+								<label>Grade</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Economics">Economics</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Business Statistics">Business Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Economics">Economics</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Business Statistics">Business Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Economics">Economics</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Business Statistics">Business Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div id="option-Technology" class="option">
+						<div class="row">
+							<div class="col">
+								<label>Subject</label>
+							</div>
+							<div class="col">
+								<label>Grade</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Bio Resource Technology">Bio Resource Technology</option>
+									<option value="Bio Systems Technology">Bio Systems Technology</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Economics">Economics</option>
+									<option value="Electrical, Electronic and Information Technology">Electrical,
+										Electronic and Information Technology</option>
+									<option value="Engineering Technology">Engineering Technology</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Logic">Logic</option>
+									<option value="Mechanical Technology">Mechanical Technology</option>
+									<option value="Physics">Physics</option>
+									<option value="Statistics">Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Bio Resource Technology">Bio Resource Technology</option>
+									<option value="Bio Systems Technology">Bio Systems Technology</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Economics">Economics</option>
+									<option value="Electrical, Electronic and Information Technology">Electrical,
+										Electronic and Information Technology</option>
+									<option value="Engineering Technology">Engineering Technology</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Logic">Logic</option>
+									<option value="Mechanical Technology">Mechanical Technology</option>
+									<option value="Physics">Physics</option>
+									<option value="Statistics">Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Bio Resource Technology">Bio Resource Technology</option>
+									<option value="Bio Systems Technology">Bio Systems Technology</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Economics">Economics</option>
+									<option value="Electrical, Electronic and Information Technology">Electrical,
+										Electronic and Information Technology</option>
+									<option value="Engineering Technology">Engineering Technology</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Logic">Logic</option>
+									<option value="Mechanical Technology">Mechanical Technology</option>
+									<option value="Physics">Physics</option>
+									<option value="Statistics">Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div id="option-OtherStream" class="option">
+						<div class="row">
+							<div class="col">
+								<label>Subject</label>
+							</div>
+							<div class="col">
+								<label>Grade</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Bio Resource Technology">Bio Resource Technology</option>
+									<option value="Bio Systems Technology">Bio Systems Technology</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Economics">Economics</option>
+									<option value="Electrical, Electronic and Information Technology">Electrical,
+										Electronic and Information Technology</option>
+									<option value="Engineering Technology">Engineering Technology</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Logic">Logic</option>
+									<option value="Mechanical Technology">Mechanical Technology</option>
+									<option value="Physics">Physics</option>
+									<option value="Statistics">Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res1" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Bio Resource Technology">Bio Resource Technology</option>
+									<option value="Bio Systems Technology">Bio Systems Technology</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Economics">Economics</option>
+									<option value="Electrical, Electronic and Information Technology">Electrical,
+										Electronic and Information Technology</option>
+									<option value="Engineering Technology">Engineering Technology</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Logic">Logic</option>
+									<option value="Mechanical Technology">Mechanical Technology</option>
+									<option value="Physics">Physics</option>
+									<option value="Statistics">Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res2" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<select id="subj3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="Accounting">Accounting</option>
+									<option value="Agriculture">Agriculture</option>
+									<option value="Biology">Biology</option>
+									<option value="Bio Resource Technology">Bio Resource Technology</option>
+									<option value="Bio Systems Technology">Bio Systems Technology</option>
+									<option value="Business Studies">Business Studies</option>
+									<option value="Chemistry">Chemistry</option>
+									<option value="Combined-maths">Combined Maths</option>
+									<option value="Economics">Economics</option>
+									<option value="Electrical, Electronic and Information Technology">Electrical,
+										Electronic and Information Technology</option>
+									<option value="Engineering Technology">Engineering Technology</option>
+									<option value="Information and Communication Technology">Information and
+										Communication Technology</option>
+									<option value="Logic">Logic</option>
+									<option value="Mechanical Technology">Mechanical Technology</option>
+									<option value="Physics">Physics</option>
+									<option value="Statistics">Statistics</option>
+								</select>
+							</div>
+							<div class="col">
+								<select id="res3" class="form-control">
+									<option value="" selected="Selected"></option>
+									<option value="1">F</option>
+									<option value="2">S</option>
+									<option value="3">C</option>
+									<option value="4">B</option>
+									<option value="5">A</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="container-contact100-form-btn">
+								<div class="wrap-contact100-form-btn">
+									<div class="contact100-form-bgbtn"></div>
+									<div class="contact100-form-btn">
+										<input type="button" style="color: white;background: transparent"  value="Go to Quiz"
+											onclick="getEligibiltyAL();" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="container-contact100-form-btn">
+								<div class="wrap-contact100-form-btn">
+									<div class="contact100-form-bgbtn-secondary"></div>
+									<div class="contact100-form-btn">
+										<input type="button" style="color: white;background: transparent" value="Back"
+											onclick="load_form_ol();" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+	<div id="dropDownSelect1"></div>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+	<script src="js/quiz_algo.js"></script>
+	<script src="js/st_form.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/st_form.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+
+</body>
+
+</html>

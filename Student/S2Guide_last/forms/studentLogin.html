@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>student login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="css/student.css">
+
+    <!--links-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form">
+            <div class="container">
+                <span class="contact100-form-title">Welcome To SLIIT </span>
+                <div class="wrapper animated bounceInLeft">
+                    <div class="company-info">
+                        <h3>Contact Us</h3><br>
+                        <ul>
+                            <li><i class="fa fa-road"></i>Address - New,Kandy Road Malabe </li>
+                            <li><i class="fa fa-phone"></i> Phone - +94 11 754 4801</li>
+                            <li><i class="fa fa-envelope"></i> Email - info@sliit.lk</li>
+                        </ul>
+                    </div>
+                    <div class="contact">
+                        <h3>Login With</h3><br>
+
+                        <div class="container-a">
+
+                            <div class="fb-icon-bg">
+                                <div class="slide-social">
+                                    <div class="facebook-bg ss-icon">
+                                        <i class="fa fa-facebook"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="fb-bg" id="btnFb" onclick="facebookLogin();"></div>
+
+                            <div class="g-icon-bg">
+                                <div class="slide-social">
+
+                                    <div class="google-plus-bg ss-icon">
+                                        <i class="fa fa-google-plus"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="g-bg" id="btnGmail" onclick="gmailLogin()"></div>
+                        </div>
+                        <p>Don't have a Gmail account?</p>
+                        <a href="https://www.gmail.com">Create a Gmail Account</a>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+            <script>
+                //Firebase config
+                var firebaseConfig = {
+                    apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+                    authDomain: "s2guide.firebaseapp.com",
+                    databaseURL: "https://s2guide.firebaseio.com",
+                    projectId: "s2guide",
+                    storageBucket: "s2guide.appspot.com",
+                    messagingSenderId: "457852779269",
+                    appId: "1:457852779269:web:7e27f12f4d807544"
+                };
+                //FacebookCOnfigs
+                window.fbAsyncInit = function () {
+                    FB.init({
+                        appId: '364589361094256',
+                        xfbml: true,
+                        version: 'v2.6'
+                    });
+                };
+
+                (function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) { return; }
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+
+                gmailLogin = () => {
+
+                    console.log("working");
+                    var provider = new firebase.auth.GoogleAuthProvider();
+                    firebase.auth().signInWithPopup(provider).then(function (result) {
+
+                        console.log(result);
+                        console.log("Successful");
+                        //window.open("index.html");
+                        window.location.href = '../home.html';
+                        // ...
+                    }).catch(function (error) {
+
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        var email = error.email;
+                        // The firebase.auth.AuthCredential type that was used.
+                        var credential = error.credential;
+                        // ...
+                        console.log(errorMessage);
+                    })
+                }
+
+                function facebookLogin() {
+                    var provider = new firebase.auth.FacebookAuthProvider();
+
+                    firebase.auth().signInWithPopup(provider)
+
+                        .then(function (result) {
+                            var token = result.credential.accessToken;
+                            var user = result.user;
+
+                            //console.log(token)
+                            console.log(user.displayName);
+                            window.location.href = '../home.html';
+
+                        }).catch(function (error) {
+                        console.log(error.code);
+                        console.log(error.message);
+                    });
+                }
+
+
+
+            </script>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<script>
+    $(".selection-2").select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#dropDownSelect1')
+    });
+</script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+
+
+
+</body>
+
+</html>

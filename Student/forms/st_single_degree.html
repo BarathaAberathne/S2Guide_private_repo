@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<title>Single Degree Page</title>
+	<!--===============================================================================================-->
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+	<script src="js/st_single_degree.js"></script>
+	<script src="https://kit.fontawesome.com/1a81673399.js"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+
+</head>
+<body onload="init();">
+<div class="container-contact100">
+	<div class="wrap-contact100">
+		<div class="container msg-db" id="table_group">
+
+		<input type="hidden" id="selectedId" value="">
+			<h3><b>Degree Programmes</b></h3><br/>
+		<h4><b>Faculty of Computing</b></h4><br>
+		<h5>Local Programmes</h5>
+		<table id="table_Computing_Local" class="table table-borderless">
+		</table>
+		<h5>International Programmes</h5>
+		<table id="table_Computing_Foreign" class="table table-borderless">
+		</table>
+		<br/>
+
+		<h4><b>Faculty of Business</b></h4><br/>
+		<h5>Local Programmes</h5>
+		<table id="table_Business_Local" class="table table-borderless">
+		</table>
+		<h5>International Programmes</h5>
+		<table id="table_Business_Foreign" class="table table-borderless">
+		</table>
+		<br/>
+
+		<h4><b>Faculty of Engineering</b></h4><br/>
+		<h5>Local Programmes</h5>
+		<table id="table_Engineering_Local" class="table table-borderless">
+		</table>
+		<h5>International Programmes</h5>
+		<table id="table_Engineering_Foreign" class="table table-borderless">
+		</table>
+		<br/>
+
+		<h4><b>School of Architecture</b></h4><br/>
+		<h5>International Programmes</h5>
+		<table id="table_arc_Foreign" class="table table-borderless">
+		</table>
+		<br/>
+
+		<h4><b>Faculty of Humanities and Sciences</b></h4><br/>
+		<h5>Local Programmes</h5>
+		<table id="table_HnS_Local" class="table table-borderless">
+		</table>
+		<h5>International Programmes</h5>
+		<table id="table_HnS_Foreign" class="table table-borderless">
+		</table>
+		<br/>
+
+		<h4><b>Hospitality and Cookery</b></h4><br/>
+		<h5>International Programmes</h5>
+		<table id="table_HC_Foreign" class="table table-borderless">
+		</table>
+
+	</div>
+
+		<div class="container msg-db" id="table_group_F">
+
+			<input type="hidden" id="fselectedId" value="">
+
+			<h3><b>Foundation Courses</b></h3><br/>
+			<h4><b>Faculty of Computing</b></h4><br>
+			<table id="table_Computing" class="table table-borderless">
+			</table>
+			<br/>
+
+			<h4><b>Faculty of Business</b></h4><br/>
+			<table id="table_Business" class="table table-borderless">
+			</table>
+
+		</div>
+
+		<div id="div_degree_single" class="container msg-db" style="display: none">
+	<input type="hidden" value="" id="fid"><br>
+
+	<h3 id="title_label"></h3><br/>
+	<h6 id="desc_label"></h6><br/>
+	<table id="display_table">
+		<tr><th>Type</th><td id="type_label"></td></tr>
+		<tr><th>Code</th><td id="code_label"></td></tr>
+		<tr><th>Duration</th><td id="duration_label"></td></tr>
+		<tr><th>University</th><td id="uni_label"></td></tr>
+		<tr><th>Country</th><td id="country_label"></td></tr>
+		<tr><th>Intake</th><td id="intake_label"></td></tr>
+		<tr><th>Location</th><td id="location_label"></td></tr>
+		<tr><th>Accreditation</th><td id="app_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>O/L Requirements</u></h5>
+	<table id="display_table2">
+		<tr><th>Minimum Passes</th><td id="min_label"></td></tr>
+		<tr><th>English</th><td id="eng_label"></td></tr>
+		<tr><th>Mathematics</th><td id="math_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>A/L Requirements</u></h5>
+	<table id="display_table3">
+		<tr><th>Stream</th><td id="st_label"></td></tr>
+		<tr><th>Compulsory Streams</th><td id="coms_label"></td></tr>
+		<tr><th>Compulsory Subjects</th></tr>
+		<tr><th></th><td id="sub1_label"></td></tr>
+		<tr><th></th><td id="sub2_label"></td></tr>
+		<tr><th></th><td id="sub3_label"></td></tr>
+		<tr><th><u>Minimum Results</u></th></tr>
+		<tr><th>Local GCE A/L</th></tr>
+		<tr><th></th><td id="s4_label"></td></tr>
+		<tr><th></th><td id="s5_label"></td></tr>
+		<tr><th></th><td id="s6_label"></td></tr>
+		<tr><th>London GCE A/L</th></tr>
+		<tr><th></th><td id="s7_label"></td></tr>
+		<tr><th></th><td id="s8_label"></td></tr>
+		<tr><th></th><td id="s9_label"></td></tr>
+	</table>
+	<br/>
+	<h5><b>Career Opportunities</b></h5>
+	<table id="display_table4">
+		<tr><th></th><td id="c1"></td></tr>
+		<tr><th></th><td id="c2"></td></tr>
+		<tr><th></th><td id="c3"></td></tr>
+		<tr><th></th><td id="c4"></td></tr>
+		<tr><th></th><td id="c5"></td></tr>
+		<tr><th></th><td id="c6"></td></tr>
+		<tr><th></th><td id="c7"></td></tr>
+		<tr><th></th><td id="c8"></td></tr>
+		<tr><th></th><td id="c9"></td></tr>
+		<tr><th></th><td id="c10"></td></tr>
+	</table>
+	<br/>
+
+	<button onclick="goBack();" class="btn btn-primary">Go Back</button>
+	<!--<div class="row">
+		<div class="col-md-6">
+			<div class="container-contact100-form-btn">
+				<div class="wrap-contact100-form-btn">
+					<div class="contact100-form-bgbtn-secondary"></div>
+						<button class="contact100-form-btn" onclick="goBack();">
+							<span>
+								<i class="fa fa-long-arrow-left m-l-7" aria-hidden="true"></i>
+								Back
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>-->
+	</div>
+
+		<div id="div_degree_single_Bus" class="container msg-db" style="display: none">
+	<input type="hidden" value="" id="bfid"><br>
+
+	<h3 id="btitle_label"></h3><br/>
+	<h6 id="bdesc_label"></h6><br/>
+	<table id="bdisplay_table">
+		<tr><th>Type</th><td id="btype_label"></td></tr>
+		<tr><th>Code</th><td id="bcode_label"></td></tr>
+		<tr><th>Duration</th><td id="bduration_label"></td></tr>
+		<tr><th>University</th><td id="buni_label"></td></tr>
+		<tr><th>Country</th><td id="bcountry_label"></td></tr>
+		<tr><th>Intake</th><td id="bintake_label"></td></tr>
+		<tr><th>Location</th><td id="blocation_label"></td></tr>
+		<tr><th>Accreditation</th><td id="bapp_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>O/L Requirements</u></h5>
+	<table id="bdisplay_table2">
+		<tr><th>Minimum Passes</th><td id="bmin_label"></td></tr>
+		<tr><th>English</th><td id="beng_label"></td></tr>
+		<tr><th>Mathematics</th><td id="bmath_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>A/L Requirements</u></h5>
+	<table id="bdisplay_table3">
+		<tr><th>Stream</th><td id="bst_label"></td></tr>
+		<tr><th><u>Minimum Results</u></th></tr>
+		<tr><th>Local GCE A/L</th></tr>
+		<tr><th></th><td id="bs4_label"></td></tr>
+		<tr><th></th><td id="bs5_label"></td></tr>
+		<tr><th></th><td id="bs6_label"></td></tr>
+		<tr><th>London GCE A/L</th></tr>
+		<tr><th></th><td id="bs7_label"></td></tr>
+		<tr><th></th><td id="bs8_label"></td></tr>
+		<tr><th></th><td id="bs9_label"></td></tr>
+	</table>
+	<br/>
+	<h5><b>Career Opportunities</b></h5>
+	<table id="bdisplay_table4">
+		<tr><th></th><td id="bc1"></td></tr>
+		<tr><th></th><td id="bc2"></td></tr>
+		<tr><th></th><td id="bc3"></td></tr>
+		<tr><th></th><td id="bc4"></td></tr>
+		<tr><th></th><td id="bc5"></td></tr>
+		<tr><th></th><td id="bc6"></td></tr>
+		<tr><th></th><td id="bc7"></td></tr>
+		<tr><th></th><td id="bc8"></td></tr>
+		<tr><th></th><td id="bc9"></td></tr>
+		<tr><th></th><td id="bc10"></td></tr>
+	</table>
+	<br/>
+
+	<button onclick="goBack();" class="btn btn-primary">Go Back</button>
+</div>
+
+		<div id="div_degree_single_Eng" class="container msg-db" style="display: none">
+	<input type="hidden" value="" id="efid"><br>
+
+	<h3 id="etitle_label"></h3><br/>
+	<h6 id="edesc_label"></h6><br/>
+	<table id="edisplay_table">
+		<tr><th>Type</th><td id="etype_label"></td></tr>
+		<tr><th>Code</th><td id="ecode_label"></td></tr>
+		<tr><th>Duration</th><td id="eduration_label"></td></tr>
+		<tr><th>University</th><td id="euni_label"></td></tr>
+		<tr><th>Country</th><td id="ecountry_label"></td></tr>
+		<tr><th>Intake</th><td id="eintake_label"></td></tr>
+		<tr><th>Location</th><td id="elocation_label"></td></tr>
+		<tr><th>Accreditation</th><td id="eapp_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>O/L Requirements</u></h5>
+	<table id="edisplay_table2">
+		<tr><th>Minimum Passes</th><td id="emin_label"></td></tr>
+		<tr><th>English</th><td id="eeng_label"></td></tr>
+		<tr><th>Mathematics</th><td id="emath_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>A/L Requirements</u></h5>
+	<table id="edisplay_table3">
+		<tr><th>Compulsory Stream</th><td id="ecoms_label"></td></tr>
+		<tr><th>Compulsory Subjects</th></tr>
+		<tr><th></th><td id="esub1_label"></td></tr>
+		<tr><th></th><td id="esub2_label"></td></tr>
+		<tr><th></th><td id="esub3_label"></td></tr>
+		<tr><th><u>Minimum Results</u></th></tr>
+		<tr><th>Local GCE A/L</th></tr>
+		<tr><th></th><td id="es4_label"></td></tr>
+		<tr><th></th><td id="es5_label"></td></tr>
+		<tr><th></th><td id="es6_label"></td></tr>
+		<tr><th>London GCE A/L</th></tr>
+		<tr><th></th><td id="es7_label"></td></tr>
+		<tr><th></th><td id="es8_label"></td></tr>
+		<tr><th></th><td id="es9_label"></td></tr>
+	</table>
+	<br/>
+	<h5><b>Career Opportunities</b></h5>
+	<table id="edisplay_table4">
+		<tr><th></th><td id="ec1"></td></tr>
+		<tr><th></th><td id="ec2"></td></tr>
+		<tr><th></th><td id="ec3"></td></tr>
+		<tr><th></th><td id="ec4"></td></tr>
+		<tr><th></th><td id="ec5"></td></tr>
+		<tr><th></th><td id="ec6"></td></tr>
+		<tr><th></th><td id="ec7"></td></tr>
+		<tr><th></th><td id="ec8"></td></tr>
+		<tr><th></th><td id="ec9"></td></tr>
+		<tr><th></th><td id="ec10"></td></tr>
+	</table>
+	<br/>
+	<button onclick="goBack();" class="btn btn-primary">Go Back</button>
+</div>
+
+		<div id="div_degree_single_hos" class="container msg-db" style="display: none">
+	<input type="hidden" value="" id="hfid"><br>
+
+	<h3 id="htitle_label"></h3><br/>
+	<h6 id="hdesc_label"></h6><br/>
+	<table id="hdisplay_table">
+		<tr><th>Type</th><td id="htype_label"></td></tr>
+		<tr><th>Code</th><td id="hcode_label"></td></tr>
+		<tr><th>Duration</th><td id="hduration_label"></td></tr>
+		<tr><th>University</th><td id="huni_label"></td></tr>
+		<tr><th>Country</th><td id="hcountry_label"></td></tr>
+		<tr><th>Intake</th><td id="hintake_label"></td></tr>
+		<tr><th>Location</th><td id="hlocation_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><u>O/L Requirements</u></h5>
+	<table id="hdisplay_table2">
+		<tr><th>Minimum Passes</th><td id="hmin_label"></td></tr>
+		<tr><th>English</th><td id="heng_label"></td></tr>
+		<tr></tr>
+	</table>
+	<br/>
+	<h5><b>Career Opportunities</b></h5>
+	<table id="hdisplay_table4">
+		<tr><th></th><td id="hc1"></td></tr>
+		<tr><th></th><td id="hc2"></td></tr>
+		<tr><th></th><td id="hc3"></td></tr>
+		<tr><th></th><td id="hc4"></td></tr>
+		<tr><th></th><td id="hc5"></td></tr>
+		<tr><th></th><td id="hc6"></td></tr>
+		<tr><th></th><td id="hc7"></td></tr>
+		<tr><th></th><td id="hc8"></td></tr>
+		<tr><th></th><td id="hc9"></td></tr>
+		<tr><th></th><td id="hc10"></td></tr>
+	</table>
+	<br/>
+	<button onclick="goBack();" class="btn btn-primary">Go Back</button>
+</div>
+
+
+<!---Foundation Courses - Single Degree Page-->
+		<div id="div_degree_single_f" class="container msg-db" style="display: none">
+			<input type="hidden" value="" id="ffid"><br>
+
+			<h3 id="ftitle_label"></h3><br/>
+			<h6 id="fdesc_label"></h6><br/>
+			<table id="fdisplay_table">
+				<tr><th>Code</th><td id="fcode_label"></td></tr>
+				<tr><th>Duration</th><td id="fduration_label"></td></tr>
+				<tr><th>University</th><td id="funi_label"></td></tr>
+				<tr><th>Country</th><td id="fcountry_label"></td></tr>
+				<tr><th>Intake</th><td id="fintake_label"></td></tr>
+				<tr><th>Location</th><td id="flocation_label"></td></tr>
+				<tr></tr>
+			</table>
+			<br/>
+			<h5><u>O/L Requirements</u></h5>
+			<table id="fdisplay_table2">
+				<tr><th>Minimum Passes</th><td id="fmin_label"></td></tr>
+				<tr><th>English</th><td id="feng_label"></td></tr>
+				<tr><th>Mathematics</th><td id="fmath_label"></td></tr>
+				<tr></tr>
+			</table>
+			<br/>
+			<button onclick="goBack();" class="btn btn-primary">Go Back</button>
+		</div>
+	</div>
+</div>
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="js/st_single_degree.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
