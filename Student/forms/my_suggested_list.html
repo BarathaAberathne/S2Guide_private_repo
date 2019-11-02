@@ -131,8 +131,14 @@
                     var textnode = document.createTextNode(degrees[key].degree_title);
                     node.appendChild(textnode);
                     document.getElementById("degree_list").appendChild(node);
+                }else{
+                    var node = document.createElement("LI");
+                    var textnode = document.createTextNode("");
+                    node.appendChild(textnode);
+                    document.getElementById("degree_list").appendChild(node);
                 }
             }
+            console.log(finalList);
         }
         function emailList() {
 

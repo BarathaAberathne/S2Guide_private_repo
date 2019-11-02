@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="wrap-input100 input100-select">
+        <div>
+            <select id="stream" class="selection-2" name="stream" onchange="loadSubjects();">
+                <option>SUB STREAM</option>
+                <option value="Maths">Maths</option>
+                <option value="BioScience">Bio Science</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Technology">Technology</option>
+                <option value="OtherStream">Other Stream</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <select id="subj1" class="form-control">
+
+            </select>
+        </div>
+        <div class="col">
+            <select id="res1" class="form-control">
+                <option value="" selected="Selected"></option>
+                <option value="1">F</option>
+                <option value="2">S</option>
+                <option value="3">C</option>
+                <option value="4">B</option>
+                <option value="5">A</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <select id="subj2" class="form-control">
+
+            </select>
+        </div>
+        <div class="col">
+            <select id="res2" class="form-control">
+                <option value="" selected="Selected"></option>
+                <option value="1">F</option>
+                <option value="2">S</option>
+                <option value="3">C</option>
+                <option value="4">B</option>
+                <option value="5">A</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <select id="subj3" class="form-control">
+            </select>
+        </div>
+        <div class="col">
+            <select id="res2" class="form-control">
+                <option value="" selected="Selected"></option>
+                <option value="1">F</option>
+                <option value="2">S</option>
+                <option value="3">C</option>
+                <option value="4">B</option>
+                <option value="5">A</option>
+            </select>
+        </div>
+    </div>
+</body>
+<script>
+    function loadSubjects() {
+        
+        var maths = ["Combined-Maths", "Physics", "Chemistry", "Information-and-Communication-Technology"];
+        var commerce = ["Accounting", "Business-Studies", "Economics", "Information-and-Communication-Technology", "Business-Statistics"];
+        var bio = ["Agriculture","Biology","Chemistry","Information-and-Communication-Technology","Physics"];
+        var technology = ["Accounting","Agriculture","Bio-Technology","Business-Studies","Communication-and-Media-Study","Economics","Engineering-Technology","English-Language","Geography","Home-Economics","Information-and-Communication-Technology","Science-for-Technology"];
+        var other = ["Combined-Maths", "Physics", "Chemistry", "Information-and-Communication-Technology","Biology","Accounting","Agriculture","Bio-Technology","Business-Studies","Communication-and-Media-Study","Economics","Engineering-Technology","English-Language","Geography","Home-Economics","Science-for-Technology"]
+        var stream = document.getElementById('stream').value;
+        var subj1 = document.getElementById('subj1');
+        var subj2 = document.getElementById('subj2');
+        var subj3 = document.getElementById('subj3');
+        subj1.options.length = 0;
+        subj2.options.length = 0;
+        subj3.options.length = 0;
+        console.log(stream);
+        if (stream == "Maths") {
+            for (var i = 0; i < maths.length; i++) {
+                var opt1 = document.createElement('option');
+                var opt2 = document.createElement('option');
+                var opt3 = document.createElement('option');
+                opt1.value = maths[i];
+                opt1.innerHTML = maths[i];
+                opt2.value = maths[i];
+                opt2.innerHTML = maths[i];
+                opt3.value = maths[i];
+                opt3.innerHTML = maths[i];
+
+                subj1.appendChild(opt1);
+                subj2.appendChild(opt2);
+                subj3.appendChild(opt3);
+            }
+
+        }
+        else if (stream == "Commerce") {
+            for (var i = 0; i < commerce.length; i++) {
+
+                var opt1 = document.createElement('option');
+                var opt2 = document.createElement('option');
+                var opt3 = document.createElement('option');
+                opt1.value = commerce[i];
+                opt1.innerHTML = commerce[i];
+                opt2.value = commerce[i];
+                opt2.innerHTML = commerce[i];
+                opt3.value = commerce[i];
+                opt3.innerHTML = commerce[i];
+
+                subj1.appendChild(opt1);
+                subj2.appendChild(opt2);
+                subj3.appendChild(opt3);
+            }
+        }
+        else if (stream == "BioScience") {
+            for (var i = 0; i < commerce.length; i++) {
+
+                var opt1 = document.createElement('option');
+                var opt2 = document.createElement('option');
+                var opt3 = document.createElement('option');
+                opt1.value = bio[i];
+                opt1.innerHTML = bio[i];
+                opt2.value = bio[i];
+                opt2.innerHTML = bio[i];
+                opt3.value = bio[i];
+                opt3.innerHTML = bio[i];
+
+                subj1.appendChild(opt1);
+                subj2.appendChild(opt2);
+                subj3.appendChild(opt3);
+            }
+        }
+        else if (stream == "Technology") {
+            for (var i = 0; i < commerce.length; i++) {
+
+                var opt1 = document.createElement('option');
+                var opt2 = document.createElement('option');
+                var opt3 = document.createElement('option');
+                opt1.value = technology[i];
+                opt1.innerHTML = technology[i];
+                opt2.value = technology[i];
+                opt2.innerHTML = technology[i];
+                opt3.value = technology[i];
+                opt3.innerHTML = technology[i];
+
+                subj1.appendChild(opt1);
+                subj2.appendChild(opt2);
+                subj3.appendChild(opt3);
+            }
+        }
+        else if (stream == "OtherStream") {
+            for (var i = 0; i < commerce.length; i++) {
+
+                var opt1 = document.createElement('option');
+                var opt2 = document.createElement('option');
+                var opt3 = document.createElement('option');
+                opt1.value = other[i];
+                opt1.innerHTML = other[i];
+                opt2.value = other[i];
+                opt2.innerHTML = other[i];
+                opt3.value = other[i];
+                opt3.innerHTML = other[i];
+
+                subj1.appendChild(opt1);
+                subj2.appendChild(opt2);
+                subj3.appendChild(opt3);
+            }
+        }
+    }
+</script>
+
+</html>

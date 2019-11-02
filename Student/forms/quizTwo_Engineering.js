@@ -547,8 +547,36 @@
       score.append("You scored for Bachelor of Engineering(Hons) Electrical and Electronic Engineering(Curtin): " +  (tot_EEE_Curtin)   + "Points </br> ");
       score.append("You scored for Bachelor of Engineering(Hons) Mechanical Engineering(Curtin): " +  (tot_Mech_Curtin)   + "Points </br> ");
       score.append("You scored for BSc(Hons) Degree in Quantity Surveying(UK): " +  (tot_QS_UK)   + "Points </br> ");
+      showResultBtn();
 
       return score;
     }
   });
 })();
+function onLoad() {
+  var div2 = document.getElementById("btn_view_final");
+  div2.style.display = "none";
+}
+
+function showResultBtn() {
+  var json_str = JSON.stringify("Engineering");
+  createCookie('fac_type', json_str);
+  console.log(json_str);
+  var div2 = document.getElementById("btn_view_final");
+  div2.style.display = "block";
+}
+function redirectToFinal(){
+  window.location.href = './my_suggested_list.html';
+}
+function createCookie(name, value, days) {
+  var expires;
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toGMTString();
+  }
+  else {
+    expires = "";
+  }
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
