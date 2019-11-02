@@ -35,21 +35,27 @@
 
 
 
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
-            authDomain: "s2guide.firebaseapp.com",
-            databaseURL: "https://s2guide.firebaseio.com",
-            projectId: "s2guide",
-            storageBucket: "s2guide.appspot.com",
-            messagingSenderId: "457852779269",
-            appId: "1:457852779269:web:7e27f12f4d807544"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.database().ref('testingQuizPartOne/');
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    </script>
+ <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+ <script src="index.js"></script>
+ <link rel="stylesheet" type="text/css" href="quizOne.css">
+
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyDPkSmKr-2T6C0_1SFwjWeRFlCzzL5VXc0",
+    authDomain: "s2guide.firebaseapp.com",
+    databaseURL: "https://s2guide.firebaseio.com",
+    projectId: "s2guide",
+    storageBucket: "s2guide.appspot.com",
+    messagingSenderId: "457852779269",
+    appId: "1:457852779269:web:7e27f12f4d807544"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.database().ref('QuizPartOne/');
+
+  </script>
     <script src="q1.js"> </script>
 </head>
 
@@ -204,7 +210,7 @@
 
 
                                             <div class="answer" id="DivAns1" style="display: none">
-                                                <input type="text"  class="form-control" name="ans" id="ans1" />
+                                                Answer1: <input type="text"  class="form-control" name="ans" id="ans1" />
                                                 <p></p>
                                                 <table>
                                                     <tr>
@@ -241,7 +247,7 @@
 
                                             <div class="answer" id="DivAns2" style="display:none">
 
-                                                2. <input type="text" name="ans" id="ans2" />
+                                                Answer2: <input type="text"  class="form-control" name="ans" id="ans2" />
                                                 <p></p>
                                                 <table>
                                                     <tr>
@@ -277,7 +283,7 @@
                                             </div>
 
                                             <div class="answer" id="DivAns3" style="display:none">
-                                                3. <input type="text" name="ans" id="ans1" />
+                                                Answer3: <input type="text"  class="form-control" name="ans" id="ans3" />
                                                 <p></p>
                                                 <table>
                                                     <tr>
@@ -314,7 +320,7 @@
 
                                             <div class="answer" id="DivAns4" style="display:none">
 
-                                                4. <input type="text" name="ans" id="ans1" />
+                                                Answer4: <input type="text"  class="form-control" name="ans" id="ans4" />
                                                 <p></p>
                                                 <table>
                                                     <tr>
@@ -350,7 +356,7 @@
                                             </div>
 
                                             <div class="answer" id="DivAns5" style="display:none">
-                                                5. <input type="text" name="ans" id="ans1" />
+                                                Answer5: <input type="text" name="ans" id="ans5"  class="form-control" />
                                                 <p></p>
                                                 <table>
                                                     <tr>
@@ -386,7 +392,7 @@
                                             </div>
 
                                             <div class="answer" id="DivAns6" style="display:none">
-                                                6. <input type="text" name="ans" id="ans1" />
+                                                 Answer6: <input type="text"  class="form-control" name="ans" id="ans6" />
                                                 <p></p>
                                                 <table>
                                                     <tr>
