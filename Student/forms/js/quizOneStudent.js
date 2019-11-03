@@ -369,12 +369,12 @@
 
 
 
-      score.append("You scored for Computing faculty: " + (tot_comp) + "Points <a href='quizTwo_Computing.html'>Take the Computing Quiz</a></br>");
-      score.append("You scored for Engineering faculty: " + (tot_eng) + "Points <a href='quizTwo_Engineering.html'>Take the Engineering Quiz</a></br>");
-      score.append("You scored for Business faculty: " + (tot_bm) + "Points <a href='quizTwo_Business.html'>Take the Business Quiz</a></br>");
-      score.append("You scored for Architecture faculty: " + (tot_arch) + "Points<a href='quizTwo_Archi.html'>View Degrees</a> </br>");
-      score.append("You scored for Hospitality and Cookery faculty: " + (tot_hc) + "Points <a href='quizTwo_Hospitality.html'>View Degrees</a></br> ");
-      score.append("You scored for Humanity and Sciences faculty: " + (tot_hs) + "Points  <a href='quizTwo_Humanities.html'>Take the Humanity Quiz</a></br>");
+      score.append("<div class='one' style='color: #0c18ff'>You scored for Computing faculty: " + (tot_comp) + " Points <br><a href='quizTwo_Computing.html' style='color: #0c18ff'><u>Take the Computing Quiz</u></div></a></br>");
+      score.append("<div class='two' style='color: #00b26f'>You scored for Engineering faculty: " + (tot_eng) + " Points <br><a href='quizTwo_Engineering.html' style='color: #00b26f'><u>Take the Engineering Quiz</u></div></a></br>");
+      score.append("<div class='three' style='color: #c80000'>You scored for Business faculty: " + (tot_bm) + " Points <br><a href='quizTwo_Business.html' style='color: #c80000'><u>Take the Business Quiz</u></div></a></br>");
+      score.append("<div class='four' style='color: lightblue'>You scored for Architecture faculty: " + (tot_arch) + " Points<br><a href='quizTwo_Archi.html' style='color: lightblue'><u>View Degrees</u></div></a> </br>");
+      score.append("<div class='five' style='color: #ff8e40'>You scored for Hospitality and Cookery faculty: " + (tot_hc) + " Points<br> <a href='quizTwo_Hospitality.html' style='color: #ff8e40'><u>View Degrees</u></div></a></br> ");
+      score.append("<div class='five' style='color: #a367e7'>You scored for Humanities and Sciences faculty: " + (tot_hs) + " Points  <br><a href='quizTwo_Humanities.html' style='color: #a367e7'><u>Take the Humanities & Sciences Quiz</u></div></a></br>");
       var fac_score = [tot_comp,tot_eng,tot_bm,tot_arch,tot_hc,tot_hs];
       console.log(sortNumbers(fac_score));
       return score;
