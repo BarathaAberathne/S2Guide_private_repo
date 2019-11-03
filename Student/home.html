@@ -24,33 +24,26 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-
     <style>
         @media only screen and (min-width: 768px) {
+
             /* For mobile phones: */
             .carousel-item {
 
 
-                height:20em;
+                height: 20em;
             }
         }
 
+        .carousel-inner {
 
-
-
-
-        .carousel-inner{
-
-            width:100%
+            width: 100%
         }
 
-        .carousel-holder{
-            margin-top:3.8cm;
+        .carousel-holder {
+            margin-top: 0.5cm;
         }
-
     </style>
-
 </head>
 
 <body onload="checkState();">
@@ -60,7 +53,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        
+
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +63,7 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    
+
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="home.html">Home</a>
@@ -84,18 +77,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="https://www.sliit.lk/">Our website</a>
                                 </li>
-                                
+
                             </ul>
                         </div>
-                        
+
                         <img id="userPic" src="" width="40px" height="40px" style=" border-radius: 50%;">
                         <p class="nav-link" id="userName"></p>
                         <li class="nav-link" onclick="logOut();">
-                                <a class="nav-link" href="">Log out</a>
-                            </li>
-                        <li class="nav-link" >
-                            <a class="nav-link" style="color: white;cursor: pointer;" id="dnperm">Subscribe</a>
+                            <a class="nav-link" href="">Log out</a>
                         </li>
+
                         <ul id="comment">
                         </ul>
                     </nav>
@@ -111,15 +102,20 @@
     <section class="cta_part section_padding">
         <div class="container">
 
+            
             <div class="row align-items-center">
 
                 <div class="col-lg-7">
 
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                        <img src="img/logo.png" alt="logo" width="70px" height="70px"> </a>
-                            <p class="s2-s">We help you to find the best higher eduation path for you.</p>
+                            <div class="row">
+                                
+                            </div>
+                            <br><br>
+                            <h4>We help you to find the best higher eduation path for you.</h4>
                             <a href="forms/quiz.html" class="btn_2 banner_btn_1">Answer our Quiz </a>
+                            
                         </div>
                     </div>
                 </div>
@@ -132,12 +128,22 @@
         </div>
     </section>
     <section>
+            <div class="single_feature" style="padding-left:30%;">
+                    <div class="single_feature_part single_feature_part_2">
+                        <a class="btn_1" style="color: black;cursor: pointer;" id="dnperm">Subscribe to us</a>
+                    </div>
+                </div>
+            <li class="nav-link">
+                </li>
+    </section>
+    <section>
         <div class="container-fluid carousel-holder no-padding" style="height: auto">
 
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" id="gallery">
                     <div class="carousel-item active">
-                        <img src="img/Humanities-Sciences-Programme-Slider.jpg" class="d-block w-100" style="width: 600px;height: 250px">
+                        <img src="img/Humanities-Sciences-Programme-Slider.jpg" class="d-block w-100"
+                            style="width: 600px;height: 250px">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -296,24 +302,22 @@
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src='main.js'></script>
 
-    <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
     <script>
 
 
         var dnperm = document.getElementById('dnperm');
-        dnperm.addEventListener('click',function(e){
+        dnperm.addEventListener('click', function (e) {
             e.preventDefault();
-            if(!window.Notification){
+            if (!window.Notification) {
                 alert('Not supported');
-            }else{
-                Notification.requestPermission().then(function(p){
-                    if(p=='denied'){
+            } else {
+                Notification.requestPermission().then(function (p) {
+                    if (p == 'denied') {
                         alert('You denied to show notification');
-                    }else if(p=='granted'){
+                    } else if (p == 'granted') {
                         alert('You allowed to show notification');
                     }
                 });
@@ -338,22 +342,22 @@
 
         var database = firebase.database().ref().child("notices");
 
-        database.limitToLast(1).on('child_added', function(data) {
-            if(Notification.permission!=='default'){
+        database.limitToLast(1).on('child_added', function (data) {
+            if (Notification.permission !== 'default') {
                 var notify;
 
-                notify= new Notification('New message from SLIIT',{
+                notify = new Notification('New message from SLIIT', {
                     'body': data.val().notice_topic,
                     'icon': 'img/sliit.png',
                     'tag': data.getKey()
                 });
-                notify.onclick = function(){
+                notify.onclick = function () {
                     //alert(this.tag);
                     //window.open("https://www.sliit.lk");
                     //var notice_description = $("#notice_description").val();
                     window.open(data.val().notice_description);
                 }
-            }else{
+            } else {
                 //alert('Please allow the notification first');
                 //<a href='#' id="dnperm">Reuqest Permission</a><br /><br />
             }
@@ -384,12 +388,12 @@
                     userPic.src = user.photoURL;
                     uName.innerHTML = user.displayName;
 
-                    
+
                 } else {
                     // No user is signed in.
                     console.log('no-logged');
                     window.location.href = 'forms/studentLogin.html';
-                    
+
                 }
             });
         }
