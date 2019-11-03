@@ -536,7 +536,7 @@
         degree_name.push("BSc(Hons) Degree in Quantity Surveying(UK)");
       }
      
-      
+      /*
       score.append("Your most suitable degree is: " +  degree_name   + " with " + (best)   + "Points </br>");
       score.append("You scored for BSc Engineering(Hons) Degree in Civil Engineering: " +  (tot_CE)   + "Points </br>");
       score.append("You scored for BSc Engineering(Hons) Degree in Electrical and Electronic Engineering: " +  (tot_EEE)   + "Points </br>");
@@ -547,6 +547,77 @@
       score.append("You scored for Bachelor of Engineering(Hons) Electrical and Electronic Engineering(Curtin): " +  (tot_EEE_Curtin)   + "Points </br> ");
       score.append("You scored for Bachelor of Engineering(Hons) Mechanical Engineering(Curtin): " +  (tot_Mech_Curtin)   + "Points </br> ");
       score.append("You scored for BSc(Hons) Degree in Quantity Surveying(UK): " +  (tot_QS_UK)   + "Points </br> ");
+	  */
+	   var recommended = [];
+		var notrecommended = [];
+		
+		if(tot_CE >= 15){
+          recommended.push("BSc Engineering(Hons) Degree in Civil Engineering: " + tot_CE.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Engineering(Hons) Degree in Civil Engineering: " + tot_CE.toString() + " Points");
+		}
+		
+        if(tot_EEE >= 15){
+          recommended.push("BSc Engineering(Hons) Degree in Electrical and Electronic Engineering: " + tot_EEE.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Engineering(Hons) Degree in Electrical and Electronic Engineering: " + tot_EEE.toString() + " Points");
+		}
+		
+        if(tot_MatEng >= 15){
+          recommended.push("BSc Engineering(Hons) Degree in Materials Engineering: " + tot_MatEng.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Engineering(Hons) Degree in Materials Engineering: " + tot_MatEng.toString() + " Points");
+		}
+		
+        if(tot_Mech >= 15){
+          recommended.push("BSc Engineering(Hons) Degree in Mechanical Engineering: " + tot_Mech.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Engineering(Hons) Degree in Mechanical Engineering: " + tot_Mech.toString() + " Points");
+		}
+		
+        if(tot_Mechatronics >= 15){
+          recommended.push("BSc Engineering(Hons) Degree in Mechanical Engineering(Mechatronics): " + tot_Mechatronics.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Engineering(Hons) Degree in Mechanical Engineering(Mechatronics): " + tot_Mechatronics.toString() + " Points");
+		}
+		
+        if(tot_CE_Curtin >= 15){
+          recommended.push("Bachelor of Engineering(Hons) Civil and Construction Engineering(Curtin): " + tot_CE_Curtin.toString() + " Points");
+        }else{
+		  notrecommended.push("Bachelor of Engineering(Hons) Civil and Construction Engineering(Curtin): " + tot_CE_Curtin.toString() + " Points");
+		}
+		
+        if(tot_EEE_Curtin >= 15){
+          recommended.push("Bachelor of Engineering(Hons) Electrical and Electronic Engineering(Curtin): " + tot_EEE_Curtin.toString() + " Points");
+        }else{
+		  notrecommended.push("Bachelor of Engineering(Hons) Electrical and Electronic Engineering(Curtin): " + tot_EEE_Curtin.toString() + " Points");
+		}
+		
+        if(tot_Mech_Curtin >= 15){
+          recommended.push("Bachelor of Engineering(Hons) Mechanical Engineering(Curtin): " + tot_Mech_Curtin.toString() + " Points");
+        }else{
+		  notrecommended.push("Bachelor of Engineering(Hons) Mechanical Engineering(Curtin): " + tot_Mech_Curtin.toString() + " Points");
+		}
+		
+        if(tot_QS_UK >= 15){
+          recommended.push("BSc(Hons) Degree in Quantity Surveying(UK): " + tot_QS_UK.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc(Hons) Degree in Quantity Surveying(UK): " + tot_QS_UK.toString() + " Points");
+		}
+		
+		
+        score.append("<b>Your most suitable degree is: " +  degree_name   + " with " + (best)   + " Points </b></br>");
+		
+       
+
+		score.append("Recommended List </br>");
+		for(var c=0; c < recommended.length; c++ ){
+			score.append(recommended[c]+ " </br>");
+		}
+		score.append("Not Recommended List </br>");
+		for(var c=0; c < notrecommended.length; c++ ){
+			score.append(notrecommended[c]+ " </br>");
+		}
       showResultBtn();
 
       return score;
