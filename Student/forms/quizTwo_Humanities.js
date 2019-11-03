@@ -412,7 +412,7 @@
         if(best == tot_BNurse){
           degree_name.push("BSc_Hons_Nursing_UK");
         }
-        
+        /*
         score.append("Your most suitable degree is: " +  degree_name   + " with " + (best)   + "Points </br>");
         score.append("You scored for BEd Hons in Physical Sciences: " +  (tot_BPS)   + "Points </br>");
         score.append("You scored for BEd Hons in Biological Sciences: " +  (tot_BBS)   + "Points </br>");
@@ -420,9 +420,60 @@
         score.append("You scored for BSc Hons Psychology UK: " +  (tot_BPsy)   + "Points </br>");
         score.append("You scored for LLB Hons Law UK: " +  (tot_LLB)   + "Points </br> ");
         score.append("You scored for BSc_Hons_Nursing_UK: " +  (tot_BNurse)   + "Points </br> ");
-        showResultBtn();
+        */
+	
+	var recommended = [];
+		var notrecommended = [];
+		
+		if(tot_BPS >= 15){
+          recommended.push("BEd Hons in Physical Sciences: " + tot_BPS.toString() + " Points");
+        }else{
+		  notrecommended.push("BEd Hons in Physical Sciences: " + tot_BPS.toString() + " Points");
+		}
+		
+        if(tot_BBS >= 15){
+          recommended.push("BEd Hons in Biological Sciences: " + tot_BBS.toString() + " Points");
+        }else{
+		  notrecommended.push("BEd Hons in Biological Sciences: " + tot_BBS.toString() + " Points");
+		}
+		
+        if(tot_BBT >= 15){
+          recommended.push("BSc Hons in Bio Technology: " + tot_BBT.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Hons in Bio Technology: " + tot_BBT.toString() + " Points");
+		}
+		
+        if(tot_BPsy >= 15){
+          recommended.push("BSc Hons Psychology UK: " + tot_BPsy.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc Hons Psychology UK: " + tot_BPsy.toString() + " Points");
+		}
+		
+        if(tot_LLB >= 15){
+          recommended.push("LLB Hons Law UK: " + tot_LLB.toString() + " Points");
+        }else{
+		  notrecommended.push("LLB Hons Law UK: " + tot_LLB.toString() + " Points");
+		}
+		
+        if(tot_BNurse >= 15){
+          degree_name.push("BSc_Hons_Nursing_UK: " + tot_BNurse.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc_Hons_Nursing_UK: " + tot_BNurse.toString() + " Points");
+		}
+		
+        score.append("<b>Your most suitable degree is: " +  degree_name   + " with " + (best)   + " Points </b></br>");
+		
+       
 
-  
+		score.append("Recommended List </br>");
+		for(var c=0; c < recommended.length; c++ ){
+			score.append(recommended[c]+ " </br>");
+		}
+		score.append("Not Recommended List </br>");
+		for(var c=0; c < notrecommended.length; c++ ){
+			score.append(notrecommended[c]+ " </br>");
+		}
+	showResultBtn();
         return score;
       }
     });
