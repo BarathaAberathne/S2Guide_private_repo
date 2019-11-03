@@ -537,7 +537,7 @@
           degree_name.push("BA(Hons) in Business Administration Topup(UK)");
         }
        
-        
+        /*
         score.append("Your most suitable degree is: " +  degree_name   + " with " + (best)   + "Points </br>");
         score.append("You scored for BBA(Hons) Degree sp in Accounting and Finance: " +  (tot_AF)   + "Points </br>");
         score.append("You scored for BBA(Hons) Degree sp in Business Analytics: " +  (tot_BA)   + "Points </br>");
@@ -548,7 +548,77 @@
         score.append("You scored for BBA(Hons) Degree sp in Management Information Systems: " +  (tot_MIS)   + "Points </br> ");
         score.append("You scored for BBA(Hons) Business Administration(UK): " +  (tot_B_Admin_UK)   + "Points </br> ");
         score.append("You scored for BA(Hons) in Business Administration Topup(UK): " +  (tot_BA_Topup)   + "Points </br> ");
+		*/
+		 var recommended = [];
+		var notrecommended = [];
+		
+		if(tot_AF >= 15){
+          recommended.push("BBA(Hons) Degree sp in Accounting and Finance: " + tot_AF.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Accounting and Finance: " + tot_AF.toString() + " Points");
+		}
+		
+        if(tot_BA >= 15){
+          recommended.push("BBA(Hons) Degree sp in Business Analytics: " + tot_BA.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Business Analytics: " + tot_BA.toString() + " Points");
+		}
+		
+        if(tot_BM >= 15){
+          recommended.push("BBA(Hons) Degree sp in Business Management: " + tot_BM.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Business Management: " + tot_BM.toString() + " Points");
+		}
+		
+        if(tot_MM >= 15){
+          recommended.push("BBA(Hons) Degree sp in Marketing Management: " + tot_MM.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Marketing Management: " + tot_MM.toString() + " Points");
+		}
+		
+        if(tot_HCM >= 15){
+          recommended.push("BBA(Hons) Degree sp in Human Capital Management: " + tot_HCM.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Human Capital Management: " + tot_HCM.toString() + " Points");
+		}
+		
+        if(tot_LSCM >= 15){
+          recommended.push("BBA(Hons) Degree sp in Logistics and Supply Chain Management: " + tot_LSCM.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Logistics and Supply Chain Management: " + tot_LSCM.toString() + " Points");
+		}
+		
+        if(tot_MIS >= 15){
+          recommended.push("BBA(Hons) Degree sp in Management Information Systems: " + tot_MIS.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Degree sp in Management Information Systems: " + tot_MIS.toString() + " Points");
+		}
+		
+        if(tot_B_Admin_UK >= 15){
+          recommended.push("BBA(Hons) Business Administration(UK): " + tot_B_Admin_UK.toString() + " Points");
+        }else{
+		  notrecommended.push("BBA(Hons) Business Administration(UK) " + tot_B_Admin_UK.toString() + " Points");
+		}
+		
+        if(tot_BA_Topup >= 15){
+          recommended.push("BA(Hons) in Business Administration Topup(UK): " + tot_BA_Topup.toString() + " Points");
+        }else{
+		  notrecommended.push("BA(Hons) in Business Administration Topup(UK): " + tot_BA_Topup.toString() + " Points");
+		}
+		
+		
+        score.append("<b>Your most suitable degree is: " +  degree_name   + " with " + (best)   + " Points </b></br>");
+		
+       
 
+		score.append("Recommended List </br>");
+		for(var c=0; c < recommended.length; c++ ){
+			score.append(recommended[c]+ " </br>");
+		}
+		score.append("Not Recommended List </br>");
+		for(var c=0; c < notrecommended.length; c++ ){
+			score.append(notrecommended[c]+ " </br>");
+		}
         return score;
       }
     });
