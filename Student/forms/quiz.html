@@ -30,7 +30,17 @@
 </head>
 
 <body onload="init();">
-
+<div class="row">
+	<div class="container-contact100-form-btn">
+		<div class="wrap-contact100-form-btn">
+			<div class="contact100-form-bgbtn"></div>
+			<div class="btn contact100-form-btn">
+				<input type="button" style="color: white;background: transparent" value="Home"
+					onclick="gotoHome();" />
+			</div>
+		</div>
+	</div>
+</div>
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<div class="container msg-db" id="student_details">
@@ -323,7 +333,10 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-23581568-13');
+function gotoHome(){
+            window.location.href = '../home.html';
 
+        }
 		
 	</script>
 </body>
