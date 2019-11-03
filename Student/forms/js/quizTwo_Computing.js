@@ -638,7 +638,7 @@
       if (best == tot_CSN) {
         degree_name.push("Bsc (Hons) in IT sp. In Computer Systems Networking");
       }
-
+/*
       score.append("Your most suitable degree is: " + degree_name + " with " + (best) + "Points </br>");
       score.append("You scored for BSc (Hons) in IT sp.in Information Technology: " + (tot_IT) + "Points </br>");
       score.append("You scored for Bsc (Hons) in IT sp. in Informations Systems Engineering: " + (tot_ISE) + "Points </br>");
@@ -652,6 +652,95 @@
       score.append("You scored for Bsc in Computer Systems & Networking (Curtin): " + (tot_CSNcur) + "Points </br> ");
       score.append("You scored for BSc.(Hons) Computer Science and Software Engineering (Bedfordshire): " + (tot_CSSEbed) + "Points </br> ");
       score.append("You scored for BSc.(Hons) Computer Networking (Bedfordshire): " + (tot_CNbed) + "Points </br> ");
+	  
+	  */
+	  var recommended = [];
+		var notrecommended = [];
+		
+		if(tot_IT >= 15){
+          recommended.push("BSc (Hons) in IT sp.in Information Technology: " + tot_IT.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc (Hons) in IT sp.in Information Technology: " + tot_IT.toString() + " Points");
+		}
+		
+        if(tot_ISE >= 15){
+          recommended.push("BSc (Hons) in IT sp. in Informations Systems Engineering: " + tot_ISE.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc (Hons) in IT sp. in Informations Systems Engineering: " + tot_ISE.toString() + " Points");
+		}
+		
+        if(tot_SE >= 15){
+          recommended.push("Bsc (Hons) in IT sp. in Software Engineering: " + tot_SE.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc (Hons) in IT sp. in Software Engineering: " + tot_SE.toString() + " Points");
+		}
+		
+        if(tot_CS >= 15){
+          recommended.push("Bsc (Hons) in IT sp. In Cyber Security: " + tot_CS.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc (Hons) in IT sp. In Cyber Security: " + tot_CS.toString() + " Points");
+		}
+		
+        if(tot_IM >= 15){
+          recommended.push("Bsc (Hons) in IT sp. In Interactive Media: " + tot_IM.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc (Hons) in IT sp. In Interactive Media: " + tot_IM.toString() + " Points");
+		}
+		
+        if(tot_DS >= 15){
+          recommended.push("Bsc (Hons) in IT sp. In Data Science: " + tot_DS.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc (Hons) in IT sp. In Data Science: " + tot_DS.toString() + " Points");
+		}
+		
+        if(tot_ITcur >= 15){
+          recommended.push("Bsc in Information Technology (Curtin): " + tot_ITcur.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc in Information Technology (Curtin): " + tot_ITcur.toString() + " Points");
+		}
+		
+        if(tot_SEcur >= 15){
+          recommended.push("Bsc in Software Engineering (Curtin): " + tot_SEcur.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc in Software Engineering (Curtin): " + tot_SEcur.toString() + " Points");
+		}
+		
+        if(tot_CSNcur >= 15){
+          recommended.push("Bsc in Computer Systems & Networking (Curtin): " + tot_CSNcur.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc in Computer Systems & Networking (Curtin): " + tot_CSNcur.toString() + " Points");
+		}
+		
+        if(tot_CSSEbed >= 15){
+          recommended.push("BSc.(Hons) Computer Science and Software Engineering (Bedfordshire): " + tot_CSSEbed.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc.(Hons) Computer Science and Software Engineering (Bedfordshire): " + tot_CSSEbed.toString() + " Points");
+		}
+		
+        if(tot_CNbed >= 15){
+          recommended.push("BSc.(Hons) Computer Networking (Bedfordshire): " + tot_CNbed.toString() + " Points");
+        }else{
+		  notrecommended.push("BSc.(Hons) Computer Networking (Bedfordshire): " + tot_CNbed.toString() + " Points");
+		}
+		
+        if(tot_CSN >= 15){
+          recommended.push("Bsc (Hons) in IT sp. In Computer Systems Networking: " + tot_CSN.toString() + " Points");
+        }else{
+		  notrecommended.push("Bsc (Hons) in IT sp. In Computer Systems Networking: " + tot_CSN.toString() + " Points");
+		}
+		
+        score.append("<b>Your most suitable degree is: " +  degree_name   + " with " + (best)   + " Points </b></br>");
+		
+       
+
+		score.append("Recommended List </br>");
+		for(var c=0; c < recommended.length; c++ ){
+			score.append(recommended[c]+ " </br>");
+		}
+		score.append("Not Recommended List </br>");
+		for(var c=0; c < notrecommended.length; c++ ){
+			score.append(notrecommended[c]+ " </br>");
+		}
       showResultBtn();
 
       return score;
