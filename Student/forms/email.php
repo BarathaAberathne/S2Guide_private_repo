@@ -7,9 +7,10 @@ if($_POST){
     $mailHeaders = "From: Admin " . "<". $admin_email .">\r\n";
 
     if(mail($toEmail,"Your eligible list at SLIIT",$message,$mailHeaders)){
-        print "<p class='success'>Mail Sent.</p>";
+        echo "<p class='success'>Mail Sent.</p>";
+
     } else {
-        print "<p class='Error'>Problem in Sending Mail.</p>";
+        echo "<p class='Error'>Problem in Sending Mail.</p>";
     }
     }
 ?>

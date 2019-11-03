@@ -47,7 +47,7 @@
                         Hi,
                     </span>
                     <span id="u_name" name="u_name">
-                        
+
                     </span>
                     <span>
                         Here is your eligible degree list!
@@ -63,7 +63,11 @@
                     <div class="container-contact100-form-btn">
                         <div class="wrap-contact100-form-btn">
                             <div class="contact100-form-bgbtn"></div>
-                            <input type="button" onclick="emailList();" value="Email this list"
+                            <form action="email.php">
+                                <input type="submit" value="Email the list" class="btn contact100-form-btn"
+                                    style="background: transparent;color: white">
+                            </form>
+                            <input type="button" onclick="gotoHome();" value="Go to Home"
                                 class="btn contact100-form-btn" style="background: transparent;color: white">
 
 
@@ -131,7 +135,7 @@
                     var textnode = document.createTextNode(degrees[key].degree_title);
                     node.appendChild(textnode);
                     document.getElementById("degree_list").appendChild(node);
-                }else{
+                } else {
                     var node = document.createElement("LI");
                     var textnode = document.createTextNode("");
                     node.appendChild(textnode);
@@ -188,6 +192,10 @@
                 rtn = true;
             }
             return rtn;
+        }
+        function gotoHome(){
+            window.location.href = '../home.html';
+
         }
     </script>
 </body>
