@@ -409,7 +409,7 @@ function loadSubjects() {
         }
     }
     else if (stream == "BioScience") {
-        for (var i = 0; i < commerce.length; i++) {
+        for (var i = 0; i < bio.length; i++) {
 
             var opt1 = document.createElement('option');
             var opt2 = document.createElement('option');
@@ -427,7 +427,7 @@ function loadSubjects() {
         }
     }
     else if (stream == "Technology") {
-        for (var i = 0; i < commerce.length; i++) {
+        for (var i = 0; i < technology.length; i++) {
 
             var opt1 = document.createElement('option');
             var opt2 = document.createElement('option');
@@ -445,7 +445,7 @@ function loadSubjects() {
         }
     }
     else if (stream == "OtherStream") {
-        for (var i = 0; i < commerce.length; i++) {
+        for (var i = 0; i < other.length; i++) {
 
             var opt1 = document.createElement('option');
             var opt2 = document.createElement('option');
